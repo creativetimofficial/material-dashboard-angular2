@@ -1,0 +1,68 @@
+<div class="logo">
+    <a href="http://www.creative-tim.com" class="simple-text">
+        Creative Tim
+    </a>
+</div>
+<div class="sidebar-wrapper">
+    <!-- <div class="navbar-toggleable-xs navbar-collapse" id="bd-main-nav"
+    [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}"> -->
+    <ul class="nav">
+        <li (click)="isCollapsed = true"
+        class="nav-item" routerLinkActive="active"
+        [ngClass]="getMenuItemClasses(menuItems)">
+            <a class="nav-item nav-link" [routerLink]="[menuItems[0].path]">
+                <i class="{{menuItems[0].icon}}">dashboard</i>
+                <p>{{menuItems[0].title}}</p>
+            </a>
+        </li>
+        <li (click)="isCollapsed = true"
+        class="nav-item" routerLinkActive="active"
+        [ngClass]="getMenuItemClasses(menuItems)">
+            <a class="nav-item nav-link" [routerLink]="[menuItems[1].path]">
+                <i class="{{menuItems[1].icon}}">person</i>
+                <p>{{menuItems[1].title}}</p>
+            </a>
+        </li>
+        <li (click)="isCollapsed = true"
+        class="nav-item" routerLinkActive="active"
+        [ngClass]="getMenuItemClasses(menuItems)">
+            <a class="nav-item nav-link" [routerLink]="[menuItems[2].path]">
+                <i class="{{menuItems[2].icon}}">content_paste</i>
+                <p>{{menuItems[2].title}}</p>
+            </a>
+        </li>
+        <li (click)="isCollapsed = true"
+        class="nav-item" routerLinkActive="active"
+        [ngClass]="getMenuItemClasses(menuItems)">
+            <a class="nav-item nav-link" [routerLink]="[menuItems[3].path]">
+                <i class="{{menuItems[3].icon}}">library_books</i>
+                <p>{{menuItems[3].title}}</p>
+            </a>
+        </li>
+        <li (click)="isCollapsed = true"
+        class="nav-item" routerLinkActive="active"
+        [ngClass]="getMenuItemClasses(menuItems)">
+            <a class="nav-item nav-link" [routerLink]="[menuItems[4].path]">
+                <i class="{{menuItems[4].icon}}">bubble_chart</i>
+                <p>{{menuItems[4].title}}</p>
+            </a>
+        </li>
+        <li (click)="isCollapsed = true"
+        class="nav-item" routerLinkActive="active"
+        [ngClass]="getMenuItemClasses(menuItems)">
+            <a class="nav-item nav-link" [routerLink]="[menuItems[5].path]">
+                <i class="{{menuItems[5].icon}}">location_on</i>
+                <p>{{menuItems[5].title}}</p>
+            </a>
+        </li>
+        <li (click)="isCollapsed = true"
+        class="nav-item" routerLinkActive="active"
+        [ngClass]="getMenuItemClasses(menuItems)">
+            <a class="nav-item nav-link" [routerLink]="[menuItems[6].path]">
+                <i class="{{menuItems[6].icon}}">notifications</i>
+                <p>{{menuItems[6].title}}</p>
+            </a>
+        </li>
+    </ul>
+    <!-- </div> -->
+</div>

@@ -1,0 +1,47 @@
+{
+  "name": "Angular2",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/angular/angular.io/blob/master/LICENSE"
+    }
+  ],
+  "dependencies": {
+    "@angular/common": "~2.2.2",
+    "@angular/compiler": "~2.2.2",
+    "@angular/core": "~2.2.2",
+    "@angular/forms": "~2.2.2",
+    "@angular/http": "~2.2.2",
+    "@angular/platform-browser": "~2.2.2",
+    "@angular/platform-browser-dynamic": "~2.2.2",
+    "@angular/router": "~3.2.2",
+    "@angular/upgrade": "~2.2.2",
+    "angular-in-memory-web-api": "~0.1.13",
+    "angular2-chartist": "~0.10.1",
+    "angular2-google-maps": "~0.16.0",
+    "chartist": "~0.9.8",
+    "core-js": "~2.4.1",
+    "jquery": "~3.1.1",
+    "ng2-bootstrap": "~1.1.16",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "~0.19.41",
+    "zone.js": "^0.6.26"
+  },
+  "devDependencies": {
+    "@types/chartist": "~0.9.33",
+    "@types/core-js": "~0.9.34",
+    "@types/jquery": "~2.0.34",
+    "@types/node": "~6.0.45",
+    "concurrently": "~3.0.0",
+    "lite-server": "~2.2.2",
+    "typescript": "~2.0.3"
+  }
+}
