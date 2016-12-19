@@ -17,8 +17,7 @@ body{
 }
 .navbar-title h4{
     line-height: 12px;
-    margin-top: 16px;
-    margin-bottom: 5px;
+    margin-bottom: -6px;
 }
 
 .navbar-title img{
