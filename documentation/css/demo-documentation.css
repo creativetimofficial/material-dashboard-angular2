@@ -20,6 +20,16 @@ body{
     margin-bottom: -6px;
 }
 
+.image-header{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.image-header img{
+    width: 100%;
+}
+
 .navbar-title img{
     width: 100%
 }
