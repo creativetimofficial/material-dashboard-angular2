@@ -446,6 +446,31 @@ h2.title {
   height: 100vh;
 }
 
+.moving-tab {
+  position: absolute;
+  padding: 10px 15px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  top: 0px;
+  left: 0px;
+  border-radius: 3px;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin: 10px 15px;
+}
+.moving-tab p {
+  margin: 0;
+  line-height: 30px;
+}
+.moving-tab i {
+  font-size: 24px;
+  float: left;
+  margin-right: 15px;
+  line-height: 30px;
+  width: 30px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
 .bootstrap-navbar {
   position: absolute;
   top: 0;
@@ -506,14 +531,6 @@ h2.title {
 .off-canvas-sidebar .nav li:hover > a {
   background: rgba(200, 200, 200, 0.2);
   color: #3C4858;
-}
-.sidebar .nav li.active > a,
-.off-canvas-sidebar .nav li.active > a {
-  color: #FFFFFF;
-}
-.sidebar .nav li.active > a i,
-.off-canvas-sidebar .nav li.active > a i {
-  color: #FFFFFF;
 }
 .sidebar .nav p,
 .off-canvas-sidebar .nav p {
@@ -631,28 +648,28 @@ h2.title {
 .off-canvas-sidebar.has-image:after {
   opacity: .77;
 }
-.sidebar[data-color="blue"] .nav li.active a,
-.off-canvas-sidebar[data-color="blue"] .nav li.active a {
+.sidebar[data-color="blue"] .moving-tab,
+.off-canvas-sidebar[data-color="blue"] .moving-tab {
   background-color: #00bcd4;
   box-shadow: 0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2);
 }
-.sidebar[data-color="green"] .nav li.active a,
-.off-canvas-sidebar[data-color="green"] .nav li.active a {
+.sidebar[data-color="green"] .moving-tab,
+.off-canvas-sidebar[data-color="green"] .moving-tab {
   background-color: #4caf50;
   box-shadow: 0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2);
 }
-.sidebar[data-color="orange"] .nav li.active a,
-.off-canvas-sidebar[data-color="orange"] .nav li.active a {
+.sidebar[data-color="orange"] .moving-tab,
+.off-canvas-sidebar[data-color="orange"] .moving-tab {
   background-color: #ff9800;
   box-shadow: 0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2);
 }
-.sidebar[data-color="red"] .nav li.active a,
-.off-canvas-sidebar[data-color="red"] .nav li.active a {
+.sidebar[data-color="red"] .moving-tab,
+.off-canvas-sidebar[data-color="red"] .moving-tab {
   background-color: #f44336;
   box-shadow: 0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2);
 }
-.sidebar[data-color="purple"] .nav li.active a,
-.off-canvas-sidebar[data-color="purple"] .nav li.active a {
+.sidebar[data-color="purple"] .moving-tab,
+.off-canvas-sidebar[data-color="purple"] .moving-tab {
   background-color: #9c27b0;
   box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);
 }
@@ -3396,6 +3413,10 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   width: 100%;
   padding-top: 10px;
   z-index: 1029;
+}
+
+.nav-container {
+  position: relative;
 }
 
 .popover, .tooltip-inner {

@@ -184,6 +184,5 @@ import initDemo = require('../../../assets/js/charts.js');
 export class HomeComponent implements OnInit{
     ngOnInit(){
         initDemo();
-        // $.getScript('../../../assets/js/material-dashboard.js');
     }
 }

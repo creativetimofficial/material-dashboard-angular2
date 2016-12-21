@@ -3,6 +3,32 @@
     top: 0;
     height: 100vh;
 }
+.moving-tab{
+    position: absolute;
+    padding: 10px 15px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    top: 0px;
+    left: 0px;
+    border-radius: 3px;
+    color: $white-color;
+    cursor: pointer;
+    margin: 10px 15px;
+
+    p{
+        margin: 0;
+        line-height: 30px;
+    }
+
+    i{
+        font-size: 24px;
+        float: left;
+        margin-right: 15px;
+        line-height: 30px;
+        width: 30px;
+        text-align: center;
+        color: $white-color;
+    }
+}
 .bootstrap-navbar {
     position: absolute;
     top: 0;
@@ -66,14 +92,6 @@
             &:hover > a{
                 background: rgba(200, 200, 200, 0.2);
                 color: $black-color;
-            }
-
-            &.active > a{
-                color: #FFFFFF;
-
-                i{
-                    color: #FFFFFF;
-                }
             }
         }
 
