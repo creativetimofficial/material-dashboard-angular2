@@ -15,7 +15,6 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         initDemo();
-        // $.getScript('../../../assets/js/material-dashboard.js');
     };
     HomeComponent = __decorate([
         core_1.Component({

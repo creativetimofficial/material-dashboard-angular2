@@ -16,19 +16,8 @@ var SidebarComponent = (function () {
         this.isCollapsed = true;
     }
     SidebarComponent.prototype.ngOnInit = function () {
+        $.getScript('../../assets/js/material-dashboard-angular.js');
         this.menuItems = sidebar_routes_config_1.ROUTES.filter(function (menuItem) { return menuItem.menuType !== sidebar_metadata_1.MenuType.BRAND; });
-    };
-    Object.defineProperty(SidebarComponent.prototype, "menuIcon", {
-        get: function () {
-            return this.isCollapsed ? '☰' : '✖';
-        },
-        enumerable: true,
-        configurable: true
-    });
-    SidebarComponent.prototype.getMenuItemClasses = function (menuItem) {
-        return {
-            'pull-xs-right': this.isCollapsed && menuItem.menuType === sidebar_metadata_1.MenuType.RIGHT
-        };
     };
     SidebarComponent = __decorate([
         core_1.Component({

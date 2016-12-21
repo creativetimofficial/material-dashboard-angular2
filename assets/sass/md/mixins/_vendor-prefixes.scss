@@ -54,11 +54,9 @@
 }
 
 @mixin set-background-color-button ($color){
-    .nav{
-        li.active a{
-            background-color: $color;
-            @include shadow-big-color($color);
-        }
+    .moving-tab{
+        background-color: $color;
+        @include shadow-big-color($color);
     }
 }
 
