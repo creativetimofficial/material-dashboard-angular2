@@ -14,6 +14,7 @@ body {
   background-color: #EEEEEE;
   // background: #fdfdfe;
   color: $black-color;
+  min-height: 100vh;
   &.inverse {
     background: #333333;
     &, .form-control {
