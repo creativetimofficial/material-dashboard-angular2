@@ -55,9 +55,6 @@ $(document).ready(function(){
     $sidebar = $('.sidebar');
 
     $.material.init();
-
-    md.initSidebarsCheck();
-
     window_width = $(window).width();
     // check if there is an image set for the sidebar's background
     //  Activate the tooltips
@@ -74,7 +71,6 @@ $(document).ready(function(){
 
 // activate collapse right menu when the windows is resized
 $(window).resize(function(){
-    md.initSidebarsCheck();
 
     // reset the seq for charts drawing animations
     seq = seq2 = 0;
@@ -86,17 +82,6 @@ md = {
         navbar_menu_visible: 0,
         active_collapse: true,
         disabled_collapse_init: 0,
-    },
-
-    initSidebarsCheck: function(){
-        if($(window).width() <= 991){
-            if($sidebar.length != 0){
-            md.initRightMenu();
-            } else {
-            md.initBootstrapNavbarMenu();
-            }
-        }
-
     },
 
     checkScrollForTransparentNavbar: debounce(function() {
@@ -114,160 +99,6 @@ md = {
                 }
             }
     }, 17),
-
-
-    initRightMenu: function(){
-        $sidebar_wrapper = $('.sidebar-wrapper');
-
-        if(!mobile_menu_initialized){
-            $navbar = $('nav').find('.navbar-collapse').first().clone(true);
-
-            nav_content = '';
-            mobile_menu_content = '';
-
-            $navbar.children('ul').each(function(){
-
-                content_buff = $(this).html();
-                nav_content = nav_content + content_buff;
-            });
-
-            nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
-
-            $navbar_form = $('nav').find('.navbar-form').clone(true);
-
-            $sidebar_nav = $sidebar_wrapper.find(' > .nav');
-            // insert the navbar form before the sidebar list
-            $nav_content = $(nav_content);
-                $nav_content.insertBefore($sidebar_nav);
-                $navbar_form.insertBefore($nav_content);
-
-
-            $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function(event) {
-                event.stopPropagation();
-
-            });
-            mobile_menu_initialized = true;
-
-        } else {
-            if($(window).width() > 991){
-                // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
-                $sidebar_wrapper.find('.navbar-form').remove();
-                $sidebar_wrapper.find('.nav-mobile-menu').remove();
-                mobile_menu_initialized = false;
-            }
-        }
-
-        if(!toggle_initialized){
-            $toggle = $('.navbar-toggle');
-
-            $toggle.click(function (){
-
-                if(mobile_menu_visible == 1) {
-                    $('html').removeClass('nav-open');
-
-                    $('.close-layer').remove();
-                    setTimeout(function(){
-                        $toggle.removeClass('toggled');
-                    }, 400);
-
-                    mobile_menu_visible = 0;;
-                } else {
-                    setTimeout(function(){
-                        $toggle.addClass('toggled');
-                    }, 430);
-
-
-                    $layer = $('<div class="close-layer"></div>');
-                    $layer.appendTo(".wrapper");
-
-                    setTimeout(function(){
-                        $layer.addClass('visible');
-                    }, 100);
-
-                    $layer.click(function() {
-                        $('html').removeClass('nav-open');
-                        mobile_menu_visible = 0;
-
-                        $layer.removeClass('visible');
-
-                         setTimeout(function(){
-                            $layer.remove();
-                            $toggle.removeClass('toggled');
-
-                         }, 400);
-                    });
-
-                    $('html').addClass('nav-open');
-                    mobile_menu_visible = 1;
-                }
-            });
-            toggle_initialized = true;
-        }
-    },
-    initBootstrapNavbarMenu: debounce(function(){
-        if(!bootstrap_nav_initialized){
-            $navbar = $('nav').find('.navbar-collapse').first().clone(true);
-
-            nav_content = '';
-            mobile_menu_content = '';
-            //add the content from the regular header to the mobile menu
-            $navbar.children('ul').each(function(){
-                content_buff = $(this).html();
-                nav_content = nav_content + content_buff;
-            });
-
-            nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
-            $navbar.html(nav_content);
-            $navbar.addClass('bootstrap-navbar');
-
-            // append it to the body, so it will come from the right side of the screen
-            $('body').append($navbar);
-            $toggle = $('.navbar-toggle');
-            $navbar.find('a').removeClass('btn btn-round btn-default');
-            $navbar.find('button').removeClass('btn-round btn-fill btn-info btn-primary btn-success btn-danger btn-warning btn-neutral');
-            $navbar.find('button').addClass('btn-simple btn-block');
-
-            $toggle.click(function (){
-                if(mobile_menu_visible == 1) {
-                    $('html').removeClass('nav-open');
-                    $('.close-layer').remove();
-
-                    setTimeout(function(){
-                        $toggle.removeClass('toggled');
-                    }, 400);
-                    mobile_menu_visible = 0;
-                } else {
-                    setTimeout(function(){
-                        $toggle.addClass('toggled');
-                    }, 430);
-
-                    $layer = $('<div class="close-layer"></div>');
-                    $layer.appendTo(".wrapper-full-page");
-
-                    setTimeout(function(){
-                        $layer.addClass('visible');
-                    }, 100);
-
-                    $layer.click(function() {
-                        $('html').removeClass('nav-open');
-
-                        mobile_menu_visible = 0;
-                        $layer.removeClass('visible');
-
-                        setTimeout(function(){
-                            $layer.remove();
-                            $toggle.removeClass('toggled');
-                        }, 400);
-                    });
-
-                    $('html').addClass('nav-open');
-                    mobile_menu_visible = 1;
-                }
-            });
-
-            bootstrap_nav_initialized = true;
-        }
-    }, 500),
 
     startAnimationForLineChart: function(chart){
 
