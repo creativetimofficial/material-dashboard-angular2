@@ -1,19 +1,19 @@
 $(document).ready(function(){
     $moving_tab = $('<div class="moving-tab"/>');
-    $('.nav-container').append($moving_tab);
+    $('.sidebar .nav-container').append($moving_tab);
 
-    $this = $('.nav').find('li.active a');
+    $this = $('.sidebar .nav').find('li.active a');
     animationSidebar($this, false);
 });
 
-$('.nav > li > a').click(function(){
+$('.sidebar .nav > li > a').click(function(){
     $this = $(this);
     animationSidebar($this, true);
 });
 
 function animationSidebar($this, animate){
     $current_li_distance = $this.parent('li').position().top - 10;
-    li_width = $('.nav').find('li a').innerWidth();
+    li_width = $('.sidebar .nav').find('li a').innerWidth();
 
 
     index_current =  $this.parent('li').index() + 1;

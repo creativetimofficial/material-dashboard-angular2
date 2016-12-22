@@ -9,7 +9,6 @@ import { TypographyComponent } from './typography/typography.component';
 import { MapsComponent } from './maps/maps.component';
 
 export const MODULE_ROUTES: Route[] =[
-    { path: '', pathMatch: 'full' , component: HomeComponent },
     { path: 'dashboard', component: HomeComponent },
     { path: 'user', component: UserComponent },
     { path: 'table', component: TableComponent },
@@ -17,6 +16,7 @@ export const MODULE_ROUTES: Route[] =[
     { path: 'notifications', component: NotificationsComponent },
     { path: 'typography', component: TypographyComponent },
     { path: 'maps', component: MapsComponent },
+    { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ]
 
 export const MODULE_COMPONENTS = [
