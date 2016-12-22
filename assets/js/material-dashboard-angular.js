@@ -17,7 +17,7 @@ function animationSidebar($this, animate){
 
 
     index_current =  $this.parent('li').index() + 1;
-    button_text = $('.nav').find('li:nth-child(' + index_current + ') a').html();
+    button_text = $('.sidebar .nav').find('li:nth-child(' + index_current + ') a').html();
     $(".moving-tab").css("width", li_width + "px");
 
     if(animate){

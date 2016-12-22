@@ -1519,6 +1519,7 @@ h2.title {
 body {
   background-color: #EEEEEE;
   color: #3C4858;
+  min-height: 100vh;
 }
 body.inverse {
   background: #333333;
