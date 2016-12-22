@@ -1,3 +1,15 @@
+#loader{
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    @include transform-translate-y(-50%);
+    text-align: center;
+    top: 50%;
+}
 body {
   background-color: #EEEEEE;
   // background: #fdfdfe;
