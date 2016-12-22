@@ -1,14 +1,75 @@
-#loader{
+
+.loader {
+    margin: 0 auto;
+    width: 100px;
     position: absolute;
     display: block;
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
     z-index: 1;
     @include transform-translate-y(-50%);
     text-align: center;
     top: 50%;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 3s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes color {
+  100%,
+  0% {
+    stroke: $brand-primary;
+  }
+  50% {
+    stroke: $brand-warning;
+  }
+  100% {
+    stroke: $brand-primary;
+  }
 }
 body {
   background-color: #EEEEEE;
