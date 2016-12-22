@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ROUTES } from './sidebar-routes.config';
 import { MenuType } from './sidebar.metadata';
+
 declare var $:any;
 @Component({
     moduleId: module.id,
