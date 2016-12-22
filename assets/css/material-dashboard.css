@@ -1499,6 +1499,23 @@ h2.title {
   font-size: 20px;
 }
 
+#loader {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  text-align: center;
+  top: 50%;
+}
+
 body {
   background-color: #EEEEEE;
   color: #3C4858;
