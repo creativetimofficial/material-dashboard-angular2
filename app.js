@@ -4,6 +4,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+var router = express.Router();
 
 // var users = require('./routes/users');
 var app = express();
@@ -32,6 +33,13 @@ app.use(express.static(path.join(__dirname, './app')));
 // Routes registration
 // ---
 // app.use('/users', users);
+// serve angular front end files from root path
+app.use('/', express.static('app', { redirect: false }));
+
+// rewrite virtual urls to angular app to enable refreshing of internal pages
+app.get('*', function (req, res, next) {
+    res.sendFile(path.resolve('./index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -63,6 +71,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
