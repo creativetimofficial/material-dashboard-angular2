@@ -180,7 +180,7 @@ if ('undefined' !== typeof module) {
             api.openPopup('twitter');
           },
           template: '<i class="fa fa-twitter"></i> &middot; 2',
-          url: 'http://demos.creative-tim.com/material-dashboard/examples/dashboard.html'
+          url: 'https://material-dashboard-angular2.herokuapp.com'
         });
 
         $('#facebook').sharrre({
@@ -194,7 +194,7 @@ if ('undefined' !== typeof module) {
             api.openPopup('facebook');
           },
           template: '<i class="fa fa-facebook-square"></i> &middot; 40',
-          url: 'http://demos.creative-tim.com/material-dashboard-pro/examples/dashboard.html'
+          url: 'https://material-dashboard-angular2.herokuapp.com'
         });
     }
 }
