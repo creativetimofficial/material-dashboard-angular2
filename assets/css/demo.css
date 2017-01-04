@@ -123,7 +123,17 @@
 .fixed-plugin .dropdown-menu li > a:focus{
     box-shadow: none;
 }
-
+.fixed-plugin .img-container{
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+}
+.fixed-plugin .img-container img{
+    width: 100%;
+    height: auto;
+}
 .fixed-plugin .badge{
     border: 3px solid #FFFFFF;
     border-radius: 50%;
@@ -174,11 +184,11 @@
 }
 
 .fixed-plugin li.button-container{
-    height: auto;
+    height: 60px;
 }
-.fixed-plugin li.button-container div{
+/*.fixed-plugin li.button-container div{
     margin-bottom: 5px;
-}
+}*/
 
 .fixed-plugin #sharrreTitle{
     text-align: center;
