@@ -45,7 +45,8 @@ Quick start options:
 Within the download you'll find the following directories and files:
 
 ```
-material-dashboard
+material-dashboard-angular
+├── README.md
 ├── app
 │   ├── app.component.html
 │   ├── app.component.js
@@ -136,10 +137,6 @@ material-dashboard
 │       └── sidebar.module.ts
 ├── assets
 │   ├── css
-│   │   ├── bootstrap.min.css
-│   │   ├── demo.css
-│   │   ├── material-dashboard.css
-│   │   └── material-dashboard.css.map
 │   ├── img
 │   ├── js
 │   │   ├── bootstrap-notify.js
@@ -149,12 +146,14 @@ material-dashboard
 │   │   ├── charts.js
 │   │   ├── demo.js
 │   │   ├── jquery-3.1.0.min.js
+│   │   ├── material-dashboard-angular.js
 │   │   ├── material-dashboard.js
 │   │   └── material.min.js
 │   └── sass
 │       ├── material-dashboard.scss
 │       └── md
-├── changelog\ -\ v1.1.0.txt
+│           ├── mixins
+│           └── plugins
 ├── documentation
 │   ├── css
 │   │   └── demo-documentation.css
