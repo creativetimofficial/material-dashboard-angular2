@@ -60,6 +60,18 @@
         z-index: 4;
         //background-color: $white-color;
     }
+    .logo-img{
+        width: 30px;
+        display: inline-block;
+        max-height: 30px;
+        margin-right: 10px;
+
+        img{
+            width: 40px;
+            top: 13px;
+            position: absolute;
+        }
+    }
 
     .logo-tim{
         border-radius: 50%;
@@ -168,7 +180,7 @@
             display: block;
             font-size: $font-size-large;
             color: $black-color;
-            text-align: center;
+            text-align: left;
             font-weight: $font-weight-default;
             line-height: 30px;
         }

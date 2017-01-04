@@ -502,6 +502,19 @@ h2.title {
   width: 260px;
   z-index: 4;
 }
+.sidebar .logo-img,
+.off-canvas-sidebar .logo-img {
+  width: 30px;
+  display: inline-block;
+  max-height: 30px;
+  margin-right: 10px;
+}
+.sidebar .logo-img img,
+.off-canvas-sidebar .logo-img img {
+  width: 40px;
+  top: 13px;
+  position: absolute;
+}
 .sidebar .logo-tim,
 .off-canvas-sidebar .logo-tim {
   border-radius: 50%;
@@ -603,7 +616,7 @@ h2.title {
   display: block;
   font-size: 18px;
   color: #3C4858;
-  text-align: center;
+  text-align: left;
   font-weight: 400;
   line-height: 30px;
 }
