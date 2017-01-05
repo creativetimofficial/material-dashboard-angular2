@@ -11,6 +11,7 @@ declare var $:any;
 export class AppComponent implements OnInit{
     ngOnInit(){
         $.getScript('../assets/js/material-dashboard.js');
+        $.getScript('../assets/js/initMenu.js');
     }
     public isMaps(path){
         if(path == window.location.pathname){
