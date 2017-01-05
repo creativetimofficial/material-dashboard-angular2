@@ -14,8 +14,9 @@ var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent.prototype.ngOnInit = function () {
-        $.getScript('../assets/js/initMenu.js');
         initFixedPlugin();
+        $.getScript('../assets/js/material-dashboard.js');
+        $.getScript('../assets/js/initMenu.js');
     };
     AppComponent.prototype.isMaps = function (path) {
         if (path == window.location.pathname) {

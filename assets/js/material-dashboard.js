@@ -42,11 +42,6 @@ var transparent = true;
 var transparentDemo = true;
 var fixedTop = false;
 
-var mobile_menu_visible = 0,
-    mobile_menu_initialized = false,
-    toggle_initialized = false,
-    bootstrap_nav_initialized = false;
-
 var seq = 0, delays = 80, durations = 500;
 var seq2 = 0, delays2 = 80, durations2 = 500;
 
@@ -55,6 +50,10 @@ $(document).ready(function(){
     $sidebar = $('.sidebar');
 
     $.material.init();
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     window_width = $(window).width();
     // check if there is an image set for the sidebar's background
     //  Activate the tooltips
@@ -71,7 +70,10 @@ $(document).ready(function(){
 
 // activate collapse right menu when the windows is resized
 $(window).resize(function(){
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     // reset the seq for charts drawing animations
     seq = seq2 = 0;
 
@@ -84,6 +86,10 @@ md = {
         disabled_collapse_init: 0,
     },
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     checkScrollForTransparentNavbar: debounce(function() {
             if($(document).scrollTop() > 381 ) {
                 if(transparent) {
@@ -100,6 +106,10 @@ md = {
             }
     }, 17),
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     startAnimationForLineChart: function(chart){
 
         chart.on('draw', function(data) {

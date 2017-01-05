@@ -11,8 +11,9 @@ import initFixedPlugin = require('../assets/js/initFixedPlugin.js');
 
 export class AppComponent implements OnInit{
     ngOnInit(){
-        $.getScript('../assets/js/initMenu.js');
         initFixedPlugin();
+        $.getScript('../assets/js/material-dashboard.js');
+        $.getScript('../assets/js/initMenu.js');
     }
     public isMaps(path){
         if(path == window.location.pathname){
