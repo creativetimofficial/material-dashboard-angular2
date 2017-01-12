@@ -539,9 +539,11 @@ h2.title {
   margin: 10px 15px;
   border-radius: 3px;
   color: #3C4858;
+  background-color: transparent;
 }
-.sidebar .nav li:hover > a,
-.off-canvas-sidebar .nav li:hover > a {
+.sidebar .nav li:hover > a, .sidebar .nav li.active:focus,
+.off-canvas-sidebar .nav li:hover > a,
+.off-canvas-sidebar .nav li.active:focus {
   background: rgba(200, 200, 200, 0.2);
   color: #3C4858;
 }

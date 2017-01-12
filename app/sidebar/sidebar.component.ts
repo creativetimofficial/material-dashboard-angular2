@@ -11,8 +11,6 @@ declare var $:any;
 
 export class SidebarComponent implements OnInit {
     public menuItems: any[];
-    isCollapsed = true;
-    constructor() {}
     ngOnInit() {
         $.getScript('../../assets/js/material-dashboard-angular.js');
         this.menuItems = ROUTES.filter(menuItem => menuItem.menuType !== MenuType.BRAND);

@@ -98,10 +98,12 @@
                 margin: 10px 15px;
                 border-radius: $border-radius-base;
                 color: $black-color;
+                background-color: transparent;
                 @extend .animation-transition-general;
             }
 
-            &:hover > a{
+            &:hover > a,
+            &.active:focus{
                 background: rgba(200, 200, 200, 0.2);
                 color: $black-color;
             }

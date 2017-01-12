@@ -4,6 +4,23 @@ $(document).ready(function(){
 
     $this = $('.sidebar .nav').find('li.active a');
     animationSidebar($this, false);
+    $('div').removeClass('.moving-tab');
+    if (window.history && window.history.pushState) {
+
+        console.log('sunt in window.history');
+        $(window).on('popstate', function() {
+
+            console.log('am apasat pe back, locatia noua: ', window.location.pathname);
+
+            setTimeout(function(){
+                console.log('incep animatia cu 1ms delay');
+                $this = $('.sidebar .nav').find('li.active a');
+                animationSidebar($this,true);
+            },1);
+
+        });
+
+    }
 });
 
 $('.sidebar .nav > li > a').click(function(){
@@ -12,13 +29,13 @@ $('.sidebar .nav > li > a').click(function(){
 });
 
 function animationSidebar($this, animate){
+    console.log('incep animatia si butonul pe care sunt acum este:', $this[0].href );
+
     $current_li_distance = $this.parent('li').position().top - 10;
-    li_width = $('.sidebar .nav').find('li a').innerWidth();
 
+    button_text = $this.html();
 
-    index_current =  $this.parent('li').index() + 1;
-    button_text = $('.sidebar .nav').find('li:nth-child(' + index_current + ') a').html();
-    $(".moving-tab").css("width", li_width + "px");
+    $(".moving-tab").css("width", 230 + "px");
 
     if(animate){
         $('.moving-tab').css({
