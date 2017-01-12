@@ -9,9 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var common_1 = require('@angular/common');
 var initFixedPlugin = require('../assets/js/initFixedPlugin.js');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(location) {
+        location.onPopState(function () {
+            // $('.sidebar-wrapper .nav-container div').removeClass('.moving-tab');
+            // $.getScript('../assets/js/material-dashboard-angular.js');
+            console.log('pressed back!');
+        });
     }
     AppComponent.prototype.ngOnInit = function () {
         initFixedPlugin();
@@ -32,7 +38,7 @@ var AppComponent = (function () {
             moduleId: module.id,
             templateUrl: 'app.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [common_1.PlatformLocation])
     ], AppComponent);
     return AppComponent;
 }());

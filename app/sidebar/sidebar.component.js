@@ -13,7 +13,6 @@ var sidebar_routes_config_1 = require('./sidebar-routes.config');
 var sidebar_metadata_1 = require('./sidebar.metadata');
 var SidebarComponent = (function () {
     function SidebarComponent() {
-        this.isCollapsed = true;
     }
     SidebarComponent.prototype.ngOnInit = function () {
         $.getScript('../../assets/js/material-dashboard-angular.js');
