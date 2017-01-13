@@ -7,13 +7,13 @@ $(document).ready(function(){
     $('div').removeClass('.moving-tab');
     if (window.history && window.history.pushState) {
 
-        console.log('sunt in window.history');
+        // console.log('sunt in window.history');
         $(window).on('popstate', function() {
 
-            console.log('am apasat pe back, locatia noua: ', window.location.pathname);
+            // console.log('am apasat pe back, locatia noua: ', window.location.pathname);
 
             setTimeout(function(){
-                console.log('incep animatia cu 1ms delay');
+                // console.log('incep animatia cu 1ms delay');
                 $this = $('.sidebar .nav').find('li.active a');
                 animationSidebar($this,true);
             },1);
@@ -29,7 +29,7 @@ $('.sidebar .nav > li > a').click(function(){
 });
 
 function animationSidebar($this, animate){
-    console.log('incep animatia si butonul pe care sunt acum este:', $this[0].href );
+    // console.log('incep animatia si butonul pe care sunt acum este:', $this[0].href );
 
     $current_li_distance = $this.parent('li').position().top - 10;
 
