@@ -277,6 +277,51 @@
         width: 40px;
         height: 40px;
     }
+    .icon-bar:nth-child(2),
+    .icon-bar:nth-child(3),
+    .icon-bar:nth-child(4){
+      outline: 1px solid transparent;
+    }
+    .icon-bar:nth-child(2){
+      top: 0px;
+      @include bar-animation($topbar-back);
+    }
+    .icon-bar:nth-child(3) {
+      opacity: 1;
+    }
+    .icon-bar:nth-child(4) {
+      bottom: 0px;
+      @include bar-animation($bottombar-back);
+    }
+    .toggled .icon-bar:nth-child(2) {
+      top: 6px;
+      @include bar-animation($topbar-x);
+    }
+    .toggled .icon-bar:nth-child(3) {
+      opacity: 0;
+    }
+    .toggled .icon-bar:nth-child(4) {
+      bottom: 6px;
+      @include bar-animation($bottombar-x);
+    }
+
+    @include topbar-x-rotation();
+    @include topbar-back-rotation();
+    @include bottombar-x-rotation();
+    @include bottombar-back-rotation();
+
+    @-webkit-keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @-moz-keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
     .bar1,
     .bar2,
     .bar3 {
