@@ -69,7 +69,12 @@
     -webkit-transition: all .34s;
     -moz-transition: all .34s;
 }
-
+.fixed-plugin .iframe-container-plugin{
+    margin-top: 20px;
+}
+.fixed-plugin .iframe-container-plugin iframe{
+    display: inline-block;
+}
 .fixed-plugin{
     position: fixed;
     top: 180px;
