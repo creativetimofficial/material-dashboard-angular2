@@ -45,7 +45,7 @@ mda = {
             $navbar_form = $('nav').find('.navbar-form').clone(true);
 
             $sidebar_nav = $sidebar_wrapper.find('.nav-container');
-            console.log($sidebar_nav);
+
             // insert the navbar form before the sidebar list
             $nav_content = $(nav_content);
             $nav_content.insertBefore($sidebar_nav);
