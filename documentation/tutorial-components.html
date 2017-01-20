@@ -71,7 +71,7 @@
 
 <body class="components-page">
 
-<nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll" >
+<nav class="navbar navbar-transparent  navbar-fixed-top navbar-color-on-scroll" >
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -102,7 +102,7 @@
 						<div class="image-container">
 							<img src="../assets/img/angular2-logo.png" alt="Angular2 Logo">
 						</div>
-						MD Free with Angular 2
+						Material Dashboard Angular 2
 					</h4>
 				</div>
 			</li>
@@ -153,6 +153,8 @@
                         <li><a href="#notification-row">Notifications</a></li>
                         <li><a href="#cards-row">Cards</a></li>
 						<li><a href="#changing-colors">Changing Colors (SASS)</a></li>
+						<li><a href="#api">How to setup Google API Keys</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -1039,7 +1041,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="card">
-							<div class="card-header" data-background-color="purple">
+							<div class="card-header" data-background-color="red">
 								<h4 class="title">Table Title</h4>
 								<p class="category">Here is a subtitle for this table</p>
 							</div>
@@ -1056,37 +1058,37 @@
 											<td>Dakota Rice</td>
 											<td>Niger</td>
 											<td>Oud-Turnhout</td>
-											<td class="text-primary">$36,738</td>
+											<td class="text-danger">$36,738</td>
 										</tr>
 										<tr>
 											<td>Minerva Hooper</td>
 											<td>Curaçao</td>
 											<td>Sinaai-Waas</td>
-											<td class="text-primary">$23,789</td>
+											<td class="text-danger">$23,789</td>
 										</tr>
 										<tr>
 											<td>Sage Rodriguez</td>
 											<td>Netherlands</td>
 											<td>Baileux</td>
-											<td class="text-primary">$56,142</td>
+											<td class="text-danger">$56,142</td>
 										</tr>
 										<tr>
 											<td>Philip Chaney</td>
 											<td>Korea, South</td>
 											<td>Overland Park</td>
-											<td class="text-primary">$38,735</td>
+											<td class="text-danger">$38,735</td>
 										</tr>
 										<tr>
 											<td>Doris Greene</td>
 											<td>Malawi</td>
 											<td>Feldkirchen in Kärnten</td>
-											<td class="text-primary">$63,542</td>
+											<td class="text-danger">$63,542</td>
 										</tr>
 										<tr>
 											<td>Mason Porter</td>
 											<td>Chile</td>
 											<td>Gloucester</td>
-											<td class="text-primary">$78,615</td>
+											<td class="text-danger">$78,615</td>
 										</tr>
 									</tbody>
 								</table>
@@ -1099,7 +1101,7 @@
 					<pre class="prettyprint">
 
 &lt;div class=&quot;card&quot;&gt;
-	&lt;div class=&quot;card-header&quot; data-background-color=&quot;purple&quot;&gt;
+	&lt;div class=&quot;card-header&quot; data-background-color=&quot;red&quot;&gt;
 		&lt;h4 class=&quot;title&quot;&gt;Table Title&lt;/h4&gt;
 		&lt;p class=&quot;category&quot;&gt;Here is a subtitle for this table&lt;/p&gt;
 	&lt;/div&gt;
@@ -1116,37 +1118,37 @@
 					&lt;td&gt;Dakota Rice&lt;/td&gt;
 					&lt;td&gt;Niger&lt;/td&gt;
 					&lt;td&gt;Oud-Turnhout&lt;/td&gt;
-					&lt;td class=&quot;text-primary&quot;&gt;$36,738&lt;/td&gt;
+					&lt;td class=&quot;text-danger&quot;&gt;$36,738&lt;/td&gt;
 				&lt;/tr&gt;
 				&lt;tr&gt;
 					&lt;td&gt;Minerva Hooper&lt;/td&gt;
 					&lt;td&gt;Cura&#231;ao&lt;/td&gt;
 					&lt;td&gt;Sinaai-Waas&lt;/td&gt;
-					&lt;td class=&quot;text-primary&quot;&gt;$23,789&lt;/td&gt;
+					&lt;td class=&quot;text-danger&quot;&gt;$23,789&lt;/td&gt;
 				&lt;/tr&gt;
 				&lt;tr&gt;
 					&lt;td&gt;Sage Rodriguez&lt;/td&gt;
 					&lt;td&gt;Netherlands&lt;/td&gt;
 					&lt;td&gt;Baileux&lt;/td&gt;
-					&lt;td class=&quot;text-primary&quot;&gt;$56,142&lt;/td&gt;
+					&lt;td class=&quot;text-danger&quot;&gt;$56,142&lt;/td&gt;
 				&lt;/tr&gt;
 				&lt;tr&gt;
 					&lt;td&gt;Philip Chaney&lt;/td&gt;
 					&lt;td&gt;Korea, South&lt;/td&gt;
 					&lt;td&gt;Overland Park&lt;/td&gt;
-					&lt;td class=&quot;text-primary&quot;&gt;$38,735&lt;/td&gt;
+					&lt;td class=&quot;text-danger&quot;&gt;$38,735&lt;/td&gt;
 				&lt;/tr&gt;
 				&lt;tr&gt;
 					&lt;td&gt;Doris Greene&lt;/td&gt;
 					&lt;td&gt;Malawi&lt;/td&gt;
 					&lt;td&gt;Feldkirchen in K&#228;rnten&lt;/td&gt;
-					&lt;td class=&quot;text-primary&quot;&gt;$63,542&lt;/td&gt;
+					&lt;td class=&quot;text-danger&quot;&gt;$63,542&lt;/td&gt;
 				&lt;/tr&gt;
 				&lt;tr&gt;
 					&lt;td&gt;Mason Porter&lt;/td&gt;
 					&lt;td&gt;Chile&lt;/td&gt;
 					&lt;td&gt;Gloucester&lt;/td&gt;
-					&lt;td class=&quot;text-primary&quot;&gt;$78,615&lt;/td&gt;
+					&lt;td class=&quot;text-danger&quot;&gt;$78,615&lt;/td&gt;
 				&lt;/tr&gt;
 			&lt;/tbody&gt;
 		&lt;/table&gt;
@@ -1494,6 +1496,25 @@
 					<li>Add the SASS folder from <code>assets/sass/</code> the project inside <a href="http://koala-app.com/" target="_blank">Koala Compiler</a> and find the file material-dashboard.scss, it will be the one in Green.</li>
 					<li>Right click on that file and set the output path, it must be in assets/css/ so anything that you compile will overwrite the original material-dashboard.css</li>
 					<li>Press on compile and everything will be done automatically</li>
+				</ol>
+
+			</div>
+			<div class="tim-row" id="api">
+				<h2 class="text-center">How to setup Google API Keys</h2>
+				<legend></legend>
+
+				<ol>
+					<li>
+						<p>Go to
+							<a href="https://developers.google.com/maps/documentation/javascript/get-api-key">https://developers.google.com/maps/documentation/javascript/get-api-key</a>
+						</p>
+					</li>
+					<li><p>Scroll to the “Get an API key” Title and press the “Get a Key” Button</p></li>
+					<li><p>Choose a name for your project then press on Create and Enable API</p></li>
+					<li><p>Get the Key and place it in your project where is this script:
+						<pre>&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE&#x22;&#x3E;&#x3C;/script&#x3E;</pre>
+						</p>
+					</li>
 				</ol>
 
 			</div>
