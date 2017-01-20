@@ -6,7 +6,7 @@ body{
     height: 40px;
     width: 40px;
     display: inline-block;
-    top: -3px;
+    top: -1px;
     position: relative;
 }
 .nav-mobile-menu .navbar-title{
@@ -16,8 +16,9 @@ body{
     height: 100%;
 }
 .navbar-title h4{
-    line-height: 12px;
     margin-bottom: -6px;
+    position: relative;
+    top: -2px;
 }
 
 .image-header{
@@ -150,6 +151,7 @@ body{
     color: #ddd !important;
 }
 .navbar-center{
+    margin-top: -3px;
     float: none;
     display: inline-block;
 }
@@ -184,7 +186,7 @@ body{
     font-size: 16px;
     line-height: 18px;
     float: left;
-    color: #fff;
+    color: #555555;
     margin-left: 10px;
     margin-top: 7px;
     width: 70px;
@@ -534,10 +536,6 @@ body{
   margin-right: 3px;
 }
 
-.navbar, .navbar.navbar-default {
-  background-color: #9c27b0;
-  color: #FFFFFF;
-}
 
 @media (max-width: 991px) {
     .fixed-section.affix {
