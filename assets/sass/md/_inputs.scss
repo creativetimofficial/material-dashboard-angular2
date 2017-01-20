@@ -257,6 +257,12 @@
          }
     }
 
+    &.form-black{
+        .form-control{
+             background-image: linear-gradient($black-input-color, $black-input-color), linear-gradient($mdb-input-underline-color, $mdb-input-underline-color);
+        }
+    }
+
     //.variations(unquote(".is-focused.label-placeholder label.control-label"), color, $mdb-input-placeholder-color);  // default label color variations
     &.label-placeholder {
       label,
