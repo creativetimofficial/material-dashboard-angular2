@@ -321,10 +321,6 @@
     right: -16px;
 }
 
-.fixed-plugin{
-    top: 120px;
-}
-
 @media (min-width: 992px){
 
     .typo-line{
@@ -372,9 +368,5 @@
     }
     .fixed-plugin .dropdown .dropdown-menu{
         top: 30px;
-    }
-
-    .fixed-plugin{
-        top: 60px;
     }
 }
