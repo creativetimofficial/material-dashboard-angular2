@@ -179,8 +179,8 @@ if ('undefined' !== typeof module) {
             api.simulateClick();
             api.openPopup('twitter');
           },
-          template: '<i class="fa fa-twitter"></i> &middot; 2',
-          url: 'https://material-dashboard-angular2.herokuapp.com'
+          template: '<i class="fa fa-twitter"></i> &middot; 20',
+          url: 'http://md-angular2.creative-tim.com/'
         });
 
         $('#facebook').sharrre({
@@ -193,8 +193,8 @@ if ('undefined' !== typeof module) {
             api.simulateClick();
             api.openPopup('facebook');
           },
-          template: '<i class="fa fa-facebook-square"></i> &middot; 40',
-          url: 'https://material-dashboard-angular2.herokuapp.com'
+          template: '<i class="fa fa-facebook-square"></i> &middot; 60',
+          url: 'http://md-angular2.creative-tim.com/m'
         });
     }
 }

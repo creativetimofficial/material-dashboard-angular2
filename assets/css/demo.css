@@ -206,6 +206,10 @@ my-app .main-panel .main-content .card{
 .fixed-plugin li.button-container{
     height: 60px;
 }
+
+.fixed-plugin .btn{
+    margin: 0;
+}
 /*.fixed-plugin li.button-container div{
     margin-bottom: 5px;
 }*/
