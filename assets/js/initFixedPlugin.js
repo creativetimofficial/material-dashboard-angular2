@@ -173,7 +173,7 @@ if ('undefined' !== typeof module) {
             twitter: true
           },
           enableHover: false,
-          enableTracking: true,
+          enableTracking: false,
           buttons: { twitter: {via: 'CreativeTim'}},
           click: function(api, options){
             api.simulateClick();
@@ -188,7 +188,7 @@ if ('undefined' !== typeof module) {
             facebook: true
           },
           enableHover: false,
-          enableTracking: true,
+          enableTracking: false,
           click: function(api, options){
             api.simulateClick();
             api.openPopup('facebook');

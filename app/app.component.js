@@ -23,7 +23,7 @@ var AppComponent = (function () {
                 var newRoute = _location.path() || '/';
                 // If the route has changed, send the new route to analytics.
                 if (_this.currentRoute != newRoute) {
-                    ga('send', 'pageview', newRoute);
+                    _gaq('send', 'pageview', newRoute);
                     _this.currentRoute = newRoute;
                 }
             }

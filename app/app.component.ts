@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LocationStrategy, PlatformLocation, Location} from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 
-declare var ga:Function;
+declare var _gaq:Function;
 declare var $:any;
 import initFixedPlugin = require('../assets/js/initFixedPlugin.js');
 
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
                 let newRoute = _location.path() || '/';
                 // If the route has changed, send the new route to analytics.
                 if (this.currentRoute != newRoute) {
-                    ga('send', 'pageview', newRoute);
+                    _gaq('send', 'pageview', newRoute);
                     this.currentRoute = newRoute;
                 }
             }
