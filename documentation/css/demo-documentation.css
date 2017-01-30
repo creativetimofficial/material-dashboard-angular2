@@ -465,14 +465,24 @@ body{
 .header-filter .container {
   z-index: 2;
   position: relative;
-  padding-top: 20vh;
+  padding-top: 130px;
 }
 
+.page-header{
+    height: 550px;
+}
 .page-header .title{
     font-weight: 700;
     font-family: "Roboto Slab", "Times New Roman", serif;
     line-height: 1.15em;
     color: #fff;
+    font-size: 3.3em;
+}
+.page-header .sub-title{
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 
 .section {

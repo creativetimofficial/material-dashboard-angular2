@@ -1,6 +1,6 @@
 {
-  "name": "Angular2",
-  "version": "1.0.0",
+  "name": "Material Dashboard Angular2",
+  "version": "1.1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
@@ -10,7 +10,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/angular/angular.io/blob/master/LICENSE"
+      "url": "https://github.com/creativetimofficial/material-dashboard-angular/blob/master/LICENSE.md"
     }
   ],
   "dependencies": {
