@@ -1,6 +1,6 @@
 {
-  "name": "Material Dashboard Angular2",
-  "version": "1.1.0.0",
+  "name": "material-dashboard-angular2",
+  "version": "1.1.0",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
