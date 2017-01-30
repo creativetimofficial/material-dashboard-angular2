@@ -14,186 +14,19 @@ var HomeComponent = (function () {
     function HomeComponent() {
     }
     HomeComponent.prototype.ngOnInit = function () {
+        // $('[data-toggle="checkbox"]').each(function () {
+        //     if($(this).data('toggle') == 'switch') return;
+        //
+        //     var $checkbox = $(this);
+        //     $checkbox.checkbox();
+        // });
         initDemo();
     };
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home-cmp',
             moduleId: module.id,
-            templateUrl: 'home.component.html',
-            animations: [
-                core_1.trigger('usedspace', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1
-                    })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 0s ease-out')])
-                ]),
-                core_1.trigger('revenue', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1 })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 0.25s ease-out')
-                    ])
-                ]),
-                core_1.trigger('fixedissue', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1 })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 0.5s ease-out')
-                    ])
-                ]),
-                core_1.trigger('followers', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1 })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 0.75s ease-out')
-                    ])
-                ]),
-                core_1.trigger('dailysales', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1 })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 1s ease-out')
-                    ])
-                ]),
-                core_1.trigger('subscriptions', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1 })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 1.25s ease-out')
-                    ])
-                ]),
-                core_1.trigger('completetasks', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1 })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 1.5s ease-out')
-                    ])
-                ]),
-                core_1.trigger('tasks', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1 })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 1.75s ease-out')
-                    ])
-                ]),
-                core_1.trigger('employees', [
-                    core_1.state('*', core_1.style({
-                        '-ms-transform': 'translate3D(0px, 0px, 0px)',
-                        '-webkit-transform': 'translate3D(0px, 0px, 0px)',
-                        '-moz-transform': 'translate3D(0px, 0px, 0px)',
-                        '-o-transform': 'translate3D(0px, 0px, 0px)',
-                        transform: 'translate3D(0px, 0px, 0px)',
-                        opacity: 1 })),
-                    core_1.transition('void => *', [
-                        core_1.style({ opacity: 0,
-                            '-ms-transform': 'translate3D(0px, 150px, 0px)',
-                            '-webkit-transform': 'translate3D(0px, 150px, 0px)',
-                            '-moz-transform': 'translate3D(0px, 150px, 0px)',
-                            '-o-transform': 'translate3D(0px, 150px, 0px)',
-                            transform: 'translate3D(0px, 150px, 0px)',
-                        }),
-                        core_1.animate('0.3s 2s ease-out')
-                    ])
-                ])
-            ]
+            templateUrl: 'home.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], HomeComponent);
