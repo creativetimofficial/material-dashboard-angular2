@@ -10,13 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
+var router_1 = require('@angular/router');
 var initFixedPlugin = require('../assets/js/initFixedPlugin.js');
 var AppComponent = (function () {
-    function AppComponent(location) {
-        location.onPopState(function () {
-            // $('.sidebar-wrapper .nav-container div').removeClass('.moving-tab');
-            // $.getScript('../assets/js/material-dashboard-angular.js');
-            console.log('pressed back!');
+    function AppComponent(_router, _location) {
+        var _this = this;
+        _router.events.subscribe(function (event) {
+            // Send GA tracking on NavigationEnd event. You may wish to add other
+            // logic here too or change which event to work with
+            if (event instanceof router_1.NavigationEnd) {
+                // When the route is '/', location.path actually returns ''.
+                var newRoute = _location.path() || '/';
+                // If the route has changed, send the new route to analytics.
+                if (_this.currentRoute != newRoute) {
+                    _gaq('send', 'pageview', newRoute);
+                    _this.currentRoute = newRoute;
+                }
+            }
         });
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -38,7 +48,7 @@ var AppComponent = (function () {
             moduleId: module.id,
             templateUrl: 'app.component.html'
         }), 
-        __metadata('design:paramtypes', [common_1.PlatformLocation])
+        __metadata('design:paramtypes', [router_1.Router, common_1.Location])
     ], AppComponent);
     return AppComponent;
 }());
