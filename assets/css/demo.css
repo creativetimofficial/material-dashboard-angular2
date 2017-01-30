@@ -1,3 +1,19 @@
+my-app .main-panel .main-content *{
+    animation-duration: 750ms;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 @media (min-width: 992px){
     .typo-line{
         padding-left: 140px;
