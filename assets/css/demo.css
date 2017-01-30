@@ -1,4 +1,4 @@
-my-app .main-panel .main-content *{
+my-app .main-panel .main-content .card{
     animation-duration: 750ms;
     opacity: 0;
     animation-name: fadeIn;
