@@ -11,6 +11,8 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 @NgModule({
     imports:      [
         BrowserModule,
@@ -21,6 +23,7 @@ import { NavbarModule} from './shared/navbar/navbar.module';
         RouterModule.forRoot([])
     ],
     declarations: [ AppComponent, DashboardComponent ],
+    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
