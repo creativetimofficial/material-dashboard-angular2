@@ -1,6 +1,6 @@
 {
   "name": "material-dashboard-angular2",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
@@ -26,6 +26,7 @@
     "angular-in-memory-web-api": "~0.1.13",
     "angular2-chartist": "~0.10.1",
     "angular2-google-maps": "~0.16.0",
+    "@types/core-js": "0.9.35",
     "chartist": "~0.9.8",
     "core-js": "~2.4.1",
     "jquery": "~3.1.1",
