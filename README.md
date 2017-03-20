@@ -47,6 +47,7 @@ Within the download you'll find the following directories and files:
 ```
 material-dashboard-angular
 ├── README.md
+├── LICENSE.md
 ├── app
 │   ├── app.component.html
 │   ├── app.component.js
@@ -135,12 +136,21 @@ material-dashboard-angular
 ├── documentation
 │   ├── css
 │   └── tutorial-components.html
+├── changelog.txt
 ├── index.html
 ├── package.json
 ├── systemjs.config.js
 └── tsconfig.json
 
 ```
+### Version logs
+
+V1.0.0 - 30 Jan 2017 [initial Release]
+V1.1.0 - small fixed
+V1.1.1 - 20 March (V1.1.0 from Material Dashboard HTML)
+- added "@types/core-js": "0.9.35" in package
+- added "upgrade to pro" page
+
 
 ## Useful Links
 

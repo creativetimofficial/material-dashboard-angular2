@@ -11,15 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var sidebar_routes_config_1 = require('../.././sidebar/sidebar-routes.config');
 var sidebar_metadata_1 = require('../.././sidebar/sidebar.metadata');
+var common_1 = require('@angular/common');
 var NavbarComponent = (function () {
-    function NavbarComponent() {
+    function NavbarComponent(location) {
+        this.location = location;
     }
     NavbarComponent.prototype.ngOnInit = function () {
         this.listTitles = sidebar_routes_config_1.ROUTES.filter(function (listTitle) { return listTitle.menuType !== sidebar_metadata_1.MenuType.BRAND; });
     };
     NavbarComponent.prototype.getTitle = function () {
-        var titlee = window.location.pathname;
-        titlee = titlee.substring(1);
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+        if (titlee.charAt(0) === '#') {
+            titlee = titlee.slice(2);
+        }
         for (var item = 0; item < this.listTitles.length; item++) {
             if (this.listTitles[item].path === titlee) {
                 return this.listTitles[item].title;
@@ -33,7 +37,7 @@ var NavbarComponent = (function () {
             selector: 'navbar-cmp',
             templateUrl: 'navbar.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [common_1.Location])
     ], NavbarComponent);
     return NavbarComponent;
 }());

@@ -7,5 +7,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'typography', title: 'Typography', menuType: MenuType.LEFT, icon:'material-icons' },
     { path: 'icons', title: 'Icons', menuType: MenuType.LEFT, icon:'material-icons' },
     { path: 'maps', title: 'Maps', menuType: MenuType.LEFT, icon:'material-icons' },
-    { path: 'notifications', title: 'Notifications', menuType: MenuType.LEFT, icon:'material-icons text-gray' }
+    { path: 'notifications', title: 'Notifications', menuType: MenuType.LEFT, icon:'material-icons text-gray' },
+    { path: 'upgrade', title: 'Upgrade to Pro', menuType: MenuType.LEFT, icon:'material-icons' }
+
 ];
