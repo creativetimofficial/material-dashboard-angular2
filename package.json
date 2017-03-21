@@ -10,10 +10,12 @@
     "postinstall": "npm run build:prod"
   },
   "license":"MIT",
-  "repository" :
-  {
-      "type" : "git",
-      "url" : "https://github.com/creativetimofficial/material-dashboard-angular.git"
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/creativetimofficial/material-dashboard-angular.git"
+  },
+  "bugs":{
+      "url": "https://github.com/creativetimofficial/material-dashboard-angular/issues"
   },
   "engines": {
     "node": "5.9.1"

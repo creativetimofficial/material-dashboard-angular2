@@ -8,6 +8,5 @@ exports.ROUTES = [
     { path: 'icons', title: 'Icons', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' },
     { path: 'maps', title: 'Maps', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' },
     { path: 'notifications', title: 'Notifications', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons text-gray' },
-    { path: 'upgrade', title: 'Upgrade to Pro', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' }
 ];
 //# sourceMappingURL=sidebar-routes.config.js.map
