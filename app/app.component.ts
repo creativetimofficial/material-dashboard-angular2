@@ -10,22 +10,18 @@ declare var $:any;
 })
 
 export class AppComponent implements OnInit{
+    location: Location;
+    constructor(location:Location) {
+        this.location = location;
+    }
     ngOnInit(){
         $.getScript('../assets/js/material-dashboard.js');
         $.getScript('../assets/js/initMenu.js');
     }
-    constructor(location: PlatformLocation) {
-
-        location.onPopState(() => {
-            // $('.sidebar-wrapper .nav-container div').removeClass('.moving-tab');
-            // $.getScript('../assets/js/material-dashboard-angular.js');
-            console.log('pressed back!');
-
-        });
-
-    }
     public isMaps(path){
-        if(path == window.location.pathname){
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+        titlee = titlee.slice( 1 );
+        if(path == titlee){
             return false;
         }
         else {

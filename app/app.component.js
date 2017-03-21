@@ -12,18 +12,16 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var AppComponent = (function () {
     function AppComponent(location) {
-        location.onPopState(function () {
-            // $('.sidebar-wrapper .nav-container div').removeClass('.moving-tab');
-            // $.getScript('../assets/js/material-dashboard-angular.js');
-            console.log('pressed back!');
-        });
+        this.location = location;
     }
     AppComponent.prototype.ngOnInit = function () {
         $.getScript('../assets/js/material-dashboard.js');
         $.getScript('../assets/js/initMenu.js');
     };
     AppComponent.prototype.isMaps = function (path) {
-        if (path == window.location.pathname) {
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+        titlee = titlee.slice(1);
+        if (path == titlee) {
             return false;
         }
         else {
@@ -36,7 +34,7 @@ var AppComponent = (function () {
             moduleId: module.id,
             templateUrl: 'app.component.html'
         }), 
-        __metadata('design:paramtypes', [common_1.PlatformLocation])
+        __metadata('design:paramtypes', [common_1.Location])
     ], AppComponent);
     return AppComponent;
 }());
