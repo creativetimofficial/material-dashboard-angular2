@@ -15,6 +15,7 @@ var initFixedPlugin = require('../assets/js/initFixedPlugin.js');
 var AppComponent = (function () {
     function AppComponent(_router, _location) {
         var _this = this;
+        this.location = _location;
         _router.events.subscribe(function (event) {
             // Send GA tracking on NavigationEnd event. You may wish to add other
             // logic here too or change which event to work with
@@ -35,7 +36,9 @@ var AppComponent = (function () {
         $.getScript('../assets/js/initMenu.js');
     };
     AppComponent.prototype.isMaps = function (path) {
-        if (path == window.location.pathname) {
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+        titlee = titlee.slice(1);
+        if (path == titlee) {
             return false;
         }
         else {

@@ -14,9 +14,11 @@ import initFixedPlugin = require('../assets/js/initFixedPlugin.js');
 
 export class AppComponent implements OnInit{
     private currentRoute:string;
+    location: Location;
 
     constructor(_router:Router,
                 _location:Location) {
+                    this.location = _location;
         _router.events.subscribe((event:any) => {
             // Send GA tracking on NavigationEnd event. You may wish to add other
             // logic here too or change which event to work with
@@ -37,7 +39,9 @@ export class AppComponent implements OnInit{
         $.getScript('../assets/js/initMenu.js');
     }
     public isMaps(path){
-        if(path == window.location.pathname){
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+        titlee = titlee.slice( 1 );
+        if(path == titlee){
             return false;
         }
         else {
