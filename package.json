@@ -8,9 +8,12 @@
     "tsc:w": "tsc -w"
   },
   "license":"MIT",
-  "repository" :
-  { "type" : "git",
-    "url" : "https://github.com/creativetimofficial/material-dashboard-angular.git"
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/creativetimofficial/material-dashboard-angular.git"
+  },
+  "bugs":{
+      "url": "https://github.com/creativetimofficial/material-dashboard-angular/issues"
   },
     "dependencies": {
     "@angular/common": "~2.2.2",
