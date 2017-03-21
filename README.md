@@ -147,7 +147,7 @@ material-dashboard-angular
 
 V1.0.0 - 30 Jan 2017 [initial Release]
 
-V1.1.0 - small fixed
+V1.1.0 - small fix
 
 V1.1.1 - 21 March (V1.1.0 from Material Dashboard HTML)
 - added "@types/core-js": "0.9.35" in package
