@@ -14,7 +14,7 @@ var SidebarComponent = (function () {
     function SidebarComponent() {
     }
     SidebarComponent.prototype.ngOnInit = function () {
-        $.getScript('../../assets/js/material-dashboard-angular.js');
+        $.getScript('../../assets/js/sidebar-moving-tab.js');
         this.menuItems = sidebar_routes_config_1.ROUTES.filter(function (menuItem) { return menuItem; });
     };
     SidebarComponent = __decorate([

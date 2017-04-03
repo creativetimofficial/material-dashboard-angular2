@@ -50,6 +50,13 @@ my-app .main-panel .main-content .card{
     width: 100%;
     bottom: 10px;
 }
+@media (max-width: 991px) {
+    .sidebar .nav > li.active-pro{
+        position: relative;
+        width: 100%;
+        bottom: 10px;
+    }
+}
 
 .tim-row{
     margin-bottom: 20px;

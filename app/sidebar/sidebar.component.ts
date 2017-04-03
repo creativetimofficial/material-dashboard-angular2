@@ -11,7 +11,7 @@ declare var $:any;
 export class SidebarComponent implements OnInit {
     public menuItems: any[];
     ngOnInit() {
-        $.getScript('../../assets/js/material-dashboard-angular.js');
+        $.getScript('../../assets/js/sidebar-moving-tab.js');
         this.menuItems = ROUTES.filter(menuItem => menuItem);
     }
 }

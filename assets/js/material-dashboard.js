@@ -1,7 +1,7 @@
 /*!
 
  =========================================================
- * Material Dashboard Angular 2 - V1.1.1
+ * Material Dashboard Angular 2 - V1.2.0
  =========================================================
 
  * Product Page: https://www.creative-tim.com/product/material-dashboard-angular2
