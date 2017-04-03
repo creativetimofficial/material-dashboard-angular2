@@ -327,7 +327,8 @@
     padding-top: 10px;
     z-index: 1029;
 }
-
-// .nav-container{
-//     position: relative;
-// }
+@media (max-width: $screen-md-max) {
+    .nav-container{
+        position: relative;
+    }
+}
