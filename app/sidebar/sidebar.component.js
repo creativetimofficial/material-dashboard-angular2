@@ -10,13 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var sidebar_routes_config_1 = require('./sidebar-routes.config');
-var sidebar_metadata_1 = require('./sidebar.metadata');
 var SidebarComponent = (function () {
     function SidebarComponent() {
     }
     SidebarComponent.prototype.ngOnInit = function () {
         $.getScript('../../assets/js/material-dashboard-angular.js');
-        this.menuItems = sidebar_routes_config_1.ROUTES.filter(function (menuItem) { return menuItem.menuType !== sidebar_metadata_1.MenuType.BRAND; });
+        this.menuItems = sidebar_routes_config_1.ROUTES.filter(function (menuItem) { return menuItem; });
     };
     SidebarComponent = __decorate([
         core_1.Component({
