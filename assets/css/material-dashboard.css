@@ -3491,10 +3491,6 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
   z-index: 1029;
 }
 
-.nav-container {
-  position: relative;
-}
-
 .popover, .tooltip-inner {
   color: #555555;
   line-height: 1.5em;

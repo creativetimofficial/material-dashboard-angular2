@@ -9,7 +9,7 @@
 <div class="sidebar-wrapper">
     <div class="nav-container">
         <ul class="nav">
-            <li *ngFor="let menuItem of menuItems" routerLinkActive="active">
+            <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
                 <a  [routerLink]="[menuItem.path]">
                     <i class="material-icons">{{menuItem.icon}}</i>
                     <p>{{menuItem.title}}</p>

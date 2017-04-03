@@ -17,7 +17,6 @@ var NavbarComponent = (function () {
     }
     NavbarComponent.prototype.ngOnInit = function () {
         this.listTitles = sidebar_routes_config_1.ROUTES.filter(function (listTitle) { return listTitle; });
-        console.log(this.listTitles);
     };
     NavbarComponent.prototype.getTitle = function () {
         var titlee = this.location.prepareExternalUrl(this.location.path());
