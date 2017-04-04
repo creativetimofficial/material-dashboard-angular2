@@ -56,6 +56,10 @@ my-app .main-panel .main-content .card{
         width: 100%;
         bottom: 10px;
     }
+    .sidebar .nav > li.active-pro > a{
+        margin-top: 20px;
+
+    }
 }
 
 .tim-row{
