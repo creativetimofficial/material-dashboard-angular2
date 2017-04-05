@@ -1,12 +1,12 @@
 "use strict";
-var sidebar_metadata_1 = require('./sidebar.metadata');
 exports.ROUTES = [
-    { path: 'dashboard', title: 'Dashboard', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' },
-    { path: 'user', title: 'User profile', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' },
-    { path: 'table', title: 'Table List', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' },
-    { path: 'typography', title: 'Typography', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' },
-    { path: 'icons', title: 'Icons', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' },
-    { path: 'maps', title: 'Maps', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons' },
-    { path: 'notifications', title: 'Notifications', menuType: sidebar_metadata_1.MenuType.LEFT, icon: 'material-icons text-gray' },
+    { path: 'dashboard', title: 'Dashboard', icon: 'dashboard', class: '' },
+    { path: 'user', title: 'User Profile', icon: 'person', class: '' },
+    { path: 'table', title: 'Table List', icon: 'content_paste', class: '' },
+    { path: 'typography', title: 'Typography', icon: 'library_books', class: '' },
+    { path: 'icons', title: 'Icons', icon: 'bubble_chart', class: '' },
+    { path: 'maps', title: 'Maps', icon: 'location_on', class: '' },
+    { path: 'notifications', title: 'Notifications', icon: 'notifications', class: '' },
+    { path: 'upgrade', title: 'Upgrade to PRO', icon: 'unarchive', class: 'active-pro' },
 ];
 //# sourceMappingURL=sidebar-routes.config.js.map

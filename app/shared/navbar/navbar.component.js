@@ -10,14 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var sidebar_routes_config_1 = require('../.././sidebar/sidebar-routes.config');
-var sidebar_metadata_1 = require('../.././sidebar/sidebar.metadata');
 var common_1 = require('@angular/common');
 var NavbarComponent = (function () {
     function NavbarComponent(location) {
         this.location = location;
     }
     NavbarComponent.prototype.ngOnInit = function () {
-        this.listTitles = sidebar_routes_config_1.ROUTES.filter(function (listTitle) { return listTitle.menuType !== sidebar_metadata_1.MenuType.BRAND; });
+        this.listTitles = sidebar_routes_config_1.ROUTES.filter(function (listTitle) { return listTitle; });
     };
     NavbarComponent.prototype.getTitle = function () {
         var titlee = this.location.prepareExternalUrl(this.location.path());

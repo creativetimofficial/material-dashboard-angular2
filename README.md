@@ -128,7 +128,7 @@ material-dashboard-angular
 │   │   ├── demo.js
 │   │   ├── initMenu.js
 │   │   ├── jquery-3.1.0.min.js
-│   │   ├── material-dashboard-angular.js
+│   │   ├── sidebar-moving-tab.js
 │   │   ├── material-dashboard.js
 │   │   └── material.min.js
 │   └── sass
@@ -151,6 +151,11 @@ V1.1.0 - small fix
 
 V1.1.1 - 21 March (V1.1.0 from Material Dashboard HTML)
 - added "@types/core-js": "0.9.35" in package
+
+V1.2.0 - 04 Apr (V1.1.0 from Material Dashboard HTML)
+- added Upgrade to PRO page
+- update package
+- made sidebar dynamic
 
 
 ## Useful Links

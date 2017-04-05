@@ -1,11 +1,12 @@
-import { MenuType, RouteInfo } from './sidebar.metadata';
+import {  RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
-    { path: 'dashboard', title: 'Dashboard', menuType: MenuType.LEFT, icon: 'material-icons' },
-    { path: 'user', title: 'User profile', menuType: MenuType.LEFT, icon:'material-icons' },
-    { path: 'table', title: 'Table List', menuType: MenuType.LEFT, icon:'material-icons' },
-    { path: 'typography', title: 'Typography', menuType: MenuType.LEFT, icon:'material-icons' },
-    { path: 'icons', title: 'Icons', menuType: MenuType.LEFT, icon:'material-icons' },
-    { path: 'maps', title: 'Maps', menuType: MenuType.LEFT, icon:'material-icons' },
-    { path: 'notifications', title: 'Notifications', menuType: MenuType.LEFT, icon:'material-icons text-gray' },
+    { path: 'dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+    { path: 'user', title: 'User Profile',  icon:'person', class: '' },
+    { path: 'table', title: 'Table List',  icon:'content_paste', class: '' },
+    { path: 'typography', title: 'Typography',  icon:'library_books', class: '' },
+    { path: 'icons', title: 'Icons',  icon:'bubble_chart', class: '' },
+    { path: 'maps', title: 'Maps',  icon:'location_on', class: '' },
+    { path: 'notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    { path: 'upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
 ];

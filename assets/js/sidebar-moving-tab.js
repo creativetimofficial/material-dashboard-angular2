@@ -1,7 +1,7 @@
 /*!
 
  =========================================================
- * Material Dashboard Angular - V1.1.0.0
+ * Material Dashboard Angular - V1.2.0
  =========================================================
 
  * Product Page: https://www.creative-tim.com/product/material-dashboard-angular2
@@ -14,7 +14,7 @@
 
  */
 
- 
+
 $(document).ready(function(){
     $moving_tab = $('<div class="moving-tab"/>');
     $('.sidebar .nav-container').append($moving_tab);
@@ -39,7 +39,11 @@ $(document).ready(function(){
 
     }
 });
+$(window).resize(function(){
+    $this = $('.sidebar .nav').find('li.active a');
+    animationSidebar($this,true);
 
+});
 $('.sidebar .nav > li > a').click(function(){
     $this = $(this);
     animationSidebar($this, true);
