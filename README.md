@@ -1,8 +1,8 @@
-# [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)
+# [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]
 
-![alt text](http://s3.amazonaws.com/creativetim_bucket/products/53/original/opt_md_angular_thumbnail.jpg "Material Dashboard Angular 2 Free")
+![alt text](http://s3.amazonaws.com/creativetim_bucket/products/53/original/opt_md_angular_thumbnail.jpg "Material Dashboard Angular Free")
 
-**[Material Dashboard Angular2](https://www.creative-tim.com/product/material-dashboard-angular2/)** is a free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard was built over the popular Bootstrap framework and it comes with a couple of third-party plugins redesigned to fit in with the rest of the elements.
+**[Material Dashboard Angular](https://www.creative-tim.com/product/material-dashboard-angular2/)** is a free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard was built over the popular Bootstrap framework and it comes with a couple of third-party plugins redesigned to fit in with the rest of the elements.
 
 Material Dashboard makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
 
@@ -28,135 +28,126 @@ You can find the Github Repo here.
 
 Quick start options:
 
-- [Download from Github](https://github.com/creativetimofficial/material-dashboard-angular/archive/master.zip).
+- [Download from Github](https://github.com/tiniestory/material-dashboard-angular/archive/master.zip).
 - [Download from Creative Tim](http://www.creative-tim.com/product/material-dashboard-angular2).
-- Clone the repo: `git clone https://github.com/creativetimofficial/material-dashboard-angular.git`.
+- Clone the repo: `git clone https://github.com/tiniestory/material-dashboard-angular.git`.
 
 ## Terminal Commands
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0 and angular 4.x.
 
 1. Install NodeJs from [NodeJs Official Page](https://nodejs.org/en).
 2. Open Terminal
 3. Go to your file project
-4. Run in terminal: ```npm install```
-5. And: ```npm start```
+4. Make sure you have installed [Angular CLI](https://github.com/angular/angular-cli) already. If not, please install.
+5. Run in terminal: ```npm install```
+6. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ### What's included
 
 Within the download you'll find the following directories and files:
 
 ```
-material-dashboard-angular
-├── README.md
+md-free-angular-cli
+├── CHANGELOG.md
 ├── LICENSE.md
-├── app
-│   ├── app.component.html
-│   ├── app.component.js
-│   ├── app.component.ts
-│   ├── app.module.js
-│   ├── app.module.ts
-│   ├── dashboard
-│   │   ├── dashboard.component.html
-│   │   ├── dashboard.component.js
-│   │   ├── dashboard.component.ts
-│   │   ├── dashboard.module.js
-│   │   ├── dashboard.module.ts
-│   │   ├── dashboard.routes.js
-│   │   ├── dashboard.routes.ts
-│   │   ├── home
-│   │   │   ├── home.component.html
-│   │   │   ├── home.component.js
-│   │   │   └── home.component.ts
+├── README.md
+├── angular-cli.json
+├── documentation
+├── e2e
+├── karma.conf.js
+├── package.json
+├── protractor.conf.js
+├── src
+│   ├── app
+│   │   ├── app.component.css
+│   │   ├── app.component.html
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── app.routing.ts
+│   │   ├── components
+│   │   │   ├── components.module.ts
+│   │   │   ├── footer
+│   │   │   │   ├── footer.component.css
+│   │   │   │   ├── footer.component.html
+│   │   │   │   ├── footer.component.spec.ts
+│   │   │   │   └── footer.component.ts
+│   │   │   ├── navbar
+│   │   │   │   ├── navbar.component.css
+│   │   │   │   ├── navbar.component.html
+│   │   │   │   ├── navbar.component.spec.ts
+│   │   │   │   └── navbar.component.ts
+│   │   │   └── sidebar
+│   │   │       ├── sidebar.component.css
+│   │   │       ├── sidebar.component.html
+│   │   │       ├── sidebar.component.spec.ts
+│   │   │       └── sidebar.component.ts
+│   │   ├── dashboard
+│   │   │   ├── dashboard.component.css
+│   │   │   ├── dashboard.component.html
+│   │   │   ├── dashboard.component.spec.ts
+│   │   │   └── dashboard.component.ts
 │   │   ├── icons
+│   │   │   ├── icons.component.css
 │   │   │   ├── icons.component.html
-│   │   │   ├── icons.component.js
+│   │   │   ├── icons.component.spec.ts
 │   │   │   └── icons.component.ts
 │   │   ├── maps
+│   │   │   ├── maps.component.css
 │   │   │   ├── maps.component.html
-│   │   │   ├── maps.component.js
+│   │   │   ├── maps.component.spec.ts
 │   │   │   └── maps.component.ts
 │   │   ├── notifications
+│   │   │   ├── notifications.component.css
 │   │   │   ├── notifications.component.html
-│   │   │   ├── notifications.component.js
+│   │   │   ├── notifications.component.spec.ts
 │   │   │   └── notifications.component.ts
-│   │   ├── table
-│   │   │   ├── table.component.html
-│   │   │   ├── table.component.js
-│   │   │   └── table.component.ts
+│   │   ├── table-list
+│   │   │   ├── table-list.component.css
+│   │   │   ├── table-list.component.html
+│   │   │   ├── table-list.component.spec.ts
+│   │   │   └── table-list.component.ts
 │   │   ├── typography
+│   │   │   ├── typography.component.css
 │   │   │   ├── typography.component.html
-│   │   │   ├── typography.component.js
+│   │   │   ├── typography.component.spec.ts
 │   │   │   └── typography.component.ts
-│   │   └── user
-│   │       ├── user.component.html
-│   │       ├── user.component.js
-│   │       └── user.component.ts
-│   ├── main.js
+│   │   ├── upgrade
+│   │   │   ├── upgrade.component.css
+│   │   │   ├── upgrade.component.html
+│   │   │   ├── upgrade.component.spec.ts
+│   │   │   └── upgrade.component.ts
+│   │   └── user-profile
+│   │       ├── user-profile.component.css
+│   │       ├── user-profile.component.html
+│   │       ├── user-profile.component.spec.ts
+│   │       └── user-profile.component.ts
+│   ├── assets
+│   │   ├── css
+│   │   ├── img
+│   │   ├── js
+│   │   │   └── material.min.js
+│   │   └── sass
+│   │       ├── material-dashboard.scss
+│   │       └── md
+│   ├── environments
+│   ├── favicon.ico
+│   ├── index.html
 │   ├── main.ts
-│   ├── shared
-│   │   ├── footer
-│   │   │   ├── footer.component.html
-│   │   │   ├── footer.component.js
-│   │   │   ├── footer.component.ts
-│   │   │   ├── footer.module.js
-│   │   │   └── footer.module.ts
-│   │   └── navbar
-│   │       ├── navbar.component.html
-│   │       ├── navbar.component.js
-│   │       ├── navbar.component.ts
-│   │       ├── navbar.module.js
-│   │       └── navbar.module.ts
-│   └── sidebar
-│       ├── sidebar-routes.config.js
-│       ├── sidebar-routes.config.ts
-│       ├── sidebar.component.html
-│       ├── sidebar.component.js
-│       ├── sidebar.component.ts
-│       ├── sidebar.metadata.js
-│       ├── sidebar.metadata.ts
-│       ├── sidebar.module.js
-│       └── sidebar.module.ts
-├── assets
-│   ├── css
-│   ├── img
-│   │   └── faces
-│   ├── js
-│   │   ├── bootstrap-notify.js
-│   │   ├── bootstrap.min.js
-│   │   ├── chartist.min.js
-│   │   ├── charts.d.ts
-│   │   ├── charts.js
-│   │   ├── demo.js
-│   │   ├── initMenu.js
-│   │   ├── jquery-3.1.0.min.js
-│   │   ├── sidebar-moving-tab.js
-│   │   ├── material-dashboard.js
-│   │   └── material.min.js
-│   └── sass
-│       └── material-dashboard.scss
-├── documentation
-│   ├── css
-│   └── tutorial-components.html
-├── changelog.txt
-├── index.html
-├── package.json
-├── systemjs.config.js
-└── tsconfig.json
+│   ├── polyfills.ts
+│   ├── styles.css
+│   ├── test.ts
+│   ├── tsconfig.app.json
+│   ├── tsconfig.spec.json
+│   └── typings.d.ts
+├── tsconfig.json
+├── tslint.json
+└── typings
 
 ```
-### Version logs
-
-V1.0.0 - 30 Jan 2017 [initial Release]
-
-V1.1.0 - small fix
-
-V1.1.1 - 21 March (V1.1.0 from Material Dashboard HTML)
-- added "@types/core-js": "0.9.35" in package
-
-V1.2.0 - 05 Apr (V1.1.0 from Material Dashboard HTML)
-- added Upgrade to PRO page
-- update package
-- made sidebar dynamic
-
 
 ## Useful Links
 
@@ -179,3 +170,7 @@ Dribbble: <https://dribbble.com/creativetim>
 Google+: <https://plus.google.com/+CreativetimPage>
 
 Instagram: <https://instagram.com/creativetimofficial>
+
+[CHANGELOG]: ./CHANGELOG.md
+
+[version-badge]: https://img.shields.io/badge/version-1.4.0-blue.svg
