@@ -28,6 +28,7 @@ my-app .main-panel .main-content .card{
         position: absolute;
     }
 }
+
 #map{
     position:relative;
     width:100%;

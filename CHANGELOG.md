@@ -1,7 +1,10 @@
 ## [1.4.0] - 2017-08-23
-### Added
+### Changes for Angular 4
 - added angular-cli
-- update to angular 4
+- update to Angular 4
+
+## [v1.3.0] 2017-08-23
+### skipped for sync with Angular 4 version convention
 
 ## [1.2.0] - 2017-04-05
 ### Added

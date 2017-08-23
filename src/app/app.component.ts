@@ -5,6 +5,7 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 declare const $: any;
 declare var _gaq:Function;
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

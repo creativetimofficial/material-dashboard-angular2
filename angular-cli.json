@@ -30,7 +30,6 @@
           "../node_modules/bootstrap-notify/bootstrap-notify.js",
           "../node_modules/chartist/dist/chartist.js",
           "../src/assets/js/jquery.sharrre.js"
-
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
