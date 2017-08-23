@@ -110,14 +110,14 @@ export class AppComponent implements OnInit {
           twitter: true
         },
         enableHover: false,
-        enableTracking: true,
+        enableTracking: false,
         buttons: { twitter: {via: 'CreativeTim'}},
         click: function(api, options){
           api.simulateClick();
           api.openPopup('twitter');
         },
         template: '<i class="fa fa-twitter"></i> &middot; 182',
-        url: 'http://md-angular.creative-tim.com/'
+        url: 'http://md-angular2.creative-tim.com/'
       });
 
       $('#facebook').sharrre({
@@ -125,13 +125,13 @@ export class AppComponent implements OnInit {
           facebook: true
         },
         enableHover: false,
-        enableTracking: true,
+        enableTracking: false,
         click: function(api, options){
           api.simulateClick();
           api.openPopup('facebook');
         },
         template: '<i class="fa fa-facebook-square"></i> &middot; 270',
-        url: 'http://md-angular.creative-tim.com/'
+        url: 'http://md-angular2.creative-tim.com/'
       });
   }
 
