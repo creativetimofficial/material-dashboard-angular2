@@ -6,6 +6,8 @@ declare const $: any;
 declare var _gaq:Function;
 
 
+declare const $: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,6 +37,7 @@ export class AppComponent implements OnInit {
     }
 
   ngOnInit() {
+
       const window_width = $(window).width();
       let $sidebar = $('.sidebar');
       let $sidebar_responsive = $('body > .navbar-collapse');
@@ -133,6 +136,10 @@ export class AppComponent implements OnInit {
         template: '<i class="fa fa-facebook-square"></i> &middot; 270',
         url: 'http://md-angular2.creative-tim.com/'
       });
+
+      $.material.options.autofill = true;
+      $.material.init();
+
   }
 
     isMaps(path){

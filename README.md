@@ -128,8 +128,6 @@ md-free-angular-cli
 │   ├── assets
 │   │   ├── css
 │   │   ├── img
-│   │   ├── js
-│   │   │   └── material.min.js
 │   │   └── sass
 │   │       ├── material-dashboard.scss
 │   │       └── md
@@ -173,4 +171,4 @@ Instagram: <https://instagram.com/creativetimofficial>
 
 [CHANGELOG]: ./CHANGELOG.md
 
-[version-badge]: https://img.shields.io/badge/version-1.4.0-blue.svg
+[version-badge]: https://img.shields.io/badge/version-1.4.1-blue.svg

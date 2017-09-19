@@ -24,7 +24,7 @@
       "scripts": [
           "../node_modules/jquery/dist/jquery.js",
           "../node_modules/bootstrap/dist/js/bootstrap.js",
-          "../src/assets/js/material.min.js",
+          "../node_modules/bootstrap-material-design/dist/js/material.min.js",
           "../node_modules/arrive/src/arrive.js",
           "../node_modules/moment/moment.js",
           "../node_modules/bootstrap-notify/bootstrap-notify.js",
