@@ -1,3 +1,7 @@
+## [1.4.1] - 2017-09-19
+### Material
+- added material initialisation
+
 ## [1.4.0] - 2017-08-23
 ### Changes for Angular 4
 - added angular-cli
