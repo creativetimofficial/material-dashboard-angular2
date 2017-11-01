@@ -18,7 +18,7 @@
 }
 .sidebar,
 .off-canvas-sidebar{
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -246,13 +246,10 @@
 .main-panel{
     //background: rgba(203,203,210,.15);
     position: relative;
-    z-index: 2;
+    // z-index: 2;
     float: right;
-    overflow: auto;
-    width: $sidebar-width;
     min-height: 100%;
-    @include transform-translate-x(0px);
-    @include transition (0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1));
+    width: $sidebar-width;
 
     .main-content{
         margin-top: 70px;
@@ -273,16 +270,16 @@
     float: none;
 }
 .main-panel{
-    max-height: 100%;
+    position: relative;
     height: 100%;
 }
 .sidebar,
 .main-panel{
-    -webkit-transition-property: top,bottom;
-    transition-property: top,bottom;
-    -webkit-transition-duration: .2s,.2s;
-    transition-duration: .2s,.2s;
-    -webkit-transition-timing-function: linear,linear;
-    transition-timing-function: linear,linear;
+    -webkit-transition-property: top,bottom,width;
+    transition-property: top,bottom,width;
+    -webkit-transition-duration: .2s,.2s,.35s;
+    transition-duration: .2s,.2s,.35s;
+    -webkit-transition-timing-function: linear,linear,ease;
+    transition-timing-function: linear,linear,ease;
     -webkit-overflow-scrolling: touch;
 }

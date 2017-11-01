@@ -21,7 +21,7 @@ const routes: Routes =[
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-      { path: '',          redirectTo: 'dashboard', pathMatch: 'full' }
+    { path: '',               redirectTo: 'dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({
