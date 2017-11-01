@@ -1,3 +1,12 @@
+## [1.4.2] - 2017-10-01
+### Fixes
+- added Perfect Scrollbar
+- added scrollTop on route change
+- added closeSidebar on mobile
+- autocompile scss files
+- fixes for IE
+- update package dependencies to 4.4.4
+
 ## [1.4.1] - 2017-09-19
 ### Material
 - added material.init()
