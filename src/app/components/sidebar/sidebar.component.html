@@ -7,53 +7,59 @@
     </a>
 </div>
 <div class="sidebar-wrapper">
-    <form class="navbar-form navbar-right" role="search" *ngIf="isMobileMenu()">
-        <div class="form-group form-black is-empty">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="material-input"></span>
+  <div *ngIf="isMobileMenu()">
+    <form class="navbar-form">
+      <span class="bmd-form-group">
+        <div class="input-group no-border">
+          <input type="text" value="" class="form-control" placeholder="Search...">
+          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
         </div>
-        <button type="submit" class="btn btn-white btn-round btn-just-icon">
-            <i class="material-icons">search</i><div class="ripple-container"></div>
-        </button>
+      </span>
     </form>
-
-    <ul class="nav nav-mobile-menu" *ngIf="isMobileMenu()">
-        <li>
-            <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+    <ul class="nav navbar-nav nav-mobile-menu">
+        <li class="nav-item">
+            <a class="nav-link" href="#pablo">
                 <i class="material-icons">dashboard</i>
-                <p class="hidden-lg hidden-md">Dashboard</p>
+                <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                </p>
             </a>
         </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">notifications</i>
                 <span class="notification">5</span>
-                <p class="hidden-lg hidden-md">Notifications</p>
+                <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                </p>
             </a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Mike John responded to your email</a></li>
-                <li><a href="#">You have 5 new tasks</a></li>
-                <li><a href="#">You're now friend with Andrew</a></li>
-                <li><a href="#">Another Notification</a></li>
-                <li><a href="#">Another One</a></li>
-            </ul>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                <a class="dropdown-item" href="#">Another Notification</a>
+                <a class="dropdown-item" href="#">Another One</a>
+            </div>
         </li>
-        <li>
-            <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-               <i class="material-icons">person</i>
-               <p class="hidden-lg hidden-md">Profile</p>
+        <li class="nav-item">
+            <a class="nav-link" href="#pablo">
+                <i class="material-icons">person</i>
+                <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                </p>
             </a>
         </li>
     </ul>
-
-    <div class="nav-container">
-        <ul class="nav">
-            <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
-                <a  [routerLink]="[menuItem.path]">
-                    <i class="material-icons">{{menuItem.icon}}</i>
-                    <p>{{menuItem.title}}</p>
-                </a>
-            </li>
-        </ul>
-    </div>
+  </div>
+    <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
 </div>

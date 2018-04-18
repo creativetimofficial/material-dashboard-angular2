@@ -29,13 +29,6 @@ my-app .main-panel .main-content .card{
     }
 }
 
-#map{
-    position:relative;
-    width:100%;
-    height: calc(100% - 60px);
-    margin-top: 70px;
-}
-
 .places-buttons .btn{
     margin-bottom: 30px
 }
