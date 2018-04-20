@@ -82,6 +82,7 @@
 
     .navbar-toggler{
         cursor: pointer;
+        outline: 0;
 
         .navbar-toggler-icon{
             width: 22px;
@@ -177,11 +178,6 @@
   }
 }
 
-// for demo
-#navbar .navbar{
-    border-radius: 0;
-}
-
 .navbar{
   .navbar-minimize{
     padding: 3px 0 0 15px;
@@ -194,7 +190,13 @@
   .collapse{
     .navbar-nav{
       .nav-item .nav-link{
-        padding: 15px 15px;
+        position: relative;
+        padding: 10px 15px;
+        font-weight: $font-weight-default;
+        font-size: $mdb-btn-font-size-base;
+        text-transform: uppercase;
+        border-radius: $border-radius-base;
+        line-height: 20px;
         margin-left: 5px;
         color: inherit;
 

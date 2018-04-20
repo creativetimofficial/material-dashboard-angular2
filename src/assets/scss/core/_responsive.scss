@@ -279,7 +279,6 @@
   }
 }
 
-
 /*          Changes for small display      */
 
 @media (max-width: 991px){
@@ -822,5 +821,10 @@
         display: none;
       }
     }
+  }
+
+  .nav-mobile-menu,
+  .sidebar .navbar-form{
+    display: none !important;
   }
 }

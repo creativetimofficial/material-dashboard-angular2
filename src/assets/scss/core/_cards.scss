@@ -336,48 +336,6 @@
     }
 }
 
-
-.card-plain {
-    background: transparent;
-    box-shadow: none !important;
-
-    .card-header:not(.card-avatar) {
-        margin-left: 0;
-        margin-right: 0;
-
-        .card-category,
-        .card-description{
-          color: $gray-color;
-        }
-    }
-
-
-
-    .card-body {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-    .card-header-image {
-        margin: 0 !important;
-        border-radius: $border-radius-large;
-
-        img {
-          border-radius: $border-radius-large;
-        }
-    }
-    .card-footer {
-        padding-left: 5px;
-        padding-right: 5px;
-        background-color: transparent;
-    }
-}
-
-// cards
-
-@import "../core/cards/card-testimonials";
-@import "../core/cards/card-profile";
-
 .card {
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
 
@@ -387,7 +345,7 @@
 
   .card-title{
     margin-top: 0;
-    margin-bottom: 3px;
+    margin-bottom: 15px;
   }
 
   .card-body{
@@ -398,6 +356,10 @@
 
   .card-header {
     z-index: 3 !important;
+
+    .card-title{
+      margin-bottom: 3px;
+    }
 
     .card-category{
       margin: 0;
@@ -451,6 +413,30 @@
     }
   }
 
+  .card-actions {
+      position: absolute;
+      z-index: 1;
+      top: -50px;
+      width: calc(100% - 30px);
+      left: 17px;
+      right: 17px;
+      text-align: center;
+
+      .card-header{
+        padding: 0;
+        min-height: 160px;
+      }
+
+      .btn {
+          padding-left: 12px;
+          padding-right: 12px;
+      }
+      .fix-broken-card {
+          position: absolute;
+          top: -65px;
+      }
+  }
+
   &.card-chart {
     .card-footer i:nth-child(1n+2){
       width: 18px;
@@ -497,6 +483,13 @@
       margin: 0px 15px 0;
       padding: 0;
 
+      .card-title + .card-category{
+        color: rgba(255, 255, 255, 0.62);
+        a {
+          color: $white-color;
+        }
+      }
+
       &:not(.card-header-icon):not(.card-header-text):not(.card-header-image){
         border-radius: $border-radius-base;
         margin-top: -20px;
@@ -521,13 +514,6 @@
         .card-title{
           color: $white-color;
           margin-top: 0;
-        }
-      }
-
-      .card-title + .card-category{
-        color: rgba(255, 255, 255, 0.62);
-        a {
-          color: $white-color;
         }
       }
 
@@ -587,51 +573,6 @@
       }
   }
 
-  &.card-stats{
-    .card-header{
-      &.card-header-icon,
-      &.card-header-text{
-        text-align: right;
-      }
-
-      .card-icon + .card-title,
-      .card-icon + .card-category{
-        padding-top: 10px;
-      }
-
-      .card-title,
-      .card-category {
-        margin: 0;
-      }
-      .card-category {
-        margin-bottom: 0;
-        margin-top: 0;
-
-        &:not([class*="text-"]){
-          color: $gray-color;
-          font-size: $font-paragraph;
-        }
-      }
-
-      & + .card-footer{
-        border-top: 1px solid #eee;
-        margin-top: 14px;
-      }
-
-      i {
-        font-size: 36px;
-        line-height: 56px;
-        width: 56px;
-        height: 56px;
-        text-align: center;
-      }
-    }
-
-    .card-body {
-      text-align: right;
-    }
-  }
-
   .map {
     height: 280px;
     border-radius: $border-radius-large;
@@ -656,7 +597,7 @@
 }
 
 .iframe-container {
-    margin: 0 -20px 0;
+    width: 100%;
 
     iframe {
         width: 100%;
@@ -666,6 +607,34 @@
     }
 }
 
+.card-wizard {
+  .nav.nav-pills {
+    .nav-item {
+      margin: 0;
+
+      .nav-link {
+        padding: 6px 15px !important;
+      }
+    }
+  }
+  .nav-pills:not(.flex-column) .nav-item + .nav-item:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .nav-item .nav-link.active,
+  .nav-item .nav-link:hover,
+  .nav-item .nav-link:focus {
+    background-color: inherit !important;
+    box-shadow: none !important;
+  }
+
+  .input-group-text {
+    padding: 6px 15px 0px !important;
+  }
+  .card-footer {
+    border-top: none !important;
+  }
+}
 
 .card-chart,
 .card-product {
@@ -685,46 +654,5 @@
 
   .card .card-header a[aria-expanded="true"]{
     color: #e91e63;
-  }
-}
-
-
-.card{
-  .card-body{
-    .col-form-label,
-    .label-on-right{
-      padding: 16px 5px 0 0;
-      text-align: right;
-    }
-    .label-on-right{
-      text-align: left;
-    }
-
-    .form-group {
-      margin: 27px 0 0;
-    }
-  }
-  .label-on-right{
-
-
-    code{
-      padding: 2px 4px;
-      font-size: 90%;
-      color: #c7254e;
-      background-color: #f9f2f4;
-      border-radius: 4px;
-    }
-  }
-
-  .tab-content {
-    .form-check {
-      margin-top: -15px;
-    }
-  }
-}
-
-.card-wizard {
-  .input-group .form-group {
-    width: 80%
   }
 }

@@ -1,3 +1,8 @@
+## [2.0.0] - 2018-04-20
+### Fixes
+- added bootstrap 4
+- added angular 5
+
 ## [1.4.2] - 2017-10-01
 ### Fixes
 - added Perfect Scrollbar

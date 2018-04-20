@@ -71,3 +71,13 @@
         margin-top: -30px !important;
     }
 }
+
+.tab-content .tab-pane .td-actions{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card .tab-content .form-check{
+  margin-top: 6px;
+}

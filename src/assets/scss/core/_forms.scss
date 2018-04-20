@@ -42,6 +42,7 @@ form {
     background-size: $bmd-form-control-bg-size-active;
     //border-bottom: $input-btn-border-width solid $input-border-color;
     transition-duration: 0.3s;
+    box-shadow: none;
   }
 
   @include material-placeholder() {
@@ -226,6 +227,44 @@ select {
     -webkit-appearance: none;
   }
 }
+
+// Input files - hide actual input - requires specific markup in the sample.
+//.bmd-form-group input[type=file] {
+//  opacity: 0;
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
+//  width: 100%;
+//  height: 100%;
+//  z-index: 100;
+//}
+
+//
+//
+//.form-horizontal {
+//
+//  // Consistent vertical alignment of radios and checkboxes
+//  .radio,
+//  .checkbox,
+//  .radio-inline,
+//  .checkbox-inline {
+//    padding-top: 0;
+//  }
+//
+//  .radio {
+//    margin-bottom: 10px;
+//  }
+//
+//  label {
+//    text-align: right;
+//  }
+//
+//  label {
+//    margin: 0;
+//  }
+//}
 
 
 .form-inline {

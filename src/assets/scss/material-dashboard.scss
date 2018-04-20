@@ -1,12 +1,11 @@
 /*!
 
  =========================================================
- * Material Dashboard - v2.0.0
+ * Material Dashboard Angular - v2.0.0
  =========================================================
 
- * Product Page: http://www.creative-tim.com/product/now-ui-dashboard
+ * Product Page: https://www.creative-tim.com/product/material-dashboard-angular2
  * Copyright 2018 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/material-dashboard/blob/master/LICENSE.md)
 
  * Designed by www.invisionapp.com Coded by www.creative-tim.com
 
@@ -20,48 +19,38 @@
  @import "core/variables";
  @import "core/mixins";
  @import "~bootstrap/scss/bootstrap";
- @import "core/reboot";
 
-// Core Components
-@import "core/layout";
-@import "core/buttons";
-@import "core/checkboxes";
+
+ // Core Components
+ @import "core/buttons";
+ @import "core/checkboxes";
+ @import "core/radios";
+ @import "core/forms";
+ @import "core/input-group";
+ @import "core/images";
+ @import "core/navbar";
+ @import "core/alerts";
+ @import "core/type";
+ @import "core/tabs";
+ @import "core/tooltip";
+ @import "core/popover";
+ @import "core/dropdown";
+ @import "core/togglebutton";
+ @import "core/ripples";
+ @import "core/footers";
+ @import "core/sidebar-and-main-panel";
+ @import "core/fixed-plugin";
+ @import "core/tables";
+ @import "core/misc";
+
 @import "core/cards";
-@import "core/custom-forms";
-@import "core/switches";
-@import "core/radios";
-@import "core/carousel";
-@import "core/forms";
-@import "core/input-group";
-@import "core/list-group";
-@import "core/nav";
-@import "core/images";
-@import "core/navbar";
-@import "core/badges";
-@import "core/alerts";
-@import "core/pagination";
-@import "core/pills";
-@import "core/info-areas";
-@import "core/type";
-@import "core/tabs";
-@import "core/tooltip";
-@import "core/popover";
-@import "core/modal";
-@import "core/dropdown";
-@import "core/drawer";
-@import "core/progress";
-@import "core/togglebutton";
-@import "core/ripples";
-@import "core/footers";
-@import "core/sidebar-and-main-panel";
-@import "core/fixed-plugin";
-@import "core/tables";
-@import "core/misc";
-@import "core/pages";
-@import "core/social-buttons";
-@import "core/responsive";
+@import "core/cards/card-stats";
+@import "core/cards/card-profile";
+@import "core/cards/card-plain";
 
  //plugin scss
-@import "core/plugins/animate";
-@import "core/plugins/chartist";
-@import "core/plugins/perfect-scrollbar";
+ @import "core/plugins/animate";
+ @import "core/plugins/chartist";
+ @import "core/plugins/perfect-scrollbar";
+
+ @import "core/responsive";

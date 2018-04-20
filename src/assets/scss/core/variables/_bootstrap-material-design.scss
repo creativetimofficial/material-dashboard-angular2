@@ -16,8 +16,6 @@ $icon-color: rgba($black, 0.5) !default;
 $mdb-input-placeholder-color: #AAAAAA !default;
 $mdb-input-underline-color: #D2D2D2 !default;
 
-$font-size-base:              1rem !default;
-
 $mdb-input-font-size-base: 14px !default;
 $mdb-input-font-size-large: ceil(($font-size-base * 1.25)) !default; // ~20px
 $mdb-input-font-size-small: ceil(($font-size-base * 0.75)) !default; // ~12px
