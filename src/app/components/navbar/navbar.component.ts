@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,7 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location,  private element: ElementRef) {
+    constructor(location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
           this.sidebarVisible = false;
     }
@@ -23,6 +24,14 @@ export class NavbarComponent implements OnInit {
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+      this.router.events.subscribe((event) => {
+        this.sidebarClose();
+         var $layer: any = document.getElementsByClassName('close-layer')[0];
+         if ($layer) {
+           $layer.remove();
+           this.mobile_menu_visible = 0;
+         }
+     });
     }
 
     sidebarOpen() {
@@ -31,6 +40,7 @@ export class NavbarComponent implements OnInit {
         setTimeout(function(){
             toggleButton.classList.add('toggled');
         }, 500);
+
         body.classList.add('nav-open');
 
         this.sidebarVisible = true;
@@ -44,6 +54,8 @@ export class NavbarComponent implements OnInit {
     sidebarToggle() {
         // const toggleButton = this.toggleButton;
         // const body = document.getElementsByTagName('body')[0];
+        var $toggle = document.getElementsByClassName('navbar-toggler')[0];
+
         if (this.sidebarVisible === false) {
             this.sidebarOpen();
         } else {
@@ -51,14 +63,12 @@ export class NavbarComponent implements OnInit {
         }
         const body = document.getElementsByTagName('body')[0];
 
-        var $toggle = document.getElementsByClassName('navbar-toggler')[0];
         if (this.mobile_menu_visible == 1) {
             // $('html').removeClass('nav-open');
             body.classList.remove('nav-open');
             if ($layer) {
                 $layer.remove();
             }
-
             setTimeout(function() {
                 $toggle.classList.remove('toggled');
             }, 400);

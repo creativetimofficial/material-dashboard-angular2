@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import {
   MatButtonModule,
+  MatInputModule,
   MatRippleModule,
   MatTooltipModule,
 } from '@angular/material';
@@ -36,6 +37,7 @@ import {
     RouterModule,
     MatButtonModule,
     MatRippleModule,
+    MatInputModule,
     MatTooltipModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({

@@ -18,8 +18,6 @@ export class AppComponent implements OnInit {
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
 
-    @ViewChild(NavbarComponent) navbar: NavbarComponent;
-
     constructor( public location: Location, private router: Router) {}
 
     ngOnInit() {
@@ -39,7 +37,6 @@ export class AppComponent implements OnInit {
             this.lastPoppedUrl = ev.url;
         });
          this.router.events.subscribe((event:any) => {
-            this.navbar.sidebarClose();
             if (event instanceof NavigationStart) {
                if (event.url != this.lastPoppedUrl)
                    this.yScrollStack.push(window.scrollY);
