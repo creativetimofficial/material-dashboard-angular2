@@ -393,12 +393,12 @@ md-free-angular-cli
 
     			<pre class="prettyprint">
 
-&lt;button class=&quot;btn btn-default&quot;&gt;Default&lt;/button&gt;
-&lt;button class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
-&lt;button class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
-&lt;button class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
-&lt;button class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
-&lt;button class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
+&lt;button mat-raised-button class=&quot;btn btn-default&quot;&gt;Default&lt;/button&gt;
+&lt;button mat-raised-button class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button mat-raised-button class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
+&lt;button mat-raised-button class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
+&lt;button mat-raised-button class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
+&lt;button mat-raised-button class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
     			</pre>
 
 			</div>
@@ -441,31 +441,38 @@ md-free-angular-cli
                 </p>
 
     			<pre class="prettyprint">
-&lt;div class=&quot;checkbox&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;checkbox&quot; name=&quot;optionsCheckboxes&quot;&gt;
-		Unchecked
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class=&quot;checkbox&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;checkbox&quot; name=&quot;optionsCheckboxes&quot; checked&gt;
-		Checked
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class=&quot;checkbox&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;checkbox&quot; name=&quot;optionsCheckboxes&quot; disabled&gt;
-		Disabled Unchecked
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class=&quot;checkbox&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;checkbox&quot; name=&quot;optionsCheckboxes&quot; disabled checked&gt;
-		Disabled Checked
-	&lt;/label&gt;
-&lt;/div&gt;
-
+&#x3C;div class=&#x22;form-check&#x22;&#x3E;
+  &#x3C;label class=&#x22;form-check-label&#x22;&#x3E;
+      &#x3C;input class=&#x22;form-check-input&#x22; type=&#x22;checkbox&#x22; value=&#x22;&#x22;&#x3E;
+      &#x3C;span class=&#x22;form-check-sign&#x22;&#x3E;
+          &#x3C;span class=&#x22;check&#x22;&#x3E;&#x3C;/span&#x3E;
+      &#x3C;/span&#x3E;
+  &#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;form-check&#x22;&#x3E;
+  &#x3C;label class=&#x22;form-check-label&#x22;&#x3E;
+      &#x3C;input class=&#x22;form-check-input&#x22; type=&#x22;checkbox&#x22; value=&#x22;&#x22; checked&#x3E;
+      &#x3C;span class=&#x22;form-check-sign&#x22;&#x3E;
+          &#x3C;span class=&#x22;check&#x22;&#x3E;&#x3C;/span&#x3E;
+      &#x3C;/span&#x3E;
+  &#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;form-check&#x22;&#x3E;
+  &#x3C;label class=&#x22;form-check-label&#x22;&#x3E;
+      &#x3C;input class=&#x22;form-check-input&#x22; type=&#x22;checkbox&#x22; value=&#x22;&#x22; disabled&#x3E;
+      &#x3C;span class=&#x22;form-check-sign&#x22;&#x3E;
+          &#x3C;span class=&#x22;check&#x22;&#x3E;&#x3C;/span&#x3E;
+      &#x3C;/span&#x3E;
+  &#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;form-check&#x22;&#x3E;
+  &#x3C;label class=&#x22;form-check-label&#x22;&#x3E;
+      &#x3C;input class=&#x22;form-check-input&#x22; type=&#x22;checkbox&#x22; value=&#x22;&#x22; disabled checked&#x3E;
+      &#x3C;span class=&#x22;form-check-sign&#x22;&#x3E;
+          &#x3C;span class=&#x22;check&#x22;&#x3E;&#x3C;/span&#x3E;
+      &#x3C;/span&#x3E;
+  &#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
 				</pre>
         	</div>
     		<!-- end row -->
@@ -496,39 +503,37 @@ md-free-angular-cli
 							Disabled Radio is off
 						</label>
 					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="optionsRadiosDisabled" checked="true" disabled>
-							Disabled Radio is on
-						</label>
-					</div>
                 </p>
 
 				<pre class="prettyprint">
-&lt;div class=&quot;radio&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;radio&quot; name=&quot;optionsRadios&quot;&gt;
-		Radio is off
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class=&quot;radio&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;radio&quot; name=&quot;optionsRadios&quot; checked=&quot;true&quot;&gt;
-		Radio is on
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class=&quot;radio&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;radio&quot; name=&quot;optionsRadiosDisabled&quot; disabled&gt;
-		Disabled Radio is off
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;div class=&quot;radio&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;radio&quot; name=&quot;optionsRadiosDisabled&quot; checked=&quot;true&quot; disabled&gt;
-		Disabled Radio is on
-	&lt;/label&gt;
-&lt;/div&gt;
+&#x3C;div class=&#x22;form-check form-check-radio&#x22;&#x3E;
+  &#x3C;label class=&#x22;form-check-label&#x22;&#x3E;
+      &#x3C;input class=&#x22;form-check-input&#x22; type=&#x22;radio&#x22; name=&#x22;exampleRadios&#x22; id=&#x22;exampleRadios1&#x22; value=&#x22;option1&#x22; &#x3E;
+      Radio is off
+      &#x3C;span class=&#x22;circle&#x22;&#x3E;
+          &#x3C;span class=&#x22;check&#x22;&#x3E;&#x3C;/span&#x3E;
+      &#x3C;/span&#x3E;
+  &#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;form-check form-check-radio&#x22;&#x3E;
+  &#x3C;label class=&#x22;form-check-label&#x22;&#x3E;
+      &#x3C;input class=&#x22;form-check-input&#x22; type=&#x22;radio&#x22; name=&#x22;exampleRadios&#x22; id=&#x22;exampleRadios2&#x22; value=&#x22;option2&#x22; checked&#x3E;
+      Radio is on
+      &#x3C;span class=&#x22;circle&#x22;&#x3E;
+          &#x3C;span class=&#x22;check&#x22;&#x3E;&#x3C;/span&#x3E;
+      &#x3C;/span&#x3E;
+  &#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;div class=&#x22;form-check form-check-radio disabled&#x22;&#x3E;
+  &#x3C;label class=&#x22;form-check-label&#x22;&#x3E;
+      &#x3C;input class=&#x22;form-check-input&#x22; type=&#x22;radio&#x22; name=&#x22;exampleRadios1&#x22; id=&#x22;exampleRadios1&#x22; value=&#x22;option1&#x22; disabled&#x3E;
+      Disabled radio is off
+      &#x3C;span class=&#x22;circle&#x22;&#x3E;
+          &#x3C;span class=&#x22;check&#x22;&#x3E;&#x3C;/span&#x3E;
+      &#x3C;/span&#x3E;
+  &#x3C;/label&#x3E;
+&#x3C;/div&#x3E;
     			</pre>
 		    </div>
 		    <!-- end row -->
@@ -1520,8 +1525,8 @@ md-free-angular-cli
 				<p>You can change the default colors via variables from SASS:</p>
 
 				<ol>
-					<li>You can find the colors in assets/sass/material-dashboard/_variables.scss starting with line 28 where is the primary color set: <code>$brand-primary: $purple !default;</code>.
-					<li>More colors can be found in assets/sass/material-kit/_colors.scss</li>
+					<li>You can find the colors in assets/scss/core/variables/brand.scss starting with line 6 where is the primary color set: <code>$brand-primary: $purple-500 !default;</code>.
+					<li>More colors can be found in assets/scss/core/variables/brand.scss</li>
 					<li>Change them with anything you want and save the <code>.scss</code> file, it will be automatically compiled by Angular.</li>
 				</ol>
 
