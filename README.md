@@ -58,6 +58,7 @@ md-free-angular-cli
 ├── documentation
 ├── e2e
 ├── karma.conf.js
+├── package-lock.json
 ├── package.json
 ├── protractor.conf.js
 ├── src
@@ -95,6 +96,14 @@ md-free-angular-cli
 │   │   │   ├── icons.component.html
 │   │   │   ├── icons.component.spec.ts
 │   │   │   └── icons.component.ts
+│   │   ├── layouts
+│   │   │   └── admin-layout
+│   │   │       ├── admin-layout.component.html
+│   │   │       ├── admin-layout.component.scss
+│   │   │       ├── admin-layout.component.spec.ts
+│   │   │       ├── admin-layout.component.ts
+│   │   │       ├── admin-layout.module.ts
+│   │   │       └── admin-layout.routing.ts
 │   │   ├── maps
 │   │   │   ├── maps.component.css
 │   │   │   ├── maps.component.html
@@ -127,10 +136,11 @@ md-free-angular-cli
 │   │       └── user-profile.component.ts
 │   ├── assets
 │   │   ├── css
+│   │   │   └── demo.css
 │   │   ├── img
-│   │   └── sass
-│   │       ├── material-dashboard.scss
-│   │       └── md
+│   │   └── scss
+│   │       ├── core
+│   │       └── material-dashboard.scss
 │   ├── environments
 │   ├── favicon.ico
 │   ├── index.html
@@ -171,4 +181,4 @@ Instagram: <https://instagram.com/creativetimofficial>
 
 [CHANGELOG]: ./CHANGELOG.md
 
-[version-badge]: https://img.shields.io/badge/version-2.0.0-blue.svg
+[version-badge]: https://img.shields.io/badge/version-2.1.0-blue.svg

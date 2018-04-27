@@ -1,3 +1,8 @@
+## [2.1.0] - 2018-04-27
+### Fixes
+- changed file structure
+- moved documentation online
+
 ## [2.0.0] - 2018-04-20
 ### Fixes
 - added bootstrap 4
