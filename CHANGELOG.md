@@ -1,3 +1,7 @@
+## [2.1.1] - 2018-05-23
+### Fixes
+- changed some links
+
 ## [2.1.0] - 2018-04-27
 ### Fixes
 - changed file structure
