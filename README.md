@@ -28,9 +28,8 @@ You can find the Github Repo here.
 
 Quick start options:
 
-- [Download from Github](https://github.com/tiniestory/material-dashboard-angular/archive/master.zip).
+- [Download from Github](https://github.com/tiniestory/material-dashboard-angular2/archive/master.zip).
 - [Download from Creative Tim](http://www.creative-tim.com/product/material-dashboard-angular2).
-- Clone the repo: `git clone https://github.com/tiniestory/material-dashboard-angular.git`.
 
 ## Terminal Commands
 
@@ -181,4 +180,4 @@ Instagram: <https://instagram.com/creativetimofficial>
 
 [CHANGELOG]: ./CHANGELOG.md
 
-[version-badge]: https://img.shields.io/badge/version-2.1.0-blue.svg
+[version-badge]: https://img.shields.io/badge/version-2.1.1-blue.svg
