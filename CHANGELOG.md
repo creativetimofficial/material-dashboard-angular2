@@ -1,3 +1,8 @@
+## [2.2.0] - 2018-11-14
+### Changes
+- update to Angular 7
+- update all dependencies to match Angular 7 version
+
 ## [2.1.1] - 2018-05-23
 ### Fixes
 - changed some links

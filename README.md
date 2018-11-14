@@ -49,7 +49,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Within the download you'll find the following directories and files:
 
 ```
-md-free-angular-cli
+material-dashboard-angular
 ├── CHANGELOG.md
 ├── LICENSE.md
 ├── README.md
@@ -180,4 +180,4 @@ Instagram: <https://instagram.com/creativetimofficial>
 
 [CHANGELOG]: ./CHANGELOG.md
 
-[version-badge]: https://img.shields.io/badge/version-2.1.1-blue.svg
+[version-badge]: https://img.shields.io/badge/version-2.2.0-blue.svg
