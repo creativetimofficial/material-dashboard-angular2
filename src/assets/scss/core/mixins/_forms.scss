@@ -156,8 +156,8 @@
     // on focus set borders and labels to the validation color
 
     // Use the BS provided mixin for the bulk of the color
-    @include form-validation-state("valid", $label-color);
-
+    @include form-validation-state("valid", $label-color, $form-feedback-icon-valid);
+    
     [class^='bmd-label'],
     [class*=' bmd-label'] {
       color: $label-color-focus;
