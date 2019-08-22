@@ -8,13 +8,14 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    { path: '/dashboard', title: 'TRANG CHỦ',  icon: 'dashboard', class: '' },
+    { path: '/user-profile', title: 'TIN TỨC COIN',  icon:'person', class: '' },
+    { path: '/table-list', title: 'SÀN GIAO DỊCH',  icon:'content_paste', class: '' },
+    { path: '/typography', title: 'HƯỚNG DẪN COIN',  icon:'library_books', class: '' },
+    { path: '/icons', title: 'ICO, IEO & STO',  icon:'bubble_chart', class: '' },
+    { path: '/maps', title: 'BLOCKCHAIN',  icon:'location_on', class: '' },
+    { path: '/notifications', title: 'GIÁ BITCOIN HÔM NAY',  icon:'notifications', class: '' },
+    { path: '/notifications', title: 'Forums    ',  icon:'notifications', class: '' },
     { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
 ];
 
