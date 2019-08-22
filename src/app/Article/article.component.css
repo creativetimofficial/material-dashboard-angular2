@@ -1,0 +1,52 @@
+@media (min-width: 48em) {
+  h1 {
+    font-size: 2.441em;
+  }
+
+  h2 {
+    font-size: 1.953em;
+  }
+
+  h3 {
+    font-size: 1.563em;
+  }
+
+  h4 {
+    font-size: 1.25em;
+  }
+
+  .display-1 {
+    font-size: 6em;
+  }
+
+  .display-2 {
+    font-size: 5.5em;
+  }
+
+  .display-3 {
+    font-size: 4.5em;
+  }
+
+  .display-4 {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 62em) {
+  html,
+  body {
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 75em) {
+  html,
+  body {
+    font-size: 18px !important;
+  }
+}
+@media (max-width: 48em) {
+  .display-4 {
+    font-size: 1.6em;
+  }
+}

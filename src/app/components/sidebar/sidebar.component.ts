@@ -9,9 +9,9 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'TRANG CHỦ',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'TIN TỨC COIN',  icon:'person', class: '' },
+    { path: '/article', title: 'TIN TỨC COIN',  icon:'library_books', class: '' },
+    { path: '/user-profile', title: 'HƯỚNG DẪN COIN',  icon:'person', class: '' },
     { path: '/table-list', title: 'SÀN GIAO DỊCH',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'HƯỚNG DẪN COIN',  icon:'library_books', class: '' },
     { path: '/icons', title: 'ICO, IEO & STO',  icon:'bubble_chart', class: '' },
     { path: '/maps', title: 'BLOCKCHAIN',  icon:'location_on', class: '' },
     { path: '/notifications', title: 'GIÁ BITCOIN HÔM NAY',  icon:'notifications', class: '' },
