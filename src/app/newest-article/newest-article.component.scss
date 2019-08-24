@@ -1,0 +1,52 @@
+.article-title{
+  font-weight: bold;
+  color: #555555;
+}
+@media screen and (max-width : 321px) {
+  .article-title {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media screen and (min-width : 321px) {
+  /* Styles */
+  .col-article-30{
+    width: 30%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .col-article-70{
+    width: 70%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .article-title {
+    font-size: 12px;
+  }
+  .article-body{
+    padding-bottom: 2px;
+  }
+}
+@media screen and (min-width : 640px) and (max-width : 992px) {
+  .article-wrawper{
+    width: 50%;
+  }
+  .article-title {
+    font-size: 14px;
+  }
+}
+/* Desktops and laptops ----------- */
+@media screen and (min-width : 992px) {
+  /* Styles */
+  .col-article{
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .article-title{
+    margin-top: 0px;
+    font-size: 1vw;
+  }
+}
