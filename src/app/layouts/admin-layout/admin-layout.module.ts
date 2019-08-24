@@ -15,6 +15,8 @@ import {UpgradeComponent} from '../../upgrade/upgrade.component';
 import {MatButtonModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatSelectModule, MatTooltipModule} from '@angular/material';
 import {ArticleComponent} from '../../Article/article.component';
 import {NewestArticleComponent} from '../../newest-article/newest-article.component';
+import {NewestArticleSideComponent} from '../../newest-article-side/newest-article-side.component';
+import {HotNewsComponent} from '../../hot-news/hot-news.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,7 @@ import {NewestArticleComponent} from '../../newest-article/newest-article.compon
     MatTooltipModule,
   ],
   declarations: [
+    HotNewsComponent,
     DashboardComponent,
     UserProfileComponent,
     TableListComponent,
@@ -40,6 +43,7 @@ import {NewestArticleComponent} from '../../newest-article/newest-article.compon
     UpgradeComponent,
     ArticleComponent,
     NewestArticleComponent,
+    NewestArticleSideComponent,
   ]
 })
 

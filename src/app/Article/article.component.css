@@ -33,6 +33,9 @@
 }
 
 @media (min-width: 62em) {
+  .card-title{
+    font-size: 28px;
+  }
   html,
   body {
     font-size: 16px !important;
@@ -49,4 +52,7 @@
   .display-4 {
     font-size: 1.6em;
   }
+}
+.card-title{
+  font-weight: bold;
 }

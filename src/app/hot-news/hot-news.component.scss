@@ -1,0 +1,21 @@
+tr td .stats{
+  display: none;
+}
+@media screen and (max-width : 768px) {
+  .hide-when-small{
+    display: none;
+  }
+}
+@media screen and (max-width : 768px) {
+  tr td .stats{
+    display: block;
+    color: #999999;
+    font-size: 12px;
+    line-height: 22px;
+  }
+  tr td .stats .material-icons{
+    font-size: 12px;
+    line-height: 22px;
+  }
+}
+
