@@ -10,13 +10,12 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'TRANG CHỦ',  icon: 'dashboard', class: '' },
     { path: '/article', title: 'TIN TỨC COIN',  icon:'library_books', class: '' },
-    { path: '/user-profile', title: 'HƯỚNG DẪN COIN',  icon:'person', class: '' },
-    { path: '/table-list', title: 'SÀN GIAO DỊCH',  icon:'content_paste', class: '' },
+    { path: '/user-profile', title: 'HƯỚNG DẪN COIN',  icon:'book', class: '' },
+    { path: '/table-list', title: 'SÀN GIAO DỊCH',  icon:'timeline', class: '' },
     { path: '/icons', title: 'ICO, IEO & STO',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'BLOCKCHAIN',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'GIÁ BITCOIN HÔM NAY',  icon:'notifications', class: '' },
-    { path: '/notifications', title: 'Forums    ',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+    { path: '/maps', title: 'BLOCKCHAIN',  icon:'code', class: '' },
+    { path: '/notifications', title: 'GIÁ BITCOIN HÔM NAY',  icon:'monetization_on', class: '' },
+    { path: '/notifications', title: 'Forums    ',  icon:'forum', class: '' },
 ];
 
 @Component({

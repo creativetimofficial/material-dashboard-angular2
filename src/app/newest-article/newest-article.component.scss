@@ -2,6 +2,13 @@
   font-weight: bold;
   color: #555555;
 }
+.article-wrawper .card:hover .article-title{
+  color: #ea973e;
+  //background-color: rgba(0, 0, 0, 0.075);
+}
+.article-wrawper .card{
+  cursor: pointer;
+}
 @media screen and (max-width : 321px) {
   .article-title {
     margin-top: 10px;
