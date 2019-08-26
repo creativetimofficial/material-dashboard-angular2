@@ -17,6 +17,8 @@ import {ArticleComponent} from '../../Article/article.component';
 import {NewestArticleComponent} from '../../newest-article/newest-article.component';
 import {NewestArticleSideComponent} from '../../newest-article-side/newest-article-side.component';
 import {HotNewsComponent} from '../../hot-news/hot-news.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ChartLineComponent} from '../../chart-line/chart-line.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,7 @@ import {HotNewsComponent} from '../../hot-news/hot-news.component';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    HttpClientModule,
   ],
   declarations: [
     HotNewsComponent,
@@ -44,6 +47,7 @@ import {HotNewsComponent} from '../../hot-news/hot-news.component';
     ArticleComponent,
     NewestArticleComponent,
     NewestArticleSideComponent,
+    ChartLineComponent,
   ]
 })
 
