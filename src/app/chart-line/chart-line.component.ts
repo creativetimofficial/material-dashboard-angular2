@@ -10,7 +10,7 @@ import { Chart } from 'chart.js';
 export class ChartLineComponent implements OnInit {
   title = 'app';
   data: Data[];
-  url = 'http://localhost:4000/results';
+  url = 'https://4000-a7e71c4b-813f-4f6e-8196-6a6bdbe6f8ac.ws-ap0.gitpod.io/results';
   month = [];
   price = [];
   chart = [];
