@@ -21,6 +21,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {ChartLineComponent} from '../../chart-line/chart-line.component';
 import {ChartEthComponent} from '../../chart-eth/chart-eth.component';
 import {ChartTrxComponent} from '../../chart-trx/chart-trx.component';
+import { ArticleCategoryInsideComponent } from 'app/article-category-inside/article-category-inside.component';
+import { ArticleItemComponent } from 'app/article-item/article-item.component';
 
 @NgModule({
   imports: [
@@ -52,6 +54,8 @@ import {ChartTrxComponent} from '../../chart-trx/chart-trx.component';
     NewestArticleComponent,
     NewestArticleSideComponent,
     ChartLineComponent,
+    ArticleCategoryInsideComponent,
+    ArticleItemComponent,
   ]
 })
 

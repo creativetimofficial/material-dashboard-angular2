@@ -56,10 +56,21 @@
   </div>
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a class="nav-link" [routerLink]="[menuItem.path]">
+            <a *ngIf="menuItem.subMenu.length !== 0" class="nav-link" href="javascript:void(0)" id="{{menuItem.id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}</p>
+                <p>{{menuItem.title}}{{menuItem.subMenu.length}}</p>
             </a>
+            <a *ngIf="menuItem.subMenu.length === 0" class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}{{menuItem.subMenu.length}}</p>
+            </a>
+            <div *ngIf="menuItem.subMenu.length !== 0" class="dropdown-menu dropdown-menu-right" aria-labelledby="{{menuItem.id}}">
+                <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                <a class="dropdown-item" href="#">Another Notification</a>
+                <a class="dropdown-item" href="#">Another One</a>
+            </div>
         </li>
     </ul>
 </div>
