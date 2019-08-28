@@ -19,6 +19,8 @@ import {NewestArticleSideComponent} from '../../newest-article-side/newest-artic
 import {HotNewsComponent} from '../../hot-news/hot-news.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ChartLineComponent} from '../../chart-line/chart-line.component';
+import { ArticleCategoryInsideComponent } from 'app/article-category-inside/article-category-inside.component';
+import { ArticleItemComponent } from 'app/article-item/article-item.component';
 
 @NgModule({
   imports: [
@@ -48,6 +50,8 @@ import {ChartLineComponent} from '../../chart-line/chart-line.component';
     NewestArticleComponent,
     NewestArticleSideComponent,
     ChartLineComponent,
+    ArticleCategoryInsideComponent,
+    ArticleItemComponent,
   ]
 })
 
