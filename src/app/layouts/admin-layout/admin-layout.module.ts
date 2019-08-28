@@ -19,6 +19,8 @@ import {NewestArticleSideComponent} from '../../newest-article-side/newest-artic
 import {HotNewsComponent} from '../../hot-news/hot-news.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ChartLineComponent} from '../../chart-line/chart-line.component';
+import {ChartEthComponent} from '../../chart-eth/chart-eth.component';
+import {ChartTrxComponent} from '../../chart-trx/chart-trx.component';
 
 @NgModule({
   imports: [
@@ -35,6 +37,8 @@ import {ChartLineComponent} from '../../chart-line/chart-line.component';
     HttpClientModule,
   ],
   declarations: [
+    ChartTrxComponent,
+    ChartEthComponent,
     HotNewsComponent,
     DashboardComponent,
     UserProfileComponent,

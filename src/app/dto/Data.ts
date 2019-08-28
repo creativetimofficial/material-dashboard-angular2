@@ -1,4 +1,3 @@
-export interface Data {
-    month: String;
-    price: Number;
+export interface PricingDTO {
+    prices: Number[][]
 }

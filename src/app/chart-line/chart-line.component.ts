@@ -1,81 +1,97 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Data} from '../dto/Data';
-import { Chart } from 'chart.js';
+import {PricingDTO} from '../dto/Data';
+import {Chart} from 'chart.js';
+import {DatePipe} from '@angular/common';
+
 @Component({
-  selector: 'app-chart-line',
-  templateUrl: './chart-line.component.html',
-  styleUrls: ['./chart-line.component.scss']
+    selector: 'app-chart-line',
+    templateUrl: './chart-line.component.html',
+    styleUrls: ['./chart-line.component.scss'],
+    providers: [DatePipe]
 })
 export class ChartLineComponent implements OnInit {
-  title = 'app';
-  data: Data[];
-  url = 'https://4000-a7e71c4b-813f-4f6e-8196-6a6bdbe6f8ac.ws-ap0.gitpod.io/results';
-  month = [];
-  price = [];
-  chart = [];
-  constructor(private httpClient: HttpClient) {}
+    title = 'app';
+    url = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1';
+    time = [];
+    price = [];
+    chart = [];
+    currentPrice: number;
+    downup: number;
+    constructor(private httpClient: HttpClient, private datePipe: DatePipe) {
+        datePipe = new DatePipe('en-US');
+    }
 
-  ngOnInit() {
-    this.httpClient.get(this.url).subscribe((res: Data[]) => {
-      res.forEach(y => {
-        this.month.push(y.month);
-        this.price.push(y.price);
-      });
-      this.chart = new Chart('canvas', {
-        type: 'line',
-        data: {
-          labels: this.month,
-          datasets: [
-            {
-              data: this.price,
-              borderColor: '#FFF',
-              fill: false
-            }
-          ]
-        },
-        options: {
-          elements: {
-            point: {
-              radius: 0,
-              hitRadius: 10,
-              hoverRadius: 10
-            }
-          },
-          legend: {
-            display: false,
-          },
-          scales: {
-            xAxes: [{
-              display: true,
-              gridLines: {
-                borderDash: [1, 2],
-                color: 'rgba(255,255,255,0.3)',
-              },
-              ticks: {
-                fontColor: '#FFF', // this here
-                callback: function(value, index, values) {
-                  if (index % 3 !== 0) {
-                    return '';
-                  } else {
-                    return value;
-                  }
+    ngOnInit() {
+        this.httpClient.get(this.url).subscribe((res: PricingDTO) => {
+            // @ts-ignore
+            this.downup = parseFloat(Math.round((res.prices[res.prices.length - 1][1] - res.prices[0][1]) / res.prices[0][1] * 10000) / 100).toFixed(2);
+            // @ts-ignore
+            this.currentPrice = parseFloat(Math.round(res.prices[0][1] * 100) / 100).toFixed(2);
+            res.prices.forEach(y => {
+                const date = this.datePipe.transform(y[0], 'hh:mm:ss');
+                this.time.push(date);
+                this.price.push(y[1]);
+            });
+            this.chart = new Chart('canvas', {
+                type: 'line',
+                data: {
+                    labels: this.time,
+                    datasets: [
+                        {
+                            data: this.price,
+                            borderColor: '#FFF',
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    elements: {
+                        point: {
+                            radius: 0,
+                            hitRadius: 10,
+                            hoverRadius: 10
+                        }
+                    },
+                    legend: {
+                        display: false,
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                // display: false,
+                                // borderDash: [1, 2],
+                                color: 'rgba(0,0,0,0.0)',
+                            },
+                            ticks: {
+                                fontColor: '#FFF', // this here
+                                callback: function (value, index, values) {
+                                    return value;
+                                    // const timeSplit = value.split(':');
+                                    // console.log(timeSplit);
+                                    // if (timeSplit [1] !== '00') {
+                                    //   return '';
+                                    // } else {
+                                    //   return value;
+                                    // }
+                                }
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                // display: false,
+                                // borderDash: [1, 2],
+                                color: 'rgba(0,0,0,0.0)',
+                            },
+                            ticks: {
+                                fontColor: '#FFF', // this here
+                            }
+                        }],
+                    }
                 }
-              }
-            }],
-            yAxes: [{
-              display: true,
-              gridLines: {
-                borderDash: [1, 2],
-                color: 'rgba(255,255,255,0.3)',
-              },
-              ticks: {
-                fontColor: '#FFF', // this here
-              }
-            }],
-          }
-        }
-      });
-    });
-  }
+            });
+        });
+    }
 }

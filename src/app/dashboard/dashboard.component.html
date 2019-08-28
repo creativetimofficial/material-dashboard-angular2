@@ -2,24 +2,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <div class="card card-chart">
-                    <div class="card-header card-header-success">
-                        <app-chart-line></app-chart-line>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">GIÁ BITCOIN</h4>
-                        <p class="card-category">
-                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today
-                            sales.</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> updated 4 minutes ago
-                        </div>
-                    </div>
-                </div>
+                <app-chart-line></app-chart-line>
             </div>
-
+            <div class="col-md-4">
+                <app-chart-eth></app-chart-eth>
+            </div>
+            <div class="col-md-4">
+                <app-chart-trx></app-chart-trx>
+            </div>
 <!--            <div class="col-md-4">-->
 <!--                <div class="card card-chart">-->
 <!--                    <div class="card-header card-header-success">-->
@@ -38,53 +28,25 @@
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
-            <div class="col-md-4">
-                <div class="card card-chart">
-                    <div class="card-header card-header-warning">
-                        <div class="ct-chart" id="websiteViewsChart"></div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">GIÁ ETHEREUM</h4>
-                        <p class="card-category">
-                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today
-                            sales.</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> updated 4 minutes ago
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-chart">
-                    <div class="card-header card-header-danger">
-                        <div class="ct-chart" id="completedTasksChart"></div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">GIÁ EGRETIA</h4>
-                        <p class="card-category">Last Campaign Performance</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> campaign sent 2 days ago
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
-
-
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-6 col-md-12">
                 <app-hot-news></app-hot-news>
             </div>
+            <div class="col-lg-6 col-md-12">
+                <app-hot-news></app-hot-news>
+            </div>
+            <!--            <div class="col-lg-4 col-md-12">-->
+            <!--                <app-hot-news></app-hot-news>-->
+            <!--            </div>-->
         </div>
         <div class="row">
             <div class="col-md-12">
                 <app-newest-article></app-newest-article>
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="card">

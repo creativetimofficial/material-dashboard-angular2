@@ -1,11 +1,11 @@
 <div class="card card-chart">
-  <div class="card-header card-header-success">
+  <div class="card-header card-header-warning">
     <div *ngIf="chart">
-      <canvas id="canvas" style="position: relative; height:50vh; width:60vw">{{ chart }}</canvas>
+      <canvas id="canvas-eth" style="position: relative; height:50vh; width:60vw">{{ chart }}</canvas>
     </div>
   </div>
   <div class="card-body">
-    <h4 class="card-title">GIÁ BITCOIN (BTC): {{currentPrice}} USD</h4>
+    <h4 class="card-title">GIÁ ETHERUM (ETH): {{currentPrice}} USD</h4>
     <p *ngIf="downup >= 0.0" class="card-category">
       Biến động 24h gần nhất: <span class="text-success"><i class="fa fa-long-arrow-up"></i> {{downup}}% </span> </p>
     <p *ngIf="downup < 0.0" class="card-category">
