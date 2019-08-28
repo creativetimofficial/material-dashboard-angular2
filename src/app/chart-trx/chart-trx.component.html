@@ -1,7 +1,7 @@
 <div class="card card-chart">
   <div class="card-header card-header-danger">
-    <div *ngIf="chart">
-      <canvas id="canvas-trx" style="position: relative; height:50vh; width:60vw">{{ chart }}</canvas>
+    <div *ngIf="chart" class="chart-container">
+      <canvas id="canvas-trx">{{ chart }}</canvas>
     </div>
   </div>
   <div class="card-body">

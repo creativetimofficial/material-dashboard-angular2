@@ -23,6 +23,7 @@ import {ChartEthComponent} from '../../chart-eth/chart-eth.component';
 import {ChartTrxComponent} from '../../chart-trx/chart-trx.component';
 import { ArticleCategoryInsideComponent } from 'app/article-category-inside/article-category-inside.component';
 import { ArticleItemComponent } from 'app/article-item/article-item.component';
+import {CurrentPricingComponent} from '../../current-pricing/current-pricing.component';
 
 @NgModule({
   imports: [
@@ -56,6 +57,7 @@ import { ArticleItemComponent } from 'app/article-item/article-item.component';
     ChartLineComponent,
     ArticleCategoryInsideComponent,
     ArticleItemComponent,
+    CurrentPricingComponent,
   ]
 })
 

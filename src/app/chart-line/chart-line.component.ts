@@ -16,24 +16,45 @@ export class ChartLineComponent implements OnInit {
     time = [];
     price = [];
     chart = [];
-    currentPrice: number;
+    currentPrice: string;
     downup: number;
     constructor(private httpClient: HttpClient, private datePipe: DatePipe) {
         datePipe = new DatePipe('en-US');
     }
 
+    numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    roundAndSetComma(n: number) {
+        let getNumber = 3;
+        if (n < 1) {
+            for (let i = 1; i < 10; i++) {
+                if (n / Math.pow(0.1, i) >= 1) {
+                    if (i + 2 > 3) {
+                        getNumber = i + 2;
+                    }
+                    break;
+                }
+            }
+            return (Math.round(n * Math.pow(10, getNumber)) / Math.pow(10, getNumber)).toFixed(getNumber);
+        } else {
+            return this.numberWithCommas((Math.round(n * Math.pow(10, 2)) / Math.pow(10, 2)).toFixed(2));
+        }
+    }
     ngOnInit() {
         this.httpClient.get(this.url).subscribe((res: PricingDTO) => {
             // @ts-ignore
             this.downup = parseFloat(Math.round((res.prices[res.prices.length - 1][1] - res.prices[0][1]) / res.prices[0][1] * 10000) / 100).toFixed(2);
             // @ts-ignore
-            this.currentPrice = parseFloat(Math.round(res.prices[0][1] * 100) / 100).toFixed(2);
+            this.currentPrice = this.roundAndSetComma(res.prices[res.prices.length - 1][1]);
             res.prices.forEach(y => {
                 const date = this.datePipe.transform(y[0], 'hh:mm:ss');
                 this.time.push(date);
                 this.price.push(y[1]);
             });
             this.chart = new Chart('canvas', {
+                responsive: true,
                 type: 'line',
                 data: {
                     labels: this.time,
@@ -94,4 +115,5 @@ export class ChartLineComponent implements OnInit {
             });
         });
     }
+
 }

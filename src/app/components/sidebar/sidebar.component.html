@@ -19,58 +19,68 @@
         </div>
       </span>
     </form>
-    <ul class="nav navbar-nav nav-mobile-menu">
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
-                <i class="material-icons">dashboard</i>
-                <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                </p>
-            </a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">notifications</i>
-                <span class="notification">5</span>
-                <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                </p>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                <a class="dropdown-item" href="#">Another Notification</a>
-                <a class="dropdown-item" href="#">Another One</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
-                <i class="material-icons">person</i>
-                <p>
-                    <span class="d-lg-none d-md-block">Account</span>
-                </p>
-            </a>
-        </li>
-    </ul>
+<!--    <ul class="nav navbar-nav nav-mobile-menu">-->
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="javascript:void(0)">-->
+<!--                <i class="material-icons">dashboard</i>-->
+<!--                <p>-->
+<!--                    <span class="d-lg-none d-md-block">Stats</span>-->
+<!--                </p>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown">-->
+<!--            <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                <i class="material-icons">notifications</i>-->
+<!--                <span class="notification">5</span>-->
+<!--                <p>-->
+<!--                    <span class="d-lg-none d-md-block">Some Actions</span>-->
+<!--                </p>-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">-->
+<!--                <a class="dropdown-item" href="#">Mike John responded to your email</a>-->
+<!--                <a class="dropdown-item" href="#">You have 5 new tasks</a>-->
+<!--                <a class="dropdown-item" href="#">You're now friend with Andrew</a>-->
+<!--                <a class="dropdown-item" href="#">Another Notification</a>-->
+<!--                <a class="dropdown-item" href="#">Another One</a>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="javascript:void(0)">-->
+<!--                <i class="material-icons">person</i>-->
+<!--                <p>-->
+<!--                    <span class="d-lg-none d-md-block">Account</span>-->
+<!--                </p>-->
+<!--            </a>-->
+<!--        </li>-->
+<!--    </ul>-->
   </div>
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
-            <a *ngIf="menuItem.subMenu.length !== 0" class="nav-link" href="javascript:void(0)" id="{{menuItem.id}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a *ngIf="menuItem.subMenu.length !== 0" class="nav-link" href="javascript:void(0)" id="{{menuItem.id}}" data-toggle="collapse" data-target="#SubMenu1">
                 <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}{{menuItem.subMenu.length}}</p>
+                <p>{{menuItem.title}}</p>
             </a>
             <a *ngIf="menuItem.subMenu.length === 0" class="nav-link" [routerLink]="[menuItem.path]">
                 <i class="material-icons">{{menuItem.icon}}</i>
-                <p>{{menuItem.title}}{{menuItem.subMenu.length}}</p>
+                <p>{{menuItem.title}}</p>
             </a>
-            <div *ngIf="menuItem.subMenu.length !== 0" class="dropdown-menu dropdown-menu-right" aria-labelledby="{{menuItem.id}}">
-                <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                <a class="dropdown-item" href="#">Another Notification</a>
-                <a class="dropdown-item" href="#">Another One</a>
-            </div>
+            <ul *ngIf="menuItem.subMenu.length !== 0" class="collapse" id="SubMenu1">
+                <li routerLinkActive="active" *ngFor="let submenuItem of menuItem.subMenu" class="{{submenuItem.class}}">
+                    <a *ngIf="submenuItem.subMenu.length !== 0" class="nav-link" href="javascript:void(0)" id="{{submenuItem.id}}" data-toggle="dropdown" >
+                        <p>{{submenuItem.title}}</p>
+                    </a>
+                    <a *ngIf="submenuItem.subMenu.length === 0" class="nav-link" [routerLink]="[submenuItem.path]">
+                        <p>{{submenuItem.title}}</p>
+                    </a>
+                </li>
+            </ul>
+<!--            <div *ngIf="menuItem.subMenu.length !== 0" class="dropdown-menu dropdown-menu-right" attr.aria-labelledby="{{menuItem.id}}">-->
+<!--                <a class="dropdown-item" href="#">Mike John responded to your email</a>-->
+<!--                <a class="dropdown-item" href="#">You have 5 new tasks</a>-->
+<!--                <a class="dropdown-item" href="#">You're now friend with Andrew</a>-->
+<!--                <a class="dropdown-item" href="#">Another Notification</a>-->
+<!--                <a class="dropdown-item" href="#">Another One</a>-->
+<!--            </div>-->
         </li>
     </ul>
 </div>

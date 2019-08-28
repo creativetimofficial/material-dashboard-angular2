@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title ">BẢNG GIÁ COIN</h4>
+        <p class="card-category"> Các thông tin về giá coin được cập nhật liên tục</p>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive table-hover">
+            <table class="table">
+                <thead class=" text-primary">
+                <th class="hide-when-small">
+                    ID
+                </th>
+                <th>
+                    Mã coin
+                </th>
+                <th class="hide-when-small">
+                    Giá IEO
+                </th>
+                <th>
+                    Giá hiện tại
+                </th>
+                <th class="hide-when-small">
+                    Chênh lệch
+                </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of datas; let i = index">
+                        <td class="hide-when-small">{{i+1}}</td>
+                        <td>{{data.coinName}}</td>
+                        <td class="hide-when-small">{{data.ieo}}</td>
+                        <td>{{data.price}}</td>
+                        <td class="hide-when-small">{{data.ratio}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
