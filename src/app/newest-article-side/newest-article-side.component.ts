@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleDto } from 'app/dto/article-dto';
+import { environment } from 'environments/environment';
+import { HttpClientService } from 'app/service/httpclient.service';
 
 @Component({
   selector: 'app-newest-article-side',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newest-article-side.component.scss']
 })
 export class NewestArticleSideComponent implements OnInit {
+articles: ArticleDto[];
 
-  constructor() { }
+  constructor(private httpClientService: HttpClientService) {}
 
   ngOnInit() {
+      this.httpClientService.getArticles().subscribe(
+      (response) => {
+        this.handleSuccessfulResponse(response);
+      });
   }
 
+  handleSuccessfulResponse(response) {
+    this.articles = response;
+    console.log(this.articles);
+  }
 }

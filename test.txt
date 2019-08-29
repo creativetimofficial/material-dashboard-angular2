@@ -1,0 +1,93 @@
+@RequestParam(required = false, defaultValue = "0") int offset,
+@RequestParam(required = false, defaultValue = "10") int limit,
+@RequestParam(required = false, value = "sortBy") String sortBy,
+@RequestParam(required = false, value = "filter") String filterString
+
+PageRequest pr = PageRequest.of(offset, limit, Sort.by(ArrayUtils.contains(supportedSortFieldProduct, sortBy)? sortBy : defaultSortFieldProduct));
+PathBuilder<InvPlan> pathBuilder = new PathBuilder<>(InvPlan.class, "invPlan");
+BooleanExpression predicateFiltered = PredicateUtil.getPredicateForFilterString(filterString, pathBuilder);
+BooleanExpression predicate = QInvPlan.invPlan.status.eq(Constants.STATUS.ACTIVE).and(predicateFiltered);
+List<InvPlanDto> rtv = planProductService.getAllPlans(false, pr, predicate);
+
+package com.tcbs.util;
+
+import com.querydsl.core.types.dsl.BooleanExpression;
+import com.querydsl.core.types.dsl.PathBuilder;
+import com.tcbs.sdk.common.querydsl.PredicateBuilder;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Sort;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class PredicateUtil {
+    private static final String[] supportedSortField = new String[]{"createdDate", "id"};
+    private static final String defaultSortField = "id";
+
+    public PredicateUtil() {
+    }
+
+    public static BooleanExpression getPredicateForFilterString(String filterString, PathBuilder pathBuilder) {
+        PredicateBuilder predicateBuilder = PredicateBuilder.instance().from(pathBuilder);
+        BooleanExpression be = predicateBuilder.build();
+        if (StringUtils.isNotEmpty(filterString)) {
+            Pattern pattern = Pattern.compile("(.+?)(:|<|>)(.*),");
+            Matcher matcher = pattern.matcher(filterString + ",");
+            while(matcher.find()) {
+                String group1 = matcher.group(1);
+                String group2 = matcher.group(2);
+                String group3 = matcher.group(3);
+                Class<?> propType = BeanUtils.findPropertyType(group1, new Class[]{pathBuilder.getType()});
+                List<String> strings = listValue(group3);
+                for (String t : strings) {
+                    PredicateBuilder tempPredicate = PredicateBuilder.instance().from(pathBuilder);
+                    be = be == null? predicateBuilder.withByType(propType, group1, group2, t).build() :
+                            be.or(tempPredicate.withByType(propType, group1, group2, t).build());
+                }
+            }
+        }
+        return be;
+    }
+
+    private static List<String> listValue(String values) {
+        String[] listValue = values.split(",");
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < listValue.length; i++) {
+            list.add(listValue[i]);
+        }
+        return list;
+    }
+
+    public static Sort prepareSort(String sortBy) {
+        Sort sort = Sort.by(new Sort.Order(Sort.Direction.DESC, "id"));
+        if (StringUtils.isNotEmpty(sortBy)) {
+            String[] split = sortBy.split(":");
+            sort = Sort.by(ArrayUtils.contains(supportedSortField, split[0])? split[0] : defaultSortField);
+            sort = "ASC".equals(split[1].toUpperCase())? sort.ascending() : sort.descending();
+        }
+        return sort;
+    }
+}
+
+
+@Override
+public List<InvPlanDto> getAllPlans(boolean isRM, Pageable pageable, Predicate predicate) {
+    Page<InvPlan> plans = invPlanRepository.findAll(predicate, pageable);
+    List<InvPlan> listPlans = plans.getContent();
+    if (!CollectionUtils.isEmpty(listPlans)) {
+        Flux<InvPlan> flux = Flux.fromIterable(listPlans);
+        Flux<InvPlanDto> combinations = flux.flatMap(plan -> {
+            return Mono.fromFuture(convertEntityToDto(plan));
+        });
+        Mono<List<InvPlanDto>> result = combinations.collectList();
+        List<InvPlanDto> rtv = result.block();
+        return rtv;
+    } else {
+        throw new TcbsException(null,  TcbsErrorCode.PLAN_NOT_FOUND,
+                new StringBuilder("No Plan found"));
+    }
+}

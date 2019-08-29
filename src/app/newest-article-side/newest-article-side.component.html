@@ -1,55 +1,21 @@
 <div class="card">
-    <div class="card-header card-header-danger">
-        <h4 class="card-title ">TIM MỚI NHẤT</h4>
-    </div>
-    <div class="card-body row">
-        <div class="col-sm-12 article-wrawper">
-            <div class="card card-chart card-item">
-                <div class="card-body article-body">
-                    <div class="row">
-                        <div class="col-article-30"><img class="newest-article-img img-fluid" src="https://coin68.com/wp-content/uploads/2019/08/2208-750x536.jpg" width="240" height="160"/></div>
+	<div class="card-header card-header-danger">
+		<h4 class="card-title ">TIM MỚI NHẤT</h4>
+	</div>
+	<div *ngFor="let article of articles" class="card-body row">
+		<div class="col-sm-12 article-wrawper">
+			<div class="card card-chart card-item">
+				<div class="card-body article-body">
+					<div class="row">
+						<div class="col-article-30"><img class="newest-article-img img-fluid" src="{{article.image}}" width="240" height="160"/></div>
                         <div class="col-article-70">
-                            <h4 class="article-title">Phân tích giá Bitcoin ngày 23/08: Tương lai vẫn khá “ảm đạm” dù BTC vừa bật lên mức 10200 USD</h4>
+                            <h4 class="article-title">{{article.title}}</h4>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
-                        <i class="material-icons">access_time</i> campaign sent 2 days ago
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 article-wrawper">
-            <div class="card card-chart card-item">
-                <div class="card-body article-body">
-                    <div class="row">
-                        <div class="col-article-30"><img class="newest-article-img img-fluid" src="https://coin68.com/wp-content/uploads/2019/08/2208-750x536.jpg" width="240" height="160"/></div>
-                        <div class="col-article-70">
-                            <h4 class="article-title">Phân tích giá Bitcoin ngày 23/08: Tương lai vẫn khá “ảm đạm” dù BTC vừa bật lên mức 10200 USD</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">access_time</i> campaign sent 2 days ago
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 article-wrawper">
-            <div class="card card-chart card-item">
-                <div class="card-body article-body">
-                    <div class="row">
-                        <div class="col-article-30"><img class="newest-article-img img-fluid" src="https://coin68.com/wp-content/uploads/2019/08/2208-750x536.jpg" width="240" height="160"/></div>
-                        <div class="col-article-70">
-                            <h4 class="article-title">Phân tích giá Bitcoin ngày 23/08: Tương lai vẫn khá “ảm đạm” dù BTC vừa bật lên mức 10200 USD</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        <i class="material-icons">access_time</i> {{article.createdDate}}
                     </div>
                 </div>
             </div>
