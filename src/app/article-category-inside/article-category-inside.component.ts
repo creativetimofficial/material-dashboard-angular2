@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ArticleDto} from '../dto/article-dto';
+import {HttpClientService} from '../service/httpclient.service';
 
 @Component({
   selector: 'app-article-category-inside',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleCategoryInsideComponent implements OnInit {
 
-  constructor() { }
+  articles: ArticleDto[];
+
+  constructor(private httpClientService: HttpClientService) {}
 
   ngOnInit() {
+    this.httpClientService.getArticles().subscribe(
+        (response) => {
+          this.handleSuccessfulResponse(response);
+        });
   }
 
+  handleSuccessfulResponse(response) {
+    this.articles = response;
+    console.log(this.articles);
+  }
 }

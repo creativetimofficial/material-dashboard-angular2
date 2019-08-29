@@ -24,48 +24,28 @@
                 </th>
                 </thead>
                 <tbody>
-                <tr>
+                <tr *ngFor="let article of articles; let i = index" [routerLink]="['/articles', article.id]">
                     <td class="hide-when-small">
-                        1
+                        {{i+1}}
                     </td>
                     <td>
-                        <img src="https://coin68.com/wp-content/uploads/2019/08/2208-750x536.jpg" width="20"
+                        <img src="{{article.image}}" width="20"
                              height="20"/>
                     </td>
                     <td>
-                      Phân tích giá Bitcoin ngày 23/08: Tương lai vẫn khá “ảm đạm” dù BTC vừa bật lên mức 10200 USD
-                      <div class="stats align-items-center">
-                        <i class="material-icons">access_time</i> campaign sent 2 days ago
-                      </div>
+                        {{article.title}}
+                        <div class="stats align-items-center">
+                            <i class="material-icons">access_time</i> {{article.createdDate}}
+                        </div>
                     </td>
                     <td class="hide-when-small">
-                        24/08/2019 13:00:23
+                        {{article.createdDate}}
                     </td>
                     <td class="hide-when-small">
                         TIN TỨC NỔI BẬT
                     </td>
                 </tr>
-                <tr>
-                  <td class="hide-when-small">
-                    1
-                  </td>
-                  <td>
-                    <img src="https://coin68.com/wp-content/uploads/2019/08/2208-750x536.jpg" width="20"
-                         height="20"/>
-                  </td>
-                  <td>
-                    Phân tích giá Bitcoin ngày 23/08: Tương lai vẫn khá “ảm đạm” dù BTC vừa bật lên mức 10200 USD
-                    <div class="stats align-items-center">
-                      <i class="material-icons">access_time</i> campaign sent 2 days ago
-                    </div>
-                  </td>
-                  <td class="hide-when-small">
-                    24/08/2019 13:00:23
-                  </td>
-                  <td class="hide-when-small">
-                    TIN TỨC NỔI BẬT
-                  </td>
-                </tr>
+
                 </tbody>
             </table>
         </div>

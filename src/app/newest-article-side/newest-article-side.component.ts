@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleDto } from 'app/dto/article-dto';
-import { environment } from 'environments/environment';
 import { HttpClientService } from 'app/service/httpclient.service';
 
 @Component({

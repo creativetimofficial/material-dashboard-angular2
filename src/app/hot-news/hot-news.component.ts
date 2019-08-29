@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ArticleDto} from '../dto/article-dto';
+import {HttpClientService} from '../service/httpclient.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-hot-news',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotNewsComponent implements OnInit {
 
-  constructor() { }
+  articles: ArticleDto[];
+
+  constructor(private httpClientService: HttpClientService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.httpClientService.getArticles().subscribe(
+        (response) => {
+          this.handleSuccessfulResponse(response);
+        });
   }
 
+  resize(arr, newSize) {
+    arr.length = newSize;
+  }
+
+  handleSuccessfulResponse(response) {
+    this.articles = response;
+    this.resize(this.articles, 3);
+    console.log(this.articles);
+  }
+
+  onClickArticle(article) {
+    this.router.navigate(['/articles/' + article.id]);
+  }
 }

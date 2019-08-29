@@ -8,7 +8,7 @@
 //   articleUrl: 'http://localhost:8081/articles'
 // };
 export const environment = {
-  production: false,
-  authenticationUrl: 'https://trinhkien.herokuapp.com/authenticate',
-  articleUrl: 'https://trinhkien.herokuapp.com/articles'
-};
+    production: false,
+    authenticationUrl: 'https://trinhkien.herokuapp.com/authenticate',
+    articleUrl: 'https://trinhkien.herokuapp.com/articles'
+}
