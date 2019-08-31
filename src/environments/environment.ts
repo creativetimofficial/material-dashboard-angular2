@@ -9,6 +9,6 @@
 // };
 export const environment = {
     production: false,
-    authenticationUrl: 'https://trinhkien.herokuapp.com/authenticate',
-    articleUrl: 'https://trinhkien.herokuapp.com/articles'
+    authenticationUrl: 'https://api.vietnam-trader.com/authenticate',
+    articleUrl: 'https://api.vietnam-trader.com/articles'
 }
