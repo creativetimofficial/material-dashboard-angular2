@@ -39,7 +39,7 @@ export const ROUTES: RouteInfo[] = [
       { path: '23', title: 'Tin tức Blockchain',  icon: 'dashboard', class: '', subMenu: []},
       { path: '24', title: 'Kiến thức Blockchain',  icon:'library_books', class: '', subMenu: []},
     ]}, 
-    { path: '/category-inside/25', title: 'GIÁ BITCOIN HÔM NAY',  icon:'book', class: '', subMenu: []}, 
+    { path: '/category-inside/25', title: 'GIÁ BITCOIN HÔM NAY',  icon:'monetization_on', class: '', subMenu: []}, 
     // { path: '/table-list', title: 'SÀN GIAO DỊCH',  icon:'timeline', class: '', subMenu: []},
     // { path: '/icons', title: 'ICO, IEO & STO',  icon:'bubble_chart', class: '', subMenu: []},
     // { path: '/maps', title: 'BLOCKCHAIN',  icon:'code', class: '', subMenu: []},

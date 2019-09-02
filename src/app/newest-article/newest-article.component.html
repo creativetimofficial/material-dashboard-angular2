@@ -1,10 +1,10 @@
-<div class="card">
+<div class="card" id="newest-article">
   <div class="card-header card-header-danger">
-    <h4 class="card-title ">TIM MỚI NHẤT</h4>
-    <p class="card-category"> Here is a subtitle for this table</p>
+    <h4 class="card-title ">TIN MỚI NHẤT</h4>
+    <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
   </div>
-  <div class="card-body row">
-    <div *ngFor="let article of articles" class="col-lg-4 article-wrawper" [routerLink]="['/articles', article.id]">
+  <div class="card-body row" >
+    <div *ngFor="let article of articlePaging.content | paginate: { itemsPerPage: articlePaging.size, currentPage: articlePaging.number+1, totalItems: articlePaging.totalElements}" class="col-lg-4 article-wrawper" [routerLink]="['/articles', article.id]">
       <div class="card card-chart">
         <div class="card-body">
           <div class="row">
@@ -21,5 +21,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="row justify-content-center">
+      <pagination-controls autoHide = "true" (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
   </div>
 </div>

@@ -29,15 +29,11 @@ export class ArticleCategoryInsideComponent implements OnInit {
   }
 
   handleSuccessfulResponse(response) {
-    console.log(response);
     this.articlePaging = response.articles;
-    console.log(this.articlePaging);
-    console.log(this.articlePaging.content);
     this.catgory = response.category;
   }
 
   pageChanged(event) {
-    console.log(event);
     this.httpClientService.getArticles(event - 1, 10, undefined, undefined).subscribe(
         (response) => {
           this.handleSuccessfulResponse(response);
