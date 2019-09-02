@@ -4,18 +4,19 @@ import {HttpClientService} from '../service/httpclient.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
-  selector: 'app-hot-news',
-  templateUrl: './hot-news.component.html',
-  styleUrls: ['./hot-news.component.scss']
+  selector: 'app-hot-news-side',
+  templateUrl: './hot-news-side.component.html',
+  styleUrls: ['./hot-news-side.component.scss']
 })
-export class HotNewsComponent implements OnInit {
+export class HotNewsSideComponent implements OnInit {
+
 
   articles: ArticleDto[];
 
   constructor(private httpClientService: HttpClientService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.httpClientService.getArticles(0, 9, undefined, true).subscribe(
+    this.httpClientService.getArticles(0, 5, undefined, true).subscribe(
         (response) => {
           this.handleSuccessfulResponse(response);
         });

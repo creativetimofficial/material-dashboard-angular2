@@ -25,6 +25,7 @@ import { ArticleCategoryInsideComponent } from 'app/article-category-inside/arti
 import { ArticleItemComponent } from 'app/article-item/article-item.component';
 import {CurrentPricingComponent} from '../../current-pricing/current-pricing.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { HotNewsSideComponent } from 'app/hot-news-side/hot-news-side.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -43,6 +44,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
   declarations: [
     ChartTrxComponent,
     ChartEthComponent,
+    HotNewsSideComponent,
     HotNewsComponent,
     DashboardComponent,
     UserProfileComponent,

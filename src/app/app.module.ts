@@ -23,6 +23,7 @@ import {
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HotNewsSideComponent } from './hot-news-side/hot-news-side.component';
 
 @NgModule({
     imports: [

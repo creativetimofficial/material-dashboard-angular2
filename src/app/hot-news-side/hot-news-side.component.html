@@ -1,0 +1,24 @@
+<div class="card">
+	<div class="card-header card-header-danger">
+		<h4 class="card-title ">TIN TỨC NỔI BẬT</h4>
+	</div>
+	<div *ngFor="let article of articles" class="card-body row" [routerLink]="['/articles', article.id]">
+		<div class="col-sm-12 article-wrawper">
+			<div class="card card-chart card-item">
+				<div class="card-body article-body">
+					<div class="row">
+						<div class="col-article-30"><img class="newest-article-img img-fluid" src="{{article.image}}" width="240" height="160"/></div>
+                        <div class="col-article-70">
+                            <h4 class="article-title">{{article.title}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">access_time</i> {{article.createdDate}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

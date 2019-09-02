@@ -1,0 +1,114 @@
+.card .card-body {
+    padding-bottom: 5px;
+  }
+  .card.card-chart.card-item{
+    margin-bottom: 0px;
+  }
+  .card{
+    padding-bottom: 15px;
+  }
+  .card .card-header.card-header-danger{
+    padding: 5px;
+    padding-left: 15px;
+  }
+  .newest-article-img{
+    width: 100%;
+  }
+  .article-title{
+    font-weight: bold;
+    margin-top: 0px;
+  }
+  .card .card-footer{
+    padding-top: 6px;
+    margin-bottom: 6px;
+  }
+  .card-item{
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+  .col-article-30{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 5px;
+  }
+  .col-article-70{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .article-body{
+    padding-top: 8px;
+    padding-bottom: 0px;
+  }
+  @media screen and (max-width : 321px) {
+    .article-title {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+  }
+  /* Desktops and laptops ----------- */
+  @media screen and (min-width : 321px) and (max-width : 768px){
+    /* Styles */
+    .col-article-30{
+      width: 30%;
+    }
+    .col-article-70{
+      width: 70%;
+    }
+    .card .card-footer .stats, .article-title {
+      font-size: 12px;
+    }
+    .article-body{
+      padding-bottom: 2px;
+    }
+  }
+  @media screen and (min-width : 768px) and (max-width : 1366px){
+    .col-article-30{
+      width: 30%;
+    }
+    .col-article-70{
+      width: 70%;
+    }
+    .article-title {
+      font-size: 11px;
+      margin-top: 0px;
+    }
+    .card-item{
+      margin-top: 0px;
+    }
+    .card-item{
+      margin-bottom: 1vw;
+    }
+    .article-body{
+      padding-top: 8px;
+      padding-bottom: 0px;
+    }
+    .card .card-footer .stats{
+      font-size: 11px;
+    }
+  }
+  @media screen and (min-width : 1367px){
+    .col-article-30{
+      width: 30%;
+    }
+    .col-article-70{
+      width: 70%;
+    }
+    .article-title {
+      font-size: 16px;
+      margin-top: 0px;
+    }
+    .card-item{
+      margin-top: 0px;
+    }
+    .card-item{
+      margin-bottom: 1vw;
+    }
+    .article-body{
+      padding-top: 8px;
+      padding-bottom: 0px;
+    }
+    .card .card-footer .stats{
+      font-size: 16px;
+    }
+  }
+  

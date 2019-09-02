@@ -14,7 +14,7 @@ export class NewestArticleComponent implements OnInit {
   constructor(private httpClientService: HttpClientService) {}
 
   ngOnInit() {
-    this.httpClientService.getArticles(0, 10, undefined, true).subscribe(
+    this.httpClientService.getArticles(0, 9, undefined, undefined).subscribe(
         (response) => {
           this.handleSuccessfulResponse(response);
         });
