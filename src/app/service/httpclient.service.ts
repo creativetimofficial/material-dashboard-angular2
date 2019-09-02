@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {UserDTO} from '../dto/user-dto';
 import { ArticleDto } from 'app/dto/article-dto';
+import { ArticlePaging } from 'app/dto/paging';
 
 
 @Injectable({
@@ -14,10 +15,15 @@ export class HttpClientService {
   ) {
   }
 
-
-  getArticles() {
-    console.log(environment.articleUrl);
-    return this.httpClient.get<ArticleDto[]>(environment.articleUrl);
+  getArticles(page: number, size:number, categoryId: number, hot: boolean) {
+    let url = environment.apiUrl + 'articles?page=' + page + '&size=' + size;
+    if (hot != undefined) {
+      url = url + '&hot=' + hot;
+    }
+    if (categoryId != undefined) {
+      url = url + '&categoryId=' + categoryId;
+    }
+    return this.httpClient.get<ArticlePaging[]>(url);
   }
 
   getArticleById(id) {

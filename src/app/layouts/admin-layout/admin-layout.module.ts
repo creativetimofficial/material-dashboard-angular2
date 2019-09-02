@@ -24,7 +24,7 @@ import {ChartTrxComponent} from '../../chart-trx/chart-trx.component';
 import { ArticleCategoryInsideComponent } from 'app/article-category-inside/article-category-inside.component';
 import { ArticleItemComponent } from 'app/article-item/article-item.component';
 import {CurrentPricingComponent} from '../../current-pricing/current-pricing.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   imports: [
     CommonModule,
@@ -38,6 +38,7 @@ import {CurrentPricingComponent} from '../../current-pricing/current-pricing.com
     MatSelectModule,
     MatTooltipModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   declarations: [
     ChartTrxComponent,

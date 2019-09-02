@@ -15,7 +15,7 @@ export class HotNewsComponent implements OnInit {
   constructor(private httpClientService: HttpClientService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.httpClientService.getArticles().subscribe(
+    this.httpClientService.getArticles(0, 10, undefined, true).subscribe(
         (response) => {
           this.handleSuccessfulResponse(response);
         });
@@ -26,7 +26,7 @@ export class HotNewsComponent implements OnInit {
   }
 
   handleSuccessfulResponse(response) {
-    this.articles = response;
+    this.articles = response.articles.content;
     this.resize(this.articles, 3);
     console.log(this.articles);
   }

@@ -1,17 +1,27 @@
-import {UserDTO} from './user-dto';
-import { CategoryDto } from './category-dto';
-
 export class ArticleDto {
   public id: string;
   public title: string;
   public image: string;
-  public owner: UserDTO;
+  public username: string;
   public views: number;
-  public publishDate: string;
-  public likes: string;
-  public unlikes: string;
+  public likes: number;
+  public unlikes: number;
   public tags: string;
   public content: string;
+  public publishDate: string;
   public createdDate: Date;
-  public category: CategoryDto;
+}
+export class ArticleSummaryDTO {
+  public id: string;
+  public title: string;
+  public image: string;
+  public username: string;
+  public level: number;
+  public type: string;
+  public views: number;
+  public likes: number;
+  public unlikes: number;
+  public tags: string;
+  public createdDate: Date;
+  public publishDate: string;
 }

@@ -2,14 +2,14 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header card-header-danger">
-                <h4 class="card-title">Block Plus Summit Series III – Dẫn đường cho tương lai của công nghệ tài chính và tiền điện tử</h4>
-                <p class="card-category">Created using Roboto Font Family</p>
+                <h4 class="card-title">{{categoryName}}</h4>
+                <!-- <p class="card-category">Created using Roboto Font Family</p> -->
             </div>
             <div class="card-body">
                 <div class="row">
                     <div  class="col-md-8">
                         <div class="row">
-                            <div *ngFor="let article of articles" class="col-md-6" [routerLink]="['/articles', article.id]">
+                            <div *ngFor="let article of articlePaging.content | paginate: { itemsPerPage: articlePaging.size, currentPage: articlePaging.number+1, totalItems: articlePaging.totalElements}" class="col-md-6" [routerLink]="['/articles', article.id]">
                                 <div class="card card-chart">
                                     <div class="card-body">
                                         <div class="row">
@@ -26,6 +26,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <pagination-controls autoHide = "true" (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
                         </div>
                     </div>
                     <div class="col-md-4">

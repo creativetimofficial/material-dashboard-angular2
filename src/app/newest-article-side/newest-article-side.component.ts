@@ -13,14 +13,14 @@ articles: ArticleDto[];
   constructor(private httpClientService: HttpClientService) {}
 
   ngOnInit() {
-      this.httpClientService.getArticles().subscribe(
+      this.httpClientService.getArticles(0, 10, undefined, undefined).subscribe(
       (response) => {
         this.handleSuccessfulResponse(response);
       });
   }
 
   handleSuccessfulResponse(response) {
-    this.articles = response;
+    this.articles = response.articles.content;
     console.log(this.articles);
   }
 }
