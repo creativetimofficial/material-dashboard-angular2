@@ -1,4 +1,4 @@
-import { ArticleSummaryDTO } from "./article-dto";
+import {ArticleSummaryDTO} from './article-dto';
 
 export class ArticlePaging {
     public content: ArticleSummaryDTO;
@@ -12,6 +12,7 @@ export class ArticlePaging {
     public numberOfElements: number;
     public empty: boolean;
 }
+
 export class Sort {
     unsorted: boolean;
     sorted: boolean;
