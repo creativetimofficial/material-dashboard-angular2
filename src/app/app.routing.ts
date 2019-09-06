@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
-import {LocationStrategy, PathLocationStrategy} from '@angular/common';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import {NgModule} from '@angular/core';
+import {CommonModule, LocationStrategy, PathLocationStrategy,} from '@angular/common';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule, Routes} from '@angular/router';
+import {AdminLayoutComponent} from './layouts/admin-layout/admin-layout.component';
 
-const routes: Routes =[
+const routes: Routes = [
   {
     path: '',
     redirectTo: 'dashboard',
@@ -26,10 +25,10 @@ const routes: Routes =[
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [
-  ],
+  exports: [],
   providers: [
-    {provide: LocationStrategy, useClass: PathLocationStrategy}
+    {provide: LocationStrategy, useClass: PathLocationStrategy},
   ],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
