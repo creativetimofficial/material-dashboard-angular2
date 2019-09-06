@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ArticleDto} from '../dto/article-dto';
 import {HttpClientService} from '../service/httpclient.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -20,6 +20,16 @@ export class ArticleComponent implements OnInit {
       private meta: Meta) {}
 
   ngOnInit() {
+    this.router.routeReuseStrategy.shouldReuseRoute = function(){
+      return false;
+    };
+
+    this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        this.router.navigated = false;
+        window.scrollTo(0, 0);
+      }
+    });
     const id = this.route.params['value'].url;
     this.httpClientService.getArticleById(id).subscribe(
         (response) => {
@@ -35,17 +45,9 @@ export class ArticleComponent implements OnInit {
   }
   setMetaData(data) {
     this.title.setTitle(data.title);
-
-    this.meta.updateTag({ 'name': 'keywords', 'content': data.keywords });
     this.meta.updateTag({ 'name': 'description', 'content': data.title });
-    this.meta.updateTag({ 'name': 'twitter:card', 'content': 'summary_large_image' });
-    this.meta.updateTag({ 'name': 'twitter:title', 'content': data.title });
-    this.meta.updateTag({ 'name': 'twitter:text:title', 'content': data.title });
-    this.meta.updateTag({ 'name': 'twitter:description', 'content': data.title });
-    this.meta.updateTag({ 'name': 'twitter:image', 'content': data.image });
-    this.meta.updateTag({ 'name': 'twitter:image:alt', 'content': data.title });
     this.meta.updateTag({ 'property': 'og:title', 'content' : data.title });
-    this.meta.updateTag({ 'property': 'og:url', 'content': 'https://vietnam-trader.com/test' });
+    this.meta.updateTag({ 'property': 'og:url', 'content': 'https://vietnam-trader.com/articles/' + data.url });
     this.meta.updateTag({ 'property': 'og:image', 'content': data.image });
     this.meta.updateTag({ 'property': 'og:image:alt', 'content': data.title });
     this.meta.updateTag({ 'property': 'og:description', 'content': data.title });

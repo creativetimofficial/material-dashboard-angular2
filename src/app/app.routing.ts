@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import {APP_BASE_HREF, CommonModule,} from '@angular/common';
+import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
+import {LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 const routes: Routes =[
@@ -24,11 +24,12 @@ const routes: Routes =[
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes,{
-       useHash: true
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [
+  ],
+  providers: [
+    {provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
 })
 export class AppRoutingModule { }
