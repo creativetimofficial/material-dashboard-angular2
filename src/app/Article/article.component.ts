@@ -20,7 +20,7 @@ export class ArticleComponent implements OnInit {
       private meta: Meta) {}
 
   ngOnInit() {
-    const id = this.route.params['value'].id;
+    const id = this.route.params['value'].url;
     this.httpClientService.getArticleById(id).subscribe(
         (response) => {
           this.setMetaData(response);

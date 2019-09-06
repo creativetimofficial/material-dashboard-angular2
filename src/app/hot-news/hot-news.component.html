@@ -24,7 +24,7 @@
                 </th>
                 </thead>
                 <tbody>
-                <tr *ngFor="let article of articles; let i = index" [routerLink]="['/articles', article.id]">
+                <tr *ngFor="let article of articles; let i = index" [routerLink]="['/articles', article.url]">
                     <td class="hide-when-small">
                         {{i+1}}
                     </td>

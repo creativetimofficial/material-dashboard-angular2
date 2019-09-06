@@ -4,7 +4,7 @@
     <!-- <p class="card-category"> Here is a subtitle for this table</p> -->
   </div>
   <div class="card-body row" >
-    <div *ngFor="let article of articlePaging.content | paginate: { itemsPerPage: articlePaging.size, currentPage: articlePaging.number+1, totalItems: articlePaging.totalElements}" class="col-lg-4 article-wrawper" [routerLink]="['/articles', article.id]">
+    <div *ngFor="let article of articlePaging.content | paginate: { itemsPerPage: articlePaging.size, currentPage: articlePaging.number+1, totalItems: articlePaging.totalElements}" class="col-lg-4 article-wrawper" [routerLink]="['/articles', article.url]">
       <div class="card card-chart">
         <div class="card-body">
           <div class="row">

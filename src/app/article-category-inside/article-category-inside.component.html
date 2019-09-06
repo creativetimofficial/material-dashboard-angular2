@@ -9,7 +9,7 @@
                 <div class="row">
                     <div  class="col-md-8">
                         <div class="row">
-                            <div *ngFor="let article of articlePaging.content | paginate: { itemsPerPage: articlePaging.size, currentPage: articlePaging.number+1, totalItems: articlePaging.totalElements}" class="col-md-6" [routerLink]="['/articles', article.id]">
+                            <div *ngFor="let article of articlePaging.content | paginate: { itemsPerPage: articlePaging.size, currentPage: articlePaging.number+1, totalItems: articlePaging.totalElements}" class="col-md-6" [routerLink]="['/articles', article.url]">
                                 <div class="card card-chart">
                                     <div class="card-body">
                                         <div class="row">

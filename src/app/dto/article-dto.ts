@@ -1,4 +1,5 @@
 export class ArticleDto {
+  public url: string;
   public id: string;
   public title: string;
   public image: string;
@@ -12,6 +13,7 @@ export class ArticleDto {
   public createdDate: Date;
 }
 export class ArticleSummaryDTO {
+  public url: string;
   public id: string;
   public title: string;
   public image: string;

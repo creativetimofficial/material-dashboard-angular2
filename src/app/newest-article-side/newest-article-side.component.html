@@ -2,7 +2,7 @@
 	<div class="card-header card-header-danger">
 		<h4 class="card-title ">TIN MỚI NHẤT</h4>
 	</div>
-	<div *ngFor="let article of articles" class="card-body row" [routerLink]="['/articles', article.id]">
+	<div *ngFor="let article of articles" class="card-body row" [routerLink]="['/articles', article.url]">
 		<div class="col-sm-12 article-wrawper">
 			<div class="card card-chart card-item">
 				<div class="card-body article-body">
