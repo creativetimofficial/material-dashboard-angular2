@@ -55,5 +55,6 @@ export class ArticleComponent implements OnInit {
     // document.getElementsByTagName('head')[0].appendChild(meta);
     this.meta.updateTag({name: 'description', content: this.article.title});
     this.meta.updateTag({name: 'og:image', content: this.article.image});
+    this.meta.updateTag({property: 'og:image', content: this.article.image});
   }
 }
