@@ -120,39 +120,12 @@
               </div>
           </div>
       </div>
+
       <div class="row">
           <div class="col-lg-6 col-md-12">
-              <div class="card">
-                  <div class="card-header card-header-tabs card-header-primary">
-                      <div class="nav-tabs-navigation">
-                          <div class="nav-tabs-wrapper">
-                              <span class="nav-tabs-title">Tasks:</span>
-                              <ul class="nav nav-tabs" data-tabs="tabs">
-                                  <li class="nav-item">
-                                      <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
-                                          <i class="material-icons">bug_report</i> Bugs
-                                          <div class="ripple-container"></div>
-                                      </a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a mat-button class="nav-link" href="#messages" data-toggle="tab">
-                                          <i class="material-icons">code</i> Website
-                                          <div class="ripple-container"></div>
-                                      </a>
-                                  </li>
-                                  <li class="nav-item">
-                                      <a mat-button class="nav-link" href="#settings" data-toggle="tab">
-                                          <i class="material-icons">cloud</i> Server
-                                          <div class="ripple-container"></div>
-                                      </a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="card-body">
-                      <div class="tab-content">
-                          <div class="tab-pane active" id="profile">
+              <dashboard-tab-card label="Tasks:" color="primary">
+                <dashboard-card-tab>
+                  <ng-template dashboardCardTabLabel><i class="material-icons">bug_report</i> Bugs</ng-template>
                               <table class="table">
                                   <tbody>
                                       <tr>
@@ -242,8 +215,9 @@
                                       </tr>
                                   </tbody>
                               </table>
-                          </div>
-                          <div class="tab-pane" id="messages">
+                </dashboard-card-tab>
+                <dashboard-card-tab>
+                    <ng-template dashboardCardTabLabel><i class="material-icons">code</i> Website</ng-template>
                               <table class="table">
                                   <tbody>
                                       <tr>
@@ -291,8 +265,9 @@
                                       </tr>
                                   </tbody>
                               </table>
-                          </div>
-                          <div class="tab-pane" id="settings">
+                </dashboard-card-tab>
+                <dashboard-card-tab>
+                    <ng-template dashboardCardTabLabel><i class="material-icons">cloud</i> Server</ng-template>
                               <table class="table">
                                   <tbody>
                                       <tr>
@@ -361,12 +336,10 @@
                                       </tr>
                                   </tbody>
                               </table>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
+                </dashboard-card-tab>
+              </dashboard-tab-card>
+            </div>
+            <div class="col-lg-6 col-md-12">
               <div class="card">
                   <div class="card-header card-header-warning">
                       <h4 class="card-title">Employees Stats</h4>
