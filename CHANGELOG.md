@@ -1,3 +1,9 @@
+## [2.5.0] - 2020-10-06
+### Updates
+- update to Angular 10
+- update all dependencies to match Angular 10 version
+
+
 ## [2.4.0] - 2020-03-05
 ### Updates
 - update to Angular 9
