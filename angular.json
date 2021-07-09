@@ -43,7 +43,14 @@
           },
           "configurations": {
             "production": {
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": false,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              },
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
@@ -58,7 +65,15 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
-            }
+            },
+            "development": {
+             "buildOptimizer": false,
+             "optimization": false,
+             "vendorChunk": true,
+             "extractLicenses": false,
+             "sourceMap": true,
+             "namedChunks": true
+           }
           }
         },
         "serve": {
@@ -69,8 +84,12 @@
           "configurations": {
             "production": {
               "browserTarget": "material-dashboard-angular:build:production"
+            },
+            "development": {
+              "browserTarget": "material-dashboard-angular:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
