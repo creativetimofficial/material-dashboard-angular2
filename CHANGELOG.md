@@ -1,3 +1,10 @@
+## [2.6.0] - 2021-07-15
+### Updates
+- update to Angular 12
+- update all dependencies to match Angular 12 version
+
+When you build and serve your app it is possible that some warnings to appear on your terminal. Those will NOT affect your product.
+
 ## [2.5.0] - 2020-10-07
 ### Updates
 - update to Angular 10

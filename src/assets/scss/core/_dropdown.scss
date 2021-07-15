@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Menus https://www.google.com/design/spec/components/menus.html#menus-specs
 // Dropdown buttons (mobile and desktop) https://www.google.com/design/spec/components/buttons.html#buttons-dropdown-buttons
 
@@ -90,7 +92,7 @@
     text-decoration: none;
 
     font-size: .8125rem;
-    border-radius: $border-radius / 2;
+    border-radius: math.div($border-radius, 2);
     margin: 0 $bmd-dropdown-margin-y;
     @include transitions($fast-transition-time, $transition-linear);
 

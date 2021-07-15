@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $bmd-label-color-focus: $brand-primary !default;
 $bmd-invalid-underline: $brand-danger !default;
 $bmd-readonly-underline: $input-border-color !default;
@@ -20,8 +22,8 @@ $mdb-input-font-size-base: 14px !default;
 $mdb-input-font-size-large: ceil(($font-size-base * 1.25)) !default; // ~20px
 $mdb-input-font-size-small: ceil(($font-size-base * 0.75)) !default; // ~12px
 
-$bmd-bmd-label-static-size-ratio: 75 / 100 !default;
-$bmd-help-size-ratio: 75 / 100 !default;
+$bmd-bmd-label-static-size-ratio: math.div(75, 100) !default;
+$bmd-help-size-ratio: math.div(75, 100) !default;
 
 $bmd-form-control-bg-repeat-y: no-repeat !default;
 $bmd-form-control-bg-position: center bottom, center calc(100% - 1px) !default;
