@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .togglebutton {
   vertical-align: middle;
   &, label, input, .toggle {
@@ -70,7 +72,7 @@
     // set bg when checked
     input[type=checkbox]:checked {
       + .toggle {
-        background-color: rgba($brand-primary, (70/100)); // Switch bg on
+        background-color: rgba($brand-primary, (math.div(70,100))); // Switch bg on
       }
 
       + .toggle:after {
@@ -78,7 +80,7 @@
       }
 
       + .toggle:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba($brand-primary, (10/100)); // Ripple on
+        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba($brand-primary, (math.div(10,100))); // Ripple on
       }
     }
   }
