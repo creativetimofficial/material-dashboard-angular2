@@ -1,0 +1,26 @@
+<div class="card">
+	<dashboard-tab-card-header #tabHeader [selectedIndex]="selectedIndex || 0" [color]="color">
+		<div class="nav-tabs-navigation">
+			<div class="nav-tabs-wrapper">
+				<span class="nav-tabs-title">{{label}}</span>
+				<ul class="nav nav-tabs">
+					<li role="tab" class="nav-item" *ngFor="let tab of _tabs; let i = index" [id]="_getTabLabelId(i)" [class.mat-tab-label-active]="selectedIndex == i">
+						<a mat-button class="nav-link" href="javascript:void(0)" [class.active]="selectedIndex == i" [disabled]="tab.disabled" (click)="_handleClick(tab, i)">
+							<ng-template [ngIf]="tab.templateLabel">
+								<ng-template [cdkPortalOutlet]="tab.templateLabel"></ng-template>
+							</ng-template>
+							<ng-template [ngIf]="!tab.templateLabel">{{tab.textLabel}}</ng-template>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</dashboard-tab-card-header>
+
+	<div class="card-body">
+		<div class="tab-content">
+			<ng-template [cdkPortalOutlet]="selectedTab?.content"></ng-template>
+		</div>
+	</div>
+
+</div>
