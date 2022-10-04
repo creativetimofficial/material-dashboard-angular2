@@ -1,0 +1,77 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "heros": [
+    {
+      "id": 1,
+      "name": "Iron Man",
+      "fullName": "Tony Stark",
+      "placeOfBirth": "New York",
+      "publisher": "Marvel Comics"
+    },
+    {
+      "id": 2,
+      "name": "Wolverine",
+      "fullName": "Logan",
+      "placeOfBirth": "Canada",
+      "publisher": "Marvel Comics"
+    },
+    {
+      "id": 3,
+      "name": "Wolverine",
+      "fullName": "Logan",
+      "placeOfBirth": "Canada",
+      "publisher": "Marvel Comics"
+    },
+    {
+      "id": 4,
+      "name": "Wolverine",
+      "fullName": "Logan",
+      "placeOfBirth": "Canada",
+      "publisher": "Marvel Comics"
+    },
+    {
+      "id": 5,
+      "name": "Wolverine",
+      "fullName": "Logan",
+      "placeOfBirth": "Canada",
+      "publisher": "Marvel Comics"
+    },
+    {
+      "id": 6,
+      "name": "Wolverine",
+      "fullName": "Logan",
+      "placeOfBirth": "Canada",
+      "publisher": "Marvel Comics"
+    },
+    {
+      "id": 7,
+      "name": "Wolverine",
+      "fullName": "Logan",
+      "placeOfBirth": "Canada",
+      "publisher": "Marvel Comics"
+    },
+    {
+      "id": 8,
+      "name": "Wolverine",
+      "fullName": "Logan",
+      "placeOfBirth": "Canada",
+      "publisher": "Marvel Comics"
+    }
+  ]
+}

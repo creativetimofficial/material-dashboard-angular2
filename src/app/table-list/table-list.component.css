@@ -1,0 +1,18 @@
+.container {
+    /* width: 60%; */
+    margin: 0 auto;
+}
+
+.content {
+    padding: 1rem;
+    /* border: 1px solid rgb(10, 10, 10) !important; */
+    /* border-radius: 0.1rem; */
+}
+
+.table {
+    width: 100%;
+}
+
+.filter {
+    width: 100%;
+}

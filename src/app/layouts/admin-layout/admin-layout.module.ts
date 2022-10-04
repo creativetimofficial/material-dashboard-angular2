@@ -18,6 +18,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -30,6 +34,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule
   ],
   declarations: [
     DashboardComponent,
