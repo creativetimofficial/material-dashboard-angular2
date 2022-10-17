@@ -1,0 +1,3 @@
+:host ::ng-deep .ck-content{
+    min-height: 500px !important;
+}
