@@ -17,7 +17,9 @@
                   </div>
                   <div  class="col-md-12">
                     <!-- <ckeditor [config]="editorConfig" [editor]="editor"  (ready)="onReady($event)"></ckeditor> -->
-                    <div id="editor"></div>
+                    <!-- <div id="editor"></div> -->
+                    <ckeditor (dataChange)="onChange($event)" [config]="editorConfig" editorUrl="/assets/ckeditor/ckeditor.js">
+                    </ckeditor>
                   </div>
             </div>
         </form>

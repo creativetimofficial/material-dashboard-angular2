@@ -1,28 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic'; 
+import { CKEditor4 } from 'ckeditor4-angular/ckeditor';
 import { MyUploadAdapter } from 'plugin/MyUploadAdapter';
+
+declare var CKEDITOR: any;
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit  {
-  editor = ClassicEditor;
-  editorConfig = {
-    placeholder:'Type something ...',
-  //  toolbar: [ [ 'Bold' ] ]
-  }
-  
-  constructor() {    
-   }
 
-  ngOnInit(): void {
-    ClassicEditor
-    .create( document.querySelector( '#editor' ),{
-      extraPlugins: [this.UploadAdapterPlugin,'html5video'],
-   //   toolbar: [ 'heading', 'bold', 'italic', 'numberedList', 'bulletedList' ],
-    })
-    
+  editorConfig = {
+  skin:'moono',
+  extraPlugins:'easyimage,filebrowser',
+  removePlugins: 'image',
+  filebrowserBrowseUrl: '/browser/browse.php',
+  filebrowserUploadUrl: '/uploader/upload.php',
+  //  cloudServices_tokenUrl: 'https://example.com/cs-token-endpoint',
+  //  cloudServices_uploadUrl: 'https://your-organization-id.cke-cs.com/easyimage/upload/'
+  }
+  data = ''
+  constructor() {}
+
+  ngOnInit(): void { }
+  onChange(e:CKEditor4.EventInfo){
+    console.log(e)
   }
   UploadAdapterPlugin( editor ) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
