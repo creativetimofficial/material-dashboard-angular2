@@ -8,27 +8,33 @@ declare var CKEDITOR: any;
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit  {
+export class PostComponent implements OnInit {
 
   editorConfig = {
-  skin:'moono',
-  extraPlugins:'easyimage,filebrowser',
-  removePlugins: 'image',
-  filebrowserBrowseUrl: '/browser/browse.php',
-  filebrowserUploadUrl: '/uploader/upload.php',
-  //  cloudServices_tokenUrl: 'https://example.com/cs-token-endpoint',
-  //  cloudServices_uploadUrl: 'https://your-organization-id.cke-cs.com/easyimage/upload/'
+    skin: 'moono',
+    extraPlugins: 'easyimage,filebrowser,nsvideo',
+    removePlugins: 'image',
+    filebrowserBrowseUrl: '/browser/browse.php',
+    filebrowserUploadUrl: '/uploader/upload.php',
+    cloudServices_tokenUrl: 'https://93202.cke-cs.com/token/dev/84a3eeb66108675569194fea0862cc962b7b6df47776938da8da9f2ba0ce?limit=10',
+    cloudServices_uploadUrl: 'https://93202.cke-cs.com/easyimage/upload/'
   }
   data = ''
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void { }
-  onChange(e:CKEditor4.EventInfo){
-    console.log(e)
+  ngOnInit(): void {
+    setTimeout(() => this.init(), 1000);
   }
-  UploadAdapterPlugin( editor ) {
+  init() {
+    const editor = CKEDITOR.instances.editor1
+   
+  }
+  onChange(e: CKEditor4.EventInfo) {
+   // console.log(e)
+  }
+  UploadAdapterPlugin(editor) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
-        return new MyUploadAdapter(loader);
+      return new MyUploadAdapter(loader);
     }
   }
   onReady($event) {
