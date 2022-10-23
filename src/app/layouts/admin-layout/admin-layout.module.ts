@@ -19,6 +19,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { PostComponent } from 'app/post/post.component';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { SafeHtmlPipe } from 'app/post/post.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -42,7 +43,8 @@ import { CKEditorModule } from 'ckeditor4-angular';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    PostComponent
+    PostComponent,
+    SafeHtmlPipe
   ]
 })
 

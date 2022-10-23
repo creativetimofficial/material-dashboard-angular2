@@ -4,16 +4,7 @@ CKEDITOR.plugins.add( 'nsvideo', {
             exec: function (e) {
               const now = new Date();
               const content = `
-              <div class="ckeditor-html5-video" data-responsive="true" style="text-align:center">
-<video autoplay="autoplay" controlslist="nodownload" src="https://www.w3schools.com/html/mov_bbb.mp4" style="max-width: 100%; height: auto;">&nbsp;</video>
-</div>
-
-<div class="ckeditor-html5-video" style="text-align: center;">
-<video controlslist="nodownload" src="https://www.w3schools.com/html/mov_bbb.mp4">&nbsp;</video>
-</div>
-
-<p>&nbsp;</p>
-
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/dV-znS6RPbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               `
               e.insertHtml(content);
             }
