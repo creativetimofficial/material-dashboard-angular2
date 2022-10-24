@@ -1,19 +1,18 @@
 CKEDITOR.plugins.add( 'nsvideo', {
+  requires: 'widget',
+  icons:'nsvideo',
     init: function( editor ) {
-        editor.addCommand('insertNsVideo', {
-            exec: function (e) {
-              const now = new Date();
-              const content = `
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/dV-znS6RPbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              `
-              e.insertHtml(content);
-            }
-          });
-          editor.ui.addButton('nsvideo', {
-            label: 'Insert Video',
-            command: 'insertNsVideo',
-            toolbar: 'insert,0',
-            icon: 'plugins/nsvideo/icons/timestamp.png'
-          });
+    editor.widgets.add( 'nsvideo', {
+      button: 'Insert Video',
+      template:
+      '<div class="simplebox">' +
+      `<video id="video1" style="width:600px;max-width:100%;" controls="">
+      //       <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      //       <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+      //       Your browser does not support HTML5 video.
+      //     </video>`
+      +'</div>'
+   
+  } );
     }
 });

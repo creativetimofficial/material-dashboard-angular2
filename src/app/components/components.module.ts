@@ -5,21 +5,25 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-
+import { HaneditorComponent } from './haneditor/haneditor.component';
+import { CKEditorModule } from 'ckeditor4-angular';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    CKEditorModule
   ],
   declarations: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    HaneditorComponent
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    HaneditorComponent
   ]
 })
 export class ComponentsModule { }

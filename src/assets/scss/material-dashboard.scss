@@ -57,3 +57,22 @@
  @import "core/responsive";
 
 @import "core/angular-modal.scss";
+
+.btn-primary{
+    color: #fff !important;
+    background-color: #1266f1 !important;
+}
+.btn-secondary{
+    color: #fff !important;
+    background-color: #b23cfd !important;
+}
+.post-action{
+    margin: 18px 0 0 0;
+    justify-content: flex-end;
+    display: flex;
+    gap: 20px;
+    button{
+        width: 110px;
+        padding: 10px;
+    }
+}

@@ -3,31 +3,37 @@
     <div class="card">
       <div class="card-header card-header-danger">
         <h3 class="card-title">Tạo bài viết</h3>
-        <p class="card-category">
-            Tạo bài viết mới         
-        </p>
+        <p class="card-category">Tạo bài viết mới</p>
       </div>
       <div class="card-body">
         <form>
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field class="example-full-width">
-                      <input autocomplete="off" matInput placeholder="Tiêu đề bài viết" type="text">
-                    </mat-form-field>
-                  </div>
-                  <div  class="col-md-12">
-                    <!-- <ckeditor [config]="editorConfig" [editor]="editor"  (ready)="onReady($event)"></ckeditor> -->
-                    <!-- <div id="editor"></div> -->
-                    <ckeditor [config]="editorConfig" editorUrl="/assets/ckeditor/ckeditor.js">
-                    </ckeditor>
-                  </div>
+          <div class="row">
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width">
+                <input
+                  autocomplete="off"
+                  matInput
+                  placeholder="Tiêu đề bài viết"
+                  type="text"
+                />
+              </mat-form-field>
             </div>
-            <div class="row">
-              <button (click)="post()">Post</button>
+            <div class="col-md-12">
+              <app-haneditor #editor></app-haneditor>            
             </div>
-            
-              <div [innerHTML]="content | safeHtml"></div>
-            
+          </div>
+          <div class="row">
+            <div class="col-md-12 post-action">
+              <button type="button" class="btn btn-secondary" (click)="preview()">
+                {{ "preview" | uppercase }}
+              </button>
+              <button type="button" class="btn btn-primary">
+                {{ "post" | uppercase }}
+              </button>
+            </div>
+          </div>
+
+          <!-- <div [innerHTML]="content | safeHtml"></div> -->
         </form>
       </div>
     </div>
