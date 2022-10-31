@@ -14,5 +14,6 @@ CKEDITOR.plugins.add( 'nsvideo', {
       +'</div>'
    
   } );
+  
     }
 });

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./typography.component.css']
 })
 export class TypographyComponent implements OnInit {
-
+  id:string='defaultId'
   constructor() { }
 
   ngOnInit() {

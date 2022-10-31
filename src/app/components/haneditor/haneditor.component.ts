@@ -21,6 +21,7 @@ export class HaneditorComponent implements OnInit {
       { name: "colors", groups: ["colors"] },
       { name: "tools", groups: ["tools"] },
     ],
+    contentsCss:'/assets/css/demo.css',
     height: "40vh",
     skin: "moono",
     extraPlugins: "easyimage,filebrowser,nsvideo,font,justify",

@@ -19,9 +19,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { PostComponent } from 'app/post/post.component';
 import { CKEditorModule } from 'ckeditor4-angular';
-//import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { SafeHtmlPipe } from 'app/core/pipe/commonPipe';
 import { ComponentsModule } from 'app/components/components.module';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   imports: [
     CommonModule,
@@ -35,7 +35,8 @@ import { ComponentsModule } from 'app/components/components.module';
     MatSelectModule,
     MatTooltipModule,
     CKEditorModule,
-    ComponentsModule
+    ComponentsModule,
+    MatDialogModule
   ],
   declarations: [
     DashboardComponent,

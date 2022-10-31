@@ -8,6 +8,9 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { PreviewComponent } from './post/preview/preview.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PostDetailComponent } from './typography/post-detail/post-detail.component';
+import { ListPostComponent } from './typography/list-post/list-post.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -16,12 +19,15 @@ import { PreviewComponent } from './post/preview/preview.component';
     HttpClientModule,
     ComponentsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    PreviewComponent
+    PreviewComponent,
+    PostDetailComponent,
+    ListPostComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

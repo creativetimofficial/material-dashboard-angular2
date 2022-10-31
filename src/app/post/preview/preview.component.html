@@ -1,1 +1,8 @@
-<p>preview works!</p>
+<h1 mat-dialog-title>Preview</h1>
+<div mat-dialog-content>
+    <div class="post_header">{{data.title}}</div> 
+    <div class="post_content" [innerHTML]="data.data"></div>
+</div>
+<div mat-dialog-actions class="dialog_action">
+  <button type="button" class="btn btn-light" (click)="onNoClick()">Close</button> 
+</div>

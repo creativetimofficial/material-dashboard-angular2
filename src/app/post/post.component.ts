@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { HaneditorComponent } from 'app/components/haneditor/haneditor.component';
-import { MyUploadAdapter } from 'plugin/MyUploadAdapter';
+import { MatDialog} from '@angular/material/dialog';
+import { PreviewComponent } from './preview/preview.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -10,13 +12,21 @@ import { MyUploadAdapter } from 'plugin/MyUploadAdapter';
 })
 export class PostComponent implements OnInit {
 @ViewChild ('editor') editor:HaneditorComponent
-  constructor() { }
+title:string=''
+  constructor(private dialog:MatDialog,private router:Router) { }
 
   ngOnInit(): void {   
   }
   post(){    
   }
-  preview(){
-    console.log(this.editor.getData())    
+  preview(){ 
+    const data = {
+      title:this.title,
+      data:this.editor.getData()
+    }
+    localStorage.setItem('tmppost',JSON.stringify(data))
+    const url = this.router.serializeUrl(this.router.createUrlTree([`/typography/preview`]))
+    console.log(url)
+    window.open(url,'_blank')
   }
 }
