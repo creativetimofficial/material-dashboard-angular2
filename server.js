@@ -13,10 +13,10 @@ const forceSSL = function () {
     next();
   }
 };
-app.use(express.static(__dirname +'/dist/material-dashboard-angular2'));
+app.use(express.static('./dist/'));
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname,'/dist/material-dashboard-angular2/index.html'));
+app.get('/*', (req, res) => {
+  res.sendFile('index.html', { root: 'dist/' });
 });
 
 app.use(forceSSL());
