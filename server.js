@@ -13,7 +13,7 @@ const forceSSL = function () {
     next();
   }
 };
-app.use(express.static('./dist/material-dashboard-angular2'));
+app.use(express.static(__dirname +'/dist/material-dashboard-angular2'));
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname,'/dist/material-dashboard-angular2/index.html'));
