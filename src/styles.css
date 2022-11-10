@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+.btn-primary{
+    color: #fff;
+    background-color: #1266f1;
+}
+.btn-secondary{
+    color: #fff;
+    background-color: #b23cfd;
+}
+.post_header{
+    font-size: 40px;
+    color: #1b1b1b;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+.post_content{
+    overflow: auto;
+    max-height: 600px;
+}
+.mat-dialog-content{
+    overflow: hidden !important;
+}
+.dialog_action{
+    display: flex;
+    justify-content: end;
+}
+.post_title{
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.post_content{
+    font-size: 14px;
+    font-weight: 400;
+}

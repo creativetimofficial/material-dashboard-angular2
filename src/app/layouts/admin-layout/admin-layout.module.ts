@@ -17,7 +17,12 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
-
+import { PostComponent } from 'app/post/post.component';
+import { CKEditorModule } from 'ckeditor4-angular';
+import { SafeHtmlPipe } from 'app/core/pipe/commonPipe';
+import { ComponentsModule } from 'app/components/components.module';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 @NgModule({
   imports: [
     CommonModule,
@@ -30,6 +35,10 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    CKEditorModule,
+    ComponentsModule,
+    MatDialogModule,
+    NgxDropzoneModule
   ],
   declarations: [
     DashboardComponent,
@@ -40,6 +49,8 @@ import {MatSelectModule} from '@angular/material/select';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    PostComponent,
+    SafeHtmlPipe
   ]
 })
 

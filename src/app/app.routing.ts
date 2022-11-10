@@ -17,6 +17,11 @@ const routes: Routes =[
       path: '',
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
     }]
+  },
+  {
+    path:'**',
+    redirectTo:'dashboard',
+    pathMatch:'full'
   }
 ];
 
@@ -25,7 +30,7 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-       useHash: true
+     //  useHash: true
     })
   ],
   exports: [

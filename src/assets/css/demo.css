@@ -33,3 +33,6 @@
   position: absolute;
   width: 260px;
 }
+img{
+  max-width: 100%;
+}
