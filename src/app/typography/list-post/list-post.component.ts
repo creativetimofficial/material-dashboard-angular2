@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostApi } from 'app/api/postApi';
+import { postData } from 'app/models/postData';
 
 @Component({
   selector: 'app-list-post',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPostComponent implements OnInit {
   id = 'defaultID'
-  constructor() { }
+  posts:postData[] = []
+
+  constructor(private postApi:PostApi) { }
 
   ngOnInit(): void {
+    this.postApi.getAllPost().subscribe((res:postData[])=>{
+      this.posts = res
+    })
   }
 
 }

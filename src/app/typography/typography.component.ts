@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class TypographyComponent implements OnInit {
   id:string='defaultId'
   constructor() { }
-
   ngOnInit() {
   }
 

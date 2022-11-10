@@ -1,1 +1,2 @@
-<a routerLink="{{id}}">post 1</a>
+<a *ngFor="let post of posts" routerLink="{{post.id}}">{{post.title}}</a>
+

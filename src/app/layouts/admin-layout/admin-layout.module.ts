@@ -22,6 +22,7 @@ import { CKEditorModule } from 'ckeditor4-angular';
 import { SafeHtmlPipe } from 'app/core/pipe/commonPipe';
 import { ComponentsModule } from 'app/components/components.module';
 import {MatDialogModule} from '@angular/material/dialog';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 @NgModule({
   imports: [
     CommonModule,
@@ -36,7 +37,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTooltipModule,
     CKEditorModule,
     ComponentsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxDropzoneModule
   ],
   declarations: [
     DashboardComponent,
