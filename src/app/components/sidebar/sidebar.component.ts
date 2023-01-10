@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { updateTitle } from '../../store/dashboard/dashboard.actions';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -26,11 +28,16 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
+
+  updateTitle(title) {
+    this.store.dispatch(updateTitle({ title: title }));
+  }
+
   isMobileMenu() {
       if ($(window).width() > 991) {
           return false;

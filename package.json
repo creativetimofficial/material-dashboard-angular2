@@ -29,6 +29,9 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@ngrx/store": "^14.2.0",
+    "@ngrx/effects": "^14.2.0",
+    "@ngrx/store-devtools": "^14.2.0",
     "ajv": "8.11.0",
     "arrive": "2.4.1",
     "bootstrap": "4.6.1",
@@ -46,8 +49,8 @@
     "popper.js": "1.16.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "web-animations-js": "2.3.2"
+    "web-animations-js": "2.3.2",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.7",

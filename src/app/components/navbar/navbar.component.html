@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
     <div class="container-fluid">
         <div class="navbar-wrapper">
-          <a class="navbar-brand" href="javascript:void(0)">{{getTitle()}}</a>
+          <a class="navbar-brand" href="javascript:void(0)">{{getTitle()}}
+<!--          <a class="navbar-brand" href="javascript:void(0)">{{(title$ | async) }}-->
+          </a>
         </div>
         <button mat-raised-button class="navbar-toggler" type="button" (click)="sidebarToggle()">
             <span class="sr-only">Toggle navigation</span>
