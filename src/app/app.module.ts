@@ -7,6 +7,16 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AvisService } from './services/avis.service';
+import { AppartementService } from './services/appartement.service';
+import { QuestionService } from './services/question.service';
+import { OffreService } from './services/offre.service';
+import { RoleService } from './services/role.service';
+import { UtilisateurService } from './services/utilisateur.service';
+import { MaisonService } from './services/maison.service';
+import { GarageService } from './services/garage.service';
+import { TerrainService } from './services/terrain.service';
+import { VisiteService } from './services/visite.service';
 
 @NgModule({
   imports: [
@@ -23,7 +33,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AdminLayoutComponent,
 
   ],
-  providers: [],
+  providers: [AvisService, AppartementService, QuestionService, OffreService, RoleService, UtilisateurService, MaisonService, GarageService, TerrainService, VisiteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Garage } from 'app/model/garage';
+import { GarageService } from 'app/services/garage.service';
+import { OffreService } from 'app/services/offre.service';
 
 @Component({
   selector: 'app-garage',

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Visite } from 'app/model/visite';
+import { OffreService } from 'app/services/offre.service';
+import { VisiteService } from 'app/services/visite.service';
 
 @Component({
   selector: 'app-visite',
