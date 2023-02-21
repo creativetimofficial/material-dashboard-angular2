@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Maison } from 'app/model/maison';
+import { MaisonService } from 'app/services/maison.service';
+import { OffreService } from 'app/services/offre.service';
 
 @Component({
   selector: 'app-maison',

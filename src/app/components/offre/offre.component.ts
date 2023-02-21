@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Offre } from 'app/model/offre';
+import { OffreService } from 'app/services/offre.service';
+import { UtilisateurService } from 'app/services/utilisateur.service';
 
 @Component({
   selector: 'app-offre',

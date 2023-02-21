@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Terrain } from 'app/model/terrain';
+import { OffreService } from 'app/services/offre.service';
+import { TerrainService } from 'app/services/terrain.service';
 
 @Component({
   selector: 'app-terrain',

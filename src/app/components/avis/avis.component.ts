@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Avis } from 'app/model/avis';
+import { AvisService } from 'app/services/avis.service';
+import { UtilisateurService } from 'app/services/utilisateur.service';
 
 @Component({
   selector: 'app-avis',
