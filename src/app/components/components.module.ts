@@ -15,11 +15,14 @@ import { QuestionComponent } from './question/question.component';
 import { RoleComponent } from './role/role.component';
 import { TerrainComponent } from './terrain/terrain.component';
 import { VisiteComponent } from './visite/visite.component';
+import { LoginComponent } from 'app/components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
   ],
   declarations: [
     FooterComponent,
@@ -34,7 +37,8 @@ import { VisiteComponent } from './visite/visite.component';
     QuestionComponent,
     RoleComponent,
     TerrainComponent,
-    VisiteComponent
+    VisiteComponent,
+    LoginComponent,
   ],
   exports: [
     FooterComponent,

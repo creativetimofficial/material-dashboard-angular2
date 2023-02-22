@@ -1,3 +1,4 @@
+import { LoginComponent } from 'app/components/login/login.component';
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
@@ -52,7 +53,9 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: 'dashboard',      component: DashboardComponent },
+    { path: 'login',           component: LoginComponent },
+    { path: 'home',           component: DashboardComponent }
+    /*{ path: 'dashboard',           component: DashboardComponent }*/,
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },

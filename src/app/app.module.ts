@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
@@ -17,23 +17,24 @@ import { MaisonService } from './services/maison.service';
 import { GarageService } from './services/garage.service';
 import { TerrainService } from './services/terrain.service';
 import { VisiteService } from './services/visite.service';
+import { AppService } from './app.service';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    ComponentsModule,
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
 
   ],
-  providers: [AvisService, AppartementService, QuestionService, OffreService, RoleService, UtilisateurService, MaisonService, GarageService, TerrainService, VisiteService],
+  providers: [AvisService, AppartementService, QuestionService, OffreService, RoleService, UtilisateurService, MaisonService, GarageService, TerrainService, VisiteService, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,12 @@
+<h1>Connectez-vous</h1>
+<form  (submit)="login()">
+  <div>
+    <label for="username">Nom d'utilisateur</label>
+    <input type="text" class="form-control" [(ngModel)]="credentials.username" name="username">
+  </div>
+  <div>
+    <label for="password">Mot de passe</label>
+    <input type="text" class="form-control" [(ngModel)]="credentials.password" name="password">
+  </div>
+  <button type="submit">Se connecter</button>
+</form>
