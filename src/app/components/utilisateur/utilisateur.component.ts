@@ -13,6 +13,8 @@ export class UtilisateurComponent implements OnInit {
 
   users!: any[];
   roles!: any[];
+  selectedFiles?: FileList;
+  currentFileUpload?: File;
   utilisateur: Utilisateur = new Utilisateur();
 
   constructor(private utilisateurService: UtilisateurService, private roleService: RoleService, private router: Router) {
@@ -32,13 +34,20 @@ export class UtilisateurComponent implements OnInit {
     this.roleService.findAll().subscribe(data => { this.roles = data; });
   }
 
-  saveUtilisateur() {
-    this.utilisateurService.save(this.utilisateur).subscribe(
-      () => {
-        this.findAllUtilisateurs(); // MAJ de la liste des utilisateurs
-        this.utilisateur = new Utilisateur(); // Vider le formulaire pour avoir une nouvelle ligne
-      }
-    )
+  selectFile(event: any) {
+    this.selectedFiles = event.target.files;
+  }
+
+
+  //Méthode save : 
+  save() {
+    this.currentFileUpload = this.selectedFiles?.item(0) as File;
+    this.utilisateurService.save(this.currentFileUpload, this.utilisateur).subscribe(() => {
+      this.findAllUtilisateurs();
+      this.utilisateur = new Utilisateur();
+      this.selectedFiles = undefined;
+    })
+
   }
   deleteUtilisateur(id: number) {
     this.utilisateurService.delete(id).subscribe(
