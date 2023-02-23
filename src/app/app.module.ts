@@ -18,6 +18,8 @@ import { GarageService } from './services/garage.service';
 import { TerrainService } from './services/terrain.service';
 import { VisiteService } from './services/visite.service';
 import { AppService } from './app.service';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { AppService } from './app.service';
     ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    MatMenuModule,
+    MatIconModule
   ],
   declarations: [
     AppComponent,
