@@ -1,12 +1,35 @@
-<h1>Connectez-vous</h1>
-<form  (submit)="login()">
-  <div>
-    <label for="username">Nom d'utilisateur</label>
-    <input type="text" class="form-control" [(ngModel)]="credentials.username" name="username">
+<style>
+  body {
+    margin-top: 25%;
+    margin-left: 25%;
+  }
+
+  h1 {
+    color: rgb(114, 40, 40, 0.48);
+    font-size: 70px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+</style>
+
+<div>
+  <img src="assets/img/maison.jpg" alt="photoAgence">
+</div>
+
+<body>
+  <div class="form-group col-md-8" style="text-align: center">
+    <h1>Connectez vous</h1>
+    <form (submit)="login()">
+      <div>
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" class="form-control" [(ngModel)]="credentials.username" name="username">
+      </div>
+      <div>
+        <label for="password">Mot de passe</label>
+        <input type="text" class="form-control" [(ngModel)]="credentials.password" name="password">
+        <br>
+      </div>
+      <button class="btn btn-primary" type="submit">Se connecter</button>
+      <p>Pas encore de compte ? <a routerLink="/registration">Inscrivez-vous</a></p>
+    </form>
   </div>
-  <div>
-    <label for="password">Mot de passe</label>
-    <input type="text" class="form-control" [(ngModel)]="credentials.password" name="password">
-  </div>
-  <button type="submit">Se connecter</button>
-</form>
+</body>

@@ -17,6 +17,7 @@ import { TerrainComponent } from './terrain/terrain.component';
 import { VisiteComponent } from './visite/visite.component';
 import { LoginComponent } from 'app/components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { FormsModule } from '@angular/forms';
     TerrainComponent,
     VisiteComponent,
     LoginComponent,
+    RegistrationComponent,
   ],
   exports: [
     FooterComponent,
