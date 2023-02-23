@@ -40,14 +40,13 @@ export class UtilisateurComponent implements OnInit {
 
 
   //Méthode save : 
-  save() {
-    this.currentFileUpload = this.selectedFiles?.item(0) as File;
-    this.utilisateurService.save(this.currentFileUpload, this.utilisateur).subscribe(() => {
-      this.findAllUtilisateurs();
-      this.utilisateur = new Utilisateur();
-      this.selectedFiles = undefined;
-    })
-
+  saveUtilisateur() {
+    this.utilisateurService.save(this.utilisateur).subscribe(
+      () => {
+        this.findAllUtilisateurs(); // MAJ de la liste des utilisateurs
+        this.utilisateur = new Utilisateur(); // Vider le formulaire pour avoir une nouvelle ligne
+      }
+    )
   }
   deleteUtilisateur(id: number) {
     this.utilisateurService.delete(id).subscribe(

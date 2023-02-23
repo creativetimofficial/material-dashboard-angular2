@@ -17,10 +17,10 @@ import { VisiteComponent } from './components/visite/visite.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-const routes: Routes =[
+const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    component: LoginComponent,
     pathMatch: 'full',
   }, {
     path: '',
