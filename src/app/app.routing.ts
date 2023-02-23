@@ -13,11 +13,11 @@ import { QuestionComponent } from './components/question/question.component';
 import { RoleComponent } from './components/role/role.component';
 import { TerrainComponent } from './components/terrain/terrain.component';
 import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
-import { VisiteComponent } from './components/visite/visite.component';
+import { VisiteComponent } from './components/utilisateur/visite/visite.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-const routes: Routes =[
+const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
