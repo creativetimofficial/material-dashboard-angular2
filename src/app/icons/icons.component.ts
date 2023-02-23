@@ -1,4 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppService } from 'app/app.service';
+import { Utilisateur } from 'app/model/utilisateur';
+import { RoleService } from 'app/services/role.service';
+import { UtilisateurService } from 'app/services/utilisateur.service';
 
 @Component({
   selector: 'app-icons',
@@ -6,10 +12,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icons.component.css']
 })
 export class IconsComponent implements OnInit {
+  // Déclaration d'un tableau d'utilisateurs 
+  // ! : le tableau n'est pas initialisé
+  users!: any[]; // any : n'importe quel type de données
+  // step 1
+  roles!: any[];
+  utilisateur: Utilisateur = new Utilisateur();
+  // DI : par constrcuteur
+  constructor(private utilisateurService: UtilisateurService,/*step2*/private roleService: RoleService, private router: Router) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.findAllUtilisateurs();
+    // step 4
+    this.findAllRoles();
+  }
+  findAllUtilisateurs() {
+    // subscribe : utilisation de l'expression lambda
+    // data => {this.users = data}
+    this.utilisateurService.findAll().subscribe(data => { this.users = data; });
+  }
+  // step 3
+  findAllRoles() {
+    this.roleService.findAll().subscribe(data => { this.roles = data; });
   }
 
+
+
+  //Méthode save : 
+  saveUtilisateur() {
+    this.utilisateurService.save(this.utilisateur).subscribe(
+      () => {
+        this.findAllUtilisateurs(); // MAJ la lise des utilisateurs
+        this.utilisateur = new Utilisateur(); // Vider le formulaire
+      }
+    )
+  }
+  /**/
+  deleteUtilisateur(id: number) {
+    this.utilisateurService.delete(id).subscribe(() => { this.findAllUtilisateurs() });
+  }
+  editUtilisateur(utilisateur: Utilisateur) {
+    // localStorage : créer un attribut (name = "editUserId") dans le navigateur et lui affecter une valeur (editUserId= idUtilisateur)
+    // Step 1 : MAJ du composant
+    localStorage.removeItem("editUserId");
+    // Step 2 : Sélectionner une ligne : 
+    localStorage.setItem("editUserId", utilisateur.idUtilisateur.toString());
+    this.router.navigate(['/editUser', utilisateur.idUtilisateur]);
+  }
 }

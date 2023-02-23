@@ -1,20 +1,16 @@
-<div class="main-content">
-    <div class="container-fluid">
-        <div class="card card-plain">
-            <div class="card-header card-header-danger">
-                <h4 class="card-title">Liste de tous les utilisateurs</h4>
-                <p class="card-category">Seuls les administrateurs peuvent y avoir accès. Les modifications sont
-                    enregistrées directement dans la DB
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card-body">
-                        <p>gentille liste de tous les utilisateurs</p>
-                        <p>Cliquer sur modifier/sauvegarder</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let u of utilisateur">
+            <td>{{u.nomUtilisateur}}</td>
+            <td>{{u.prenomUtilisateur}}</td>
+            <td><button (click)="deleteUtilisateur(u.idUtilisateur)">Delete</button>
+                <button (click)="editUtilisateur(u)">Editer</button>
+            </td>
+        </tr>
+    </table>
 </div>
