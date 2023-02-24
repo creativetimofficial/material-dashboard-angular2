@@ -40,7 +40,7 @@
     "express": "4.17.3",
     "googleapis": "99.0.0",
     "hammerjs": "2.0.8",
-    "jquery": "3.6.0",
+    "jquery": "^3.6.0",
     "moment": "^2.29.4",
     "perfect-scrollbar": "1.5.5",
     "popper.js": "1.16.1",
