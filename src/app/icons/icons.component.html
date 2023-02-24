@@ -2,46 +2,50 @@
 <br>
 <br>
 <br>
-<div class="container-fluid mt--7">
-    <div class="col-xl-12 order-xl-1">
-        <div class="card bg-secondary shadow">
-            <div class="card-header bg-white border-0">
-                <div class="row align-items-center">
-                    <div class="col-8">
-                        <h3 class="mb-0">Créer un compte</h3>
+<div class="container-fluid mt--7" style="background-color: white;">
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <h3 style="color: chocolate;"><b>Créer un compte</b></h3>
                     </div>
                 </div>
             </div>
             <div class="card-body">
                 <form (ngSubmit)="saveUtilisateur()">
-                    <h6 class="heading-small text-muted mb-4">Informations des utilisateurs</h6>
+                    <h4 class="heading-small text-muted mb-4"><b>Informations des utilisateurs</b>
+                    </h4>
                     <div class="pl-lg-4">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-first-name">Nom</label>
+                                <div class="form-group" style="border: 5px; border-color: chocolate;">
+                                    <label class="form-control-label" for="input-first-name"
+                                        style=" color: black;">Nom</label>
                                     <input type="text" [(ngModel)]="utilisateur.nomUtilisateur" name="nomUtilisateur"
                                         id="input-first-name" class="form-control form-control-alternative"
                                         placeholder="Nom " value="Lucky">
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-group"> <label class="form-control-label"
-                                        for="input-last-name">Prénom</label> <input type="text"
+                                <div class="form-group"> <label class="form-control-label" for="input-last-name"
+                                        style=" color: black;">Prénom</label> <input type="text"
                                         [(ngModel)]="utilisateur.prenomUtilisateur" name="prenomUtilisateur"
                                         id="input-last-name" class="form-control form-control-alternative"
                                         placeholder="Prénom" value="Luck"> </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="form-group"> <label class="form-control-label" for="input-email">Email
+                            <div class="form-group"> <label class="form-control-label" for="input-email"
+                                    style=" color: black;">Email
                                     address</label> <input type="email" [(ngModel)]="utilisateur.emailUtilisateur"
                                     name="emailUtilisateur" id="input-email"
-                                    class="form-control form-control-alternative" placeholder="mail@example.com">
+                                    class="form-control form-control-alternative" placeholder="ex : jean.yves@oui.com">
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="form-group"> <label class="form-control-label" for="input-date">Date de
+                            <div class="form-group"> <label class="form-control-label" for="input-date"
+                                    style=" color: black;">Date de
                                     naissance</label> <input type="date"
                                     [(ngModel)]="utilisateur.dateNaissanceUtilisateur" name="dateNaissanceUtilisateur"
                                     id="input-date" class="form-control form-control-alternative"> </div>
@@ -49,23 +53,24 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="form-group"> <label class="form-control-label"
-                                    for="input-username">Username</label> <input type="text"
+                            <div class="form-group"> <label class="form-control-label" for="input-username"
+                                    style=" color: black;">Nom d'utilisateur</label> <input type="text"
                                     [(ngModel)]="utilisateur.username" name="username" id="input-username"
-                                    class="form-control form-control-alternative" placeholder="Username"
+                                    class="form-control form-control-alternative" placeholder="Nom d'utilisateur"
                                     value="Username"> </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="form-group"> <label class="form-control-label"
-                                    for="input-password">Password</label> <input type="text"
+                            <div class="form-group"> <label class="form-control-label" for="input-password"
+                                    style=" color: black;">Mot de passe</label> <input type="text"
                                     [(ngModel)]="utilisateur.password" name="password" id="input-password"
-                                    class="form-control form-control-alternative" placeholder="your password">
+                                    class="form-control form-control-alternative" placeholder="mot de passe">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="form-group"> <label class="form-control-label" for="input-password">Role</label>
+                            <div class="form-group"> <label class="form-control-label" for="input-password"
+                                    style=" color: black;">Role</label>
                                 <select class="form-control form-control-alternative" multiple name="roles"
                                     [(ngModel)]="utilisateur.roles">
                                     <option *ngFor="let r of roles" [ngValue]="r">{{r.libelle}}</option>
@@ -73,7 +78,7 @@
                             </div>
                         </div>
                     </div>
-                    <div> <button class="btn btn-danger">Ajouter</button> </div>
+                    <div> <button class="btn btn-danger" style="background-color: chocolate;">Ajouter</button> </div>
                 </form>
             </div>
         </div>
@@ -86,33 +91,35 @@
         <div class="col">
             <div class="card shadow">
                 <div class="card-header border-0">
-                    <h3 class="mb-0">Users list</h3>
+                    <h3 style="color: chocolate;"><b>Liste des utilisateurs</b></h3>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col">Firstname</th>
-                                <th scope="col">Last name</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Password</th>
-                                <th scope="col">Date of birth</th>
-                                <th scope="col">Rule</th>
-                                <th style="text-align: center;" scope="col">Action</th>
+                                <th scope="col" style="color: black;"><b>Nom</b></th>
+                                <th scope="col" style="color: black;"><b>Prénom</b></th>
+                                <th scope="col" style="color: black;"><b>Nom d'utilisateur</b></th>
+                                <th scope="col" style="color: black;"><b>Mot de passe (crypté)</b></th>
+                                <th scope="col" style="color: black;"><b>Date de naissance</b></th>
+                                <th scope="col" style="color: black;"><b>Role</b></th>
+                                <th style="text-align: center;" scope="col" style="color: black;"><b>Action</b></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let u of users">
-                                <td>{{u.nomUitlisateur}}</td>
+                                <td>{{u.nomUtilisateur}}</td>
                                 <td>{{u.prenomUtilisateur}}</td>
                                 <td>{{u.username}}</td>
                                 <td>{{u.password}}</td>
-                                <td>{{u.dateNaissance}}</td>
+                                <td>{{u.dateNaissanceUtilisateur}}</td>
                                 <td>
                                     <p style="margin: 0px;" *ngFor="let r of u.roles">{{r.libelle}}</p>
                                 </td>
-                                <td> <button (click)="deleteUtilisateur(u.idUtilisateur)">Delete</button>
-                                    <button (click)="editUtilisateur(u)">Edit</button>
+                                <td> <button (click)="deleteUtilisateur(u.idUtilisateur)"
+                                        style="background-color: chocolate; color: white;">Delete</button>
+                                    <button (click)="editUtilisateur(u)"
+                                        style="background-color: chocolate; color: white;">Edit</button>
                                 </td>
                         </tbody>
                     </table>
