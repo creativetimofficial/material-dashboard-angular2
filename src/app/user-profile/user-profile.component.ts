@@ -1,6 +1,7 @@
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'app/app.service';
 import { Utilisateur } from 'app/model/utilisateur';
 import { RoleService } from 'app/services/role.service';
 import { UtilisateurService } from 'app/services/utilisateur.service';
@@ -18,11 +19,22 @@ export class UserProfileComponent implements OnInit {
   roles!: any[];
   utilisateur: Utilisateur = new Utilisateur();
 
-  constructor(private utilisateurService: UtilisateurService, private roleService: RoleService, private httpClient: HttpClient, private router: Router) {
+  // Step 3
+  idUser: any;
+  user: Utilisateur = new Utilisateur();
+
+  constructor(private appService: AppService, private utilisateurService: UtilisateurService, private roleService: RoleService, private httpClient: HttpClient, private router: Router) {
 
   }
-
-  ngOnInit(): void {
+  // Step 5
+  findOne(id: number) {
+    this.utilisateurService.findOne(id).subscribe(data => { this.user = data; });
+  }
+  ngOnInit() {
+    // Step 6
+    this.idUser = this.appService.idUser;
+    console.log("user profile " + this.idUser);
+    this.findOne(this.idUser);
     this.findAllUtilisateurs();
     this.findAllRole();
   }
@@ -35,8 +47,6 @@ export class UserProfileComponent implements OnInit {
     this.roleService.findAll().subscribe(data => { this.roles = data; });
   }
 
-
-
   deleteUtilisateur(id: number) {
     this.utilisateurService.delete(id).subscribe(
       () => {
@@ -45,4 +55,7 @@ export class UserProfileComponent implements OnInit {
     )
   }
 
+  updateProfil(value) {
+    console.log(value);
+  }
 }
