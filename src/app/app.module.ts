@@ -20,6 +20,7 @@ import { VisiteService } from './services/visite.service';
 import { AppService } from './app.service';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { MdpComponent } from './mdp/mdp.component';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    MdpComponent,
 
   ],
   providers: [AvisService, AppartementService, QuestionService, OffreService, RoleService, UtilisateurService, MaisonService, GarageService, TerrainService, VisiteService, AppService],

@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
   utilisateur: Utilisateur = new Utilisateur();
   constructor(private utilisateurService: UtilisateurService, private router: Router) { }
   ngOnInit(): void {
-
+    this.saveUtilisateur();
 
   }
 
