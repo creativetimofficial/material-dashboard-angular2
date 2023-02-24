@@ -6,7 +6,8 @@ export enum enumEtatOffre {
     NEUF = "NEUF",
     BON_ETAT = "BON_ETAT",
     PASSABLE = "PASSABLE",
-    A_RENOVE = "A_RENOVE"
+    A_RENOVE = "A_RENOVE",
+    Null = ""
 }
 
 export class Offre {

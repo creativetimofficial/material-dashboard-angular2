@@ -57,4 +57,5 @@ export class UtilisateurService {
     var utilisateurJSON = JSON.parse(utilisateur); // conversion de string vers format JSON 
     return this.httpClient.put(this.BASE_URL + "/" + utilisateurJSON.idUtilisateur, utilisateurJSON);
   }
+
 }
