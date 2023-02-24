@@ -11,34 +11,30 @@ import { UtilisateurService } from 'app/services/utilisateur.service';
   templateUrl: './icons.component.html',
   styleUrls: ['./icons.component.css']
 })
-export class IconsComponent implements OnInit {
-  // Déclaration d'un tableau d'utilisateurs 
-  // ! : le tableau n'est pas initialisé
-  users!: any[]; // any : n'importe quel type de données
-  // step 1
+
+export class IconsComponent {
+  // Déclaration d'un tableau d'utilisateur 
+  // any : n'importe quel type de données 
+  // ! ==> le tableau n'est pas initialisé 
+  users!: any[];
   roles!: any[];
   utilisateur: Utilisateur = new Utilisateur();
-  // DI : par constrcuteur
-  constructor(private utilisateurService: UtilisateurService,/*step2*/private roleService: RoleService, private router: Router) { }
-
+  // DI  : par constructeur  
+  constructor(private utilisateurService: UtilisateurService, private roleService: RoleService, private appService: AppService, private router: Router) { }
   ngOnInit(): void {
     this.findAllUtilisateurs();
-    // step 4
-    this.findAllRoles();
+    this.findAllRole();
   }
+
   findAllUtilisateurs() {
-    // subscribe : utilisation de l'expression lambda
-    // data => {this.users = data}
+    // Utilisation de l'expression lambde dans le subscribe  
+    // data => {this.users = data}   
     this.utilisateurService.findAll().subscribe(data => { this.users = data; });
   }
-  // step 3
-  findAllRoles() {
+
+  findAllRole() {
     this.roleService.findAll().subscribe(data => { this.roles = data; });
   }
-
-
-
-  //Méthode save : 
   saveUtilisateur() {
     this.utilisateurService.save(this.utilisateur).subscribe(
       () => {
@@ -47,16 +43,18 @@ export class IconsComponent implements OnInit {
       }
     )
   }
-  /**/
   deleteUtilisateur(id: number) {
-    this.utilisateurService.delete(id).subscribe(() => { this.findAllUtilisateurs() });
+    this.utilisateurService.delete(id).subscribe(() => { this.findAllUtilisateurs(); })
   }
+
   editUtilisateur(utilisateur: Utilisateur) {
-    // localStorage : créer un attribut (name = "editUserId") dans le navigateur et lui affecter une valeur (editUserId= idUtilisateur)
-    // Step 1 : MAJ du composant
-    localStorage.removeItem("editUserId");
-    // Step 2 : Sélectionner une ligne : 
-    localStorage.setItem("editUserId", utilisateur.idUtilisateur.toString());
-    this.router.navigate(['/editUser', utilisateur.idUtilisateur]);
+    // localStorage : créer un attribut (name="editUserId") dans le navigateur et lui affecter une valeur (ediUserId= idUtilisateur)   
+    // étape 1 : MAJ du composant   
+    localStorage.removeItem("editUtilisateurId");
+    // étape 2 : Séleectionner une ligne    
+    localStorage.setItem("editUtilisateurId", utilisateur.idUtilisateur.toString());
+    this.router.navigate(['/editUtilisateur', utilisateur.idUtilisateur]);
   }
 }
+
+
