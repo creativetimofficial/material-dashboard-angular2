@@ -22,7 +22,7 @@
                                     <label class="form-control-label" for="input-first-name">Nom</label>
                                     <input type="text" [(ngModel)]="utilisateur.nomUtilisateur" name="nomUtilisateur"
                                         id="input-first-name" class="form-control form-control-alternative"
-                                        placeholder="First name" value="Lucky">
+                                        placeholder="Nom " value="Lucky">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -30,51 +30,50 @@
                                         for="input-last-name">Prénom</label> <input type="text"
                                         [(ngModel)]="utilisateur.prenomUtilisateur" name="prenomUtilisateur"
                                         id="input-last-name" class="form-control form-control-alternative"
-                                        placeholder="Last name" value="Luck"> </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group"> <label class="form-control-label" for="input-email">Email
-                                        address</label> <input type="email" [(ngModel)]="utilisateur.emailUtilisateur"
-                                        name="emailUtilisateur" id="input-email"
-                                        class="form-control form-control-alternative" placeholder="mail@example.com">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group"> <label class="form-control-label" for="input-date">Date de
-                                        naissance</label> <input type="date"
-                                        [(ngModel)]="utilisateur.dateNaissanceUtilisateur"
-                                        name="dateNaissanceUtilisateur" id="input-date"
-                                        class="form-control form-control-alternative"> </div>
+                                        placeholder="Prénom" value="Luck"> </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group"> <label class="form-control-label"
-                                        for="input-username">Username</label> <input type="text"
-                                        [(ngModel)]="utilisateur.username" name="username" id="input-username"
-                                        class="form-control form-control-alternative" placeholder="Username"
-                                        value="your username"> </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group"> <label class="form-control-label"
-                                        for="input-password">Password</label> <input type="text"
-                                        [(ngModel)]="utilisateur.password" name="password" id="input-password"
-                                        class="form-control form-control-alternative" placeholder="your password">
-                                </div>
+                        <div class="col-lg-6">
+                            <div class="form-group"> <label class="form-control-label" for="input-email">Email
+                                    address</label> <input type="email" [(ngModel)]="utilisateur.emailUtilisateur"
+                                    name="emailUtilisateur" id="input-email"
+                                    class="form-control form-control-alternative" placeholder="mail@example.com">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group"> <label class="form-control-label"
-                                        for="input-password">Role</label> <select
-                                        class="form-control form-control-alternative" multiple name="roles"
-                                        [(ngModel)]="utilisateur.roles">
-                                        <option *ngFor="let r of roles" [ngValue]="r">{{r.libelle}}</option>
-                                    </select> </div>
-                            </div>
+                        <div class="col-lg-6">
+                            <div class="form-group"> <label class="form-control-label" for="input-date">Date de
+                                    naissance</label> <input type="date"
+                                    [(ngModel)]="utilisateur.dateNaissanceUtilisateur" name="dateNaissanceUtilisateur"
+                                    id="input-date" class="form-control form-control-alternative"> </div>
                         </div>
-                        <div> <button class="btn btn-danger">Ajouter</button> </div>
                     </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group"> <label class="form-control-label"
+                                    for="input-username">Username</label> <input type="text"
+                                    [(ngModel)]="utilisateur.username" name="username" id="input-username"
+                                    class="form-control form-control-alternative" placeholder="Username"
+                                    value="Username"> </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group"> <label class="form-control-label"
+                                    for="input-password">Password</label> <input type="text"
+                                    [(ngModel)]="utilisateur.password" name="password" id="input-password"
+                                    class="form-control form-control-alternative" placeholder="your password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group"> <label class="form-control-label" for="input-password">Role</label>
+                                <select class="form-control form-control-alternative" multiple name="roles"
+                                    [(ngModel)]="utilisateur.roles">
+                                    <option *ngFor="let r of roles" [ngValue]="r">{{r.libelle}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div> <button class="btn btn-danger">Ajouter</button> </div>
                 </form>
             </div>
         </div>
@@ -103,8 +102,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let u of utilisateur">
-                                <td>{{u.nomUtilisateur}}</td>
+                            <tr *ngFor="let u of users">
+                                <td>{{u.nomUitlisateur}}</td>
                                 <td>{{u.prenomUtilisateur}}</td>
                                 <td>{{u.username}}</td>
                                 <td>{{u.password}}</td>
