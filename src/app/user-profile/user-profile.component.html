@@ -1,24 +1,58 @@
-<div class="main-content">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="card">
-        <div class="card-header card-header-danger">
-          <h4 class="card-title">Mon profil</h4>
-          <p class="card-category">Vous pouvez modifier certaines de vos informations suite à des changements au cours
-            de votre vie (changement de téléphone, d'adresse mail, etc.)</p>
+<!-- Formulaire d'ajout début-->
+<div class="container-fluid mt--7">
+  <div class="col-xl-12 order-xl-1">
+    <div class="card bg-secondary shadow">
+      <div class="card-header bg-white border-0">
+        <div class="row align-items-center">
+          <div class="col-8">
+            <h3 class="mb-0">Mon espace perso :</h3>
+          </div>
         </div>
-        <div class="card-chart">
-          <p>Nom : {{user.nomUtilisateur}}
-            <input #myTxt type="text" required minlength="1" [(ngModel)]="user.nomUtilisateur">
-            <button type="submit" (click)="updateProfil(myTxt.value)">Modifier</button>
-          </p>
-          <p>Prénom : {{user.prenomUtilisateur}}</p>
-          <p>Date de Naissance : {{user.nomUtilisateur}}</p>
-          <p>Adresse E-mail : {{user.emailUtilisateur}}</p>
-          <p>Numéro de telephone : {{user.numTelUtilisateur}}</p>
-
-        </div>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="updateUtilisateur()">
+          <h6 class="text-muted mb-4">Informations de l'utilisateur</h6>
+          <div class="form-group row">
+            <label for="input-first-name" class="col-sm-3 col-form-label">Nom</label>
+            <div class="col-sm-9">
+              <input type="text" [(ngModel)]="user.nomUtilisateur" name="nomUtilisateur" id="input-first-name"
+                class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="input-last-name" class="col-sm-3 col-form-label">Prénom</label>
+            <div class="col-sm-9">
+              <input type="text" [(ngModel)]="user.prenomUtilisateur" name="prenomUtilisateur" id="input-last-name"
+                class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="input-last-name" class="col-sm-3 col-form-label">Date de naissance</label>
+            <div class="col-sm-9">
+              <input type="date" [(ngModel)]="user.dateNaissanceUtilisateur" name="date de naissance"
+                id="input-last-name" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="input-last-name" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+              <input type="email" [(ngModel)]="user.emailUtilisateur" name="email" id="input-last-name"
+                class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="input-last-name" class="col-sm-3 col-form-label">Numero de telephone</label>
+            <div class="col-sm-9">
+              <input type="text" [(ngModel)]="user.numTelUtilisateur" name="numero de telephone" id="input-last-name"
+                class="form-control">
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-primary" type="submit">Modifier</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
+<!--Formulaire d'ajout fin-->

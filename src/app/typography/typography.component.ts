@@ -13,6 +13,7 @@ export class TypographyComponent implements OnInit {
   // Déclaration d'un tableau d'utilisateur 
   // any : n'importe quel type de données 
   // ! ==> le tableau n'est pas initialisé 
+  currentFileUpload?: File;
   offres!: any[];
   offre: Offre = new Offre();
   etatOffre: enumEtatOffre;
@@ -29,7 +30,7 @@ export class TypographyComponent implements OnInit {
   }
 
   saveOffre() {
-    this.offreService.save(this.offre).subscribe(
+    this.offreService.save(this.currentFileUpload, this.offre).subscribe(
       () => {
         this.findAllOffre();
         this.offre = new Offre();

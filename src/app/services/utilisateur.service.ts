@@ -54,8 +54,9 @@ export class UtilisateurService {
   }
   // put --> verbe http : PUT --> URL : BASE_URL/id et dans le body l'objet utilisateur 
   public update(utilisateur: any): Observable<any> {
-    var utilisateurJSON = JSON.parse(utilisateur); // conversion de string vers format JSON 
-    return this.httpClient.put(this.BASE_URL + "/" + utilisateurJSON.idUtilisateur, utilisateurJSON);
+    //var utilisateurJSON = JSON.parse(utilisateur); // conversion de string vers format JSON 
+    // return this.httpClient.put(this.BASE_URL + "/" + utilisateurJSON.idUtilisateur, utilisateurJSON);
+    return this.httpClient.put(this.BASE_URL + "/" + utilisateur.idUtilisateur, utilisateur);
   }
 
 }
