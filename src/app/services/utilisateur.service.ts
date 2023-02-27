@@ -34,8 +34,8 @@ export class UtilisateurService {
   // HttpClient = module qui nous permet d'utiliser les verbes http : GET POST PUT DELETE  
   constructor(private httpClient: HttpClient) { }
   // findAll --> verbe http GET --> URL : BASE_URL  
-  // Observable --> une méthode qui vérifie  les données dans le serveur nodejs  
-  // Afficher la liste des utilisateurs  
+  // Observable --> une méthode qui vérifie  les données dans le serveur nodejs
+  // Afficher la liste des utilisateurs
   public findAll(): Observable<any> {
     return this.httpClient.get(this.BASE_URL);
   }
