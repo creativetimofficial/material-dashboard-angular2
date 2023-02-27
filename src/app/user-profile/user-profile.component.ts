@@ -1,5 +1,6 @@
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from 'app/app.service';
 import { Utilisateur } from 'app/model/utilisateur';
@@ -16,14 +17,14 @@ export class UserProfileComponent implements OnInit {
 
   private BASE_URL = "http://localhost:8080/utilisateurs";
   users!: any[];
-  roles!: any[];
   utilisateur: Utilisateur = new Utilisateur();
 
   // Step 3
   idUser: any;
+  editForm: FormGroup;
   user: Utilisateur = new Utilisateur();
 
-  constructor(private appService: AppService, private utilisateurService: UtilisateurService, private roleService: RoleService, private httpClient: HttpClient, private router: Router) {
+  constructor(private appService: AppService, private utilisateurService: UtilisateurService, private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router) {
 
   }
   // Step 5
@@ -35,27 +36,27 @@ export class UserProfileComponent implements OnInit {
     this.idUser = this.appService.idUser;
     console.log("user profile " + this.idUser);
     this.findOne(this.idUser);
-    this.findAllUtilisateurs();
-    this.findAllRole();
+    // this.findAllUtilisateurs();
+    //this.updateUtilisateur();
   }
 
   findAllUtilisateurs() {
     this.utilisateurService.findAll().subscribe(data => { this.users = data; });
   }
 
-  findAllRole() {
-    this.roleService.findAll().subscribe(data => { this.roles = data; });
-  }
-
-  deleteUtilisateur(id: number) {
-    this.utilisateurService.delete(id).subscribe(
+  updateUtilisateur() {
+    console.log("update utilisateur", this.user);
+    this.utilisateurService.save(this.user).subscribe(
       () => {
-        this.findAllUtilisateurs();
+        console.log("Update ok");
       }
     )
   }
-
-  updateProfil(value) {
-    console.log(value);
-  }
+  //   this.utilisateurService.update(this.utilisateur).subscribe(
+  //     () => {
+  //       this.findAllUtilisateurs(); // MAJ la lise des utilisateurs
+  //       this.utilisateur = new Utilisateur(); // Vider le formulaire
+  //     }
+  //   )
+  // }
 }

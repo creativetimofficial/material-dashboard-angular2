@@ -15,39 +15,44 @@
                     <div class="col">
                         <div class="card shadow">
                             <div class="card-header border-0">
-                                <h3 class="mb-0">List des offres</h3>
+                                <h3 class="mb-0">Liste des offres</h3>
                             </div>
                             <div class="table-responsive">
-                                <table class="table align-items-center table-flush">
-                                    <thead class="thead-light">
+                                <table class="table table-striped align-items-center table-flush">
+                                    <thead class="thead-dark">
                                         <tr>
-                                            <th scope="col">imageOffre</th>
-                                            <th scope="col">description</th>
-                                            <th scope="col">ville</th>
-                                            <th scope="col">adresse</th>
-                                            <th scope="col">surfaceOffre</th>
-                                            <th scope="col">orientationOffre</th>
-                                            <th scope="col">etatOffre</th>
-                                            <th scope="col">typeOffre</th>
-                                            <th scope="col">prixOffre</th>
-                                            <th scope="col">disponibiliteOffre</th>
-                                            <!-- <th style="text-align: center;" scope="col">Action</th> -->
+                                            <th class="text-center text-nowrap" scope="col">Image</th>
+                                            <th class="text-center text-nowrap" scope="col">Description
+                                            </th>
+                                            <th class="text-center text-nowrap" scope="col">Ville</th>
+                                            <th class="text-center text-nowrap" scope="col">Adresse</th>
+                                            <th class="text-center text-nowrap" scope="col">Surface</th>
+                                            <th class="text-center text-nowrap" scope="col">Orientation
+                                            </th>
+                                            <th class="text-center text-nowrap" scope="col">Etat</th>
+                                            <th class="text-center text-nowrap" scope="col">Type</th>
+                                            <th class="text-center text-nowrap" scope="col">Prix</th>
+                                            <th class="text-center text-nowrap" scope="col">
+                                                Disponibilité</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let o of offres">
-                                            <td>{{o.imageOffre}}</td>
-                                            <td>{{o.description}}</td>
-                                            <td>{{o.ville}}</td>
-                                            <td>{{o.adresse}}</td>
-                                            <td>{{o.surfaceOffre}}</td>
-                                            <td>{{o.orientationOffre}}</td>
-                                            <td>{{o.etatOffre}}</td>
-                                            <td>{{o.typeOffre}}</td>
-                                            <td>{{o.prixOffre}}</td>
-                                            <td>{{o.disponibiliteOffre}}</td>
+                                            <td class="text-center"><img src="data:image/jpeg;base64,{{o.imageOffre}}"
+                                                    height="120" width="120" /></td>
+                                            <td class="text-center">{{o.description}}</td>
+                                            <td class="text-center">{{o.ville}}</td>
+                                            <td class="text-center">{{o.adresse}}</td>
+                                            <td class="text-center">{{o.surfaceOffre}}</td>
+                                            <td class="text-center">{{o.orientationOffre}}</td>
+                                            <td class="text-center">{{o.etatOffre}}</td>
+                                            <td class="text-center">{{o.typeOffre}}</td>
+                                            <td class="text-center">{{o.prixOffre}}</td>
+                                            <td class="text-center">{{o.disponibiliteOffre}}</td>
                                         </tr>
                                     </tbody>
+
+
                                 </table>
                             </div>
                         </div>
