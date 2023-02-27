@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: chocolate; opacity: 1;">
         <div class="navbar-wrapper">
-          <a class="navbar-brand" href="javascript:void(0)">{{getTitle()}}</a>
+            <h2 class="navbar-brand" href="javascript:void(0)" style="color: black;"><b>{{getTitle()}}</b></h2>
         </div>
         <button mat-raised-button class="navbar-toggler" type="button" (click)="sidebarToggle()">
             <span class="sr-only">Toggle navigation</span>
@@ -29,19 +29,18 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <i class="material-icons">notifications</i>
-                        <span class="notification">5</span>
+                        <span class="notification">3</span>
                         <p>
                             <span class="d-lg-none d-md-block">Some Actions</span>
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="javascript:void(0)">Mike John responded to your email</a>
-                        <a class="dropdown-item" href="javascript:void(0)">You have 5 new tasks</a>
-                        <a class="dropdown-item" href="javascript:void(0)">You're now friend with Andrew</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Another Notification</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Another One</a>
+                        <a class="dropdown-item" href="javascript:void(0)">Confirmez votre adresse mail</a>
+                        <a class="dropdown-item" href="javascript:void(0)">Une envie ? Réservez une offre !</a>
+                        <a class="dropdown-item" href="javascript:void(0)">Ne ratez aucune occasion, suivez nous</a>
                     </div>
                 </li>
                 <li class="nav-item">
