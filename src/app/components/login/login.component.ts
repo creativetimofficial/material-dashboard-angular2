@@ -16,6 +16,9 @@ export class LoginComponent implements OnInit {
   username!: string;
   password!: string;
   credentials = { username: '', password: '' }
+  visible:boolean = true;
+  changetype:boolean = true;
+
   constructor(private appService: AppService, private httpClient: HttpClient, private router: Router) { }
 
 
@@ -23,6 +26,10 @@ export class LoginComponent implements OnInit {
     this.appService.authenticate(this.credentials, () => { this.router.navigateByUrl("/home") });
   }
 
+  viewpass(){
+    this.visible = !this.visible
+    this.changetype = !this.changetype;
+  }
 
   /*onSubmit(form:NgForm) {
     // Récupération des données du formulaire

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Utilisateur } from 'app/model/utilisateur';
 import { UtilisateurService } from 'app/services/utilisateur.service';
+import * as bcrypt from 'bcryptjs'
 
 
 @Component({
@@ -11,17 +13,24 @@ import { UtilisateurService } from 'app/services/utilisateur.service';
 })
 export class RegistrationComponent implements OnInit {
 
-
-
-
-  users!: any[]
-  roles!: any[];
   utilisateur: Utilisateur = new Utilisateur();
-  constructor(private utilisateurService: UtilisateurService, private router: Router) { }
+  myForm: FormGroup;
+  constructor(private fb:FormBuilder, private utilisateurService: UtilisateurService, private router: Router) { }
   ngOnInit(): void {
     this.saveUtilisateur();
 
+    $('[name="btn1"]').click(function(){
+      alert("Compte créé avec succés");
+  })
+  
+  
   }
+
+  onSubmit() {
+    const password = this.myForm.get('password').value;
+    const hashedPassword = bcrypt.hashSync(password);
+    }
+
 
 
   saveUtilisateur() {
@@ -31,5 +40,5 @@ export class RegistrationComponent implements OnInit {
       }
     )
   }
+ 
 }
-
