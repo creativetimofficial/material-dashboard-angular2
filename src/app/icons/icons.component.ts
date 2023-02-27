@@ -27,8 +27,6 @@ export class IconsComponent {
   }
 
   findAllUtilisateurs() {
-    // Utilisation de l'expression lambde dans le subscribe  
-    // data => {this.users = data}   
     this.utilisateurService.findAll().subscribe(data => { this.users = data; });
   }
 

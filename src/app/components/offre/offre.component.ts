@@ -13,6 +13,8 @@ export class OffreComponent implements OnInit {
 
   offre: Offre = new Offre();
 
+  selectedFiles?: FileList;
+  currentFileUpload?: File;
   offres!: any[];
   users!: any[];
 
@@ -33,13 +35,16 @@ export class OffreComponent implements OnInit {
     this.utilisateurService.findAll().subscribe(data => { this.users = data; });
   }
 
-  saveOffre() {
-    this.offreService.save(this.offre).subscribe(
-      () => {
-        this.findAllOffre();
-        this.offre = new Offre();
-      }
-    )
+  selectFile(event: any) {
+    this.selectedFiles = event.target.files;
+  }
+  save() {
+    this.currentFileUpload = this.selectedFiles?.item(0) as File;
+    this.offreService.save(this.currentFileUpload, this.offre).subscribe(() => {
+      this.findAllUtilisateurs();
+      this.offre = new Offre();
+      this.selectedFiles = undefined;
+    })
   }
   deleteOffre(id: number) {
     this.offreService.delete(id).subscribe(
