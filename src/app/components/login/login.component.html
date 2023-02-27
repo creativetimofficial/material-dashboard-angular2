@@ -17,7 +17,7 @@
   }
 
   .form-group {
-
+    position: relative;
     background-color: none;
     margin-top: 5%;
     border-width: 10px;
@@ -25,7 +25,24 @@
     border-style:groove;
     border-radius: 15px;
 
-    
+  }
+
+  .form-group input{
+    border: 1px solid #ddd;
+    height : 40px;
+    padding: 0 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+
+  }
+
+  .eyeicon{
+    position: absolute;
+    right: 60px;
+    top: 175px;
+    cursor: pointer;
+
   }
   
 
@@ -45,7 +62,10 @@
       </div>
       <div>
         <label for="password">Mot de passe</label>
-        <input type="text" class="form-control" [(ngModel)]="credentials.password" name="password">
+        <input [type]="changetype? 'password' : 'text'" class="form-control" [(ngModel)]="credentials.password" name="password">
+        <span class = "eyeicon" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye' : 'fa fa-eye-slash'"></i>
+
+        </span>
         <br>
       </div>
       <button class="btn btn-warning" type="submit">Se connecter</button>

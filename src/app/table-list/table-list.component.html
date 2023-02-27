@@ -1,13 +1,77 @@
+
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-                <p>Ici on pourra mettre des exmples d'offres, genre villa pas cher, appart parisien au top, etc.</p>
+            <div id="rechercheavancee" class="col-md-12">
+    <form (ngSubmit)="onSubmit()" class="form-group col-md-6">
+        <label for="ville">Ville :</label>
+        <input class="form-control" type="text" name="ville" [(ngModel)]="ville">
+  
+        <label for="typeOffre">Type d'offre :</label>
+        <input class="form-control" type="text" name="typeOffre" [(ngModel)]="typeOffre">
+
+        <label for="prix">Prix :</label>
+        <input class="form-control" type="number" name="prix" [(ngModel)]="prix">
+
+        <label for="surface">Surface :</label>
+        <input class="form-control" type="number" name="surface" [(ngModel)]="surface">
+
+        <label for="orientation">Orientation : </label>
+        <input class="form-control" type="text" name="orientation" [(ngModel)]="orientation">
+
+        <label for="bien">Type de Biens :</label>
+        <select name="bien" [(ngModel)]="bien">
+        <option value="appartement">Appartement</option>
+        <option value="maison">Maison</option>
+        <option value="maison">Garage</option>
+        <option value="maison">Terrain</option>
+        </select>
+        <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="rechercher()">Rechercher</button>
+  </form>
+    </div>
+    <div>
+        <input type="button" name="boutonrecherche" class="boutonrecherche" id="boutonrecherche" value="Faire une recherche">
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title"></h4>
             </div>
-            <div class="col-md-12">
-                <p>Ici on pourra mettre un bouton et un champ pour faire des recherches spécifique</p>
-                <button mat-raised-button type="submit" class="btn btn-danger pull-right">Lancer la recherche !</button>
-            </div>
+            <div class="card-body">
+                <!-- <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">imageOffre</th>
+                            <th scope="col">description</th>
+                            <th scope="col">ville</th>
+                            <th scope="col">adresse</th>
+                            <th scope="col">surfaceOffre</th>
+                            <th scope="col">orientationOffre</th>
+                            <th scope="col">etatOffre</th>
+                            <th scope="col">typeOffre</th>
+                            <th scope="col">prixOffre</th>
+                            <th scope="col">disponibiliteOffre</th>                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let o of offreRecherche">
+                            <td>{{o.imageOffre}}</td>
+                            <td>{{o.description}}</td>
+                            <td>{{o.ville}}</td>
+                            <td>{{o.adresse}}</td>
+                            <td>{{o.surfaceOffre}}</td>
+                            <td>{{o.orientationOffre}}</td>
+                            <td>{{o.etatOffre}}</td>
+                            <td>{{o.typeOffre}}</td>
+                            <td>{{o.prixOffre}}</td>
+                            <td>{{o.disponibiliteOffre}}</td>
+                        </tr>
+
+                    </tbody>
+                </table> -->
+
+
 
             <!--Table d'affichage des offres-->
             <div class="container-fluid mt--7">

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Utilisateur } from 'app/model/utilisateur';
 import { UtilisateurService } from 'app/services/utilisateur.service';
@@ -15,7 +15,7 @@ export class RegistrationComponent implements OnInit {
 
   utilisateur: Utilisateur = new Utilisateur();
   myForm: FormGroup;
-  constructor(private utilisateurService: UtilisateurService, private router: Router) { }
+  constructor(private fb:FormBuilder, private utilisateurService: UtilisateurService, private router: Router) { }
   ngOnInit(): void {
     this.saveUtilisateur();
 
@@ -26,6 +26,13 @@ export class RegistrationComponent implements OnInit {
   
   }
 
+  onSubmit() {
+    const password = this.myForm.get('password').value;
+    const hashedPassword = bcrypt.hashSync(password);
+    }
+
+
+
   saveUtilisateur() {
     this.utilisateurService.save(this.utilisateur).subscribe(
       () => {
@@ -33,9 +40,5 @@ export class RegistrationComponent implements OnInit {
       }
     )
   }
-  onSubmit() {
-    const password = this.myForm.get('password').value;
-    const hashedPassword = bcrypt.hashSync(password, 10);
-
-}
+ 
 }
