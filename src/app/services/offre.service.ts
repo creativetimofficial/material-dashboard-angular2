@@ -37,6 +37,12 @@ export class OffreService {
     );
   }
 
+  public rechercher(ville:string) : Observable<any>{
+      return this.httpClient.get(this.BASE_URL+"/"+ville);
+  }
+
+  
+
   public delete(id: number): Observable<any> { return this.httpClient.delete(this.BASE_URL + "/" + id); }
 
   public findOne(id: number): Observable<any> { return this.httpClient.get(this.BASE_URL + "/" + id); }

@@ -1,7 +1,7 @@
 
 <div class="main-content">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row"> 
             <div id="rechercheavancee" class="col-md-12">
     <form (ngSubmit)="onSubmit()" class="form-group col-md-6">
         <label for="ville">Ville :</label>
@@ -17,10 +17,10 @@
         <input class="form-control" type="number" name="surface" [(ngModel)]="surface">
 
         <label for="orientation">Orientation : </label>
-        <input class="form-control" type="text" name="orientation" [(ngModel)]="orientation">
-
+        <input class="form-control" type="text" name="orientation" [(ngModel)]="orientation"> 
+ 
         <label for="bien">Type de Biens :</label>
-        <select name="bien" [(ngModel)]="bien">
+        <select name="bien">
         <option value="appartement">Appartement</option>
         <option value="maison">Maison</option>
         <option value="maison">Garage</option>
@@ -33,45 +33,6 @@
         <input type="button" name="boutonrecherche" class="boutonrecherche" id="boutonrecherche" value="Faire une recherche">
 
     </div>
-    <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title"></h4>
-            </div>
-            <div class="card-body">
-                <!-- <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">imageOffre</th>
-                            <th scope="col">description</th>
-                            <th scope="col">ville</th>
-                            <th scope="col">adresse</th>
-                            <th scope="col">surfaceOffre</th>
-                            <th scope="col">orientationOffre</th>
-                            <th scope="col">etatOffre</th>
-                            <th scope="col">typeOffre</th>
-                            <th scope="col">prixOffre</th>
-                            <th scope="col">disponibiliteOffre</th>                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let o of offreRecherche">
-                            <td>{{o.imageOffre}}</td>
-                            <td>{{o.description}}</td>
-                            <td>{{o.ville}}</td>
-                            <td>{{o.adresse}}</td>
-                            <td>{{o.surfaceOffre}}</td>
-                            <td>{{o.orientationOffre}}</td>
-                            <td>{{o.etatOffre}}</td>
-                            <td>{{o.typeOffre}}</td>
-                            <td>{{o.prixOffre}}</td>
-                            <td>{{o.disponibiliteOffre}}</td>
-                        </tr>
-
-                    </tbody>
-                </table> -->
-
-
 
             <!--Table d'affichage des offres-->
             <div class="container-fluid mt--7">
@@ -101,7 +62,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let o of offres">
+                                        <tr *ngFor="let o of offreRecherche">
                                             <td class="text-center"><img src="data:image/jpeg;base64,{{o.imageOffre}}"
                                                     height="120" width="120" /></td>
                                             <td class="text-center">{{o.description}}</td>

@@ -30,11 +30,11 @@ export class TableListComponent implements OnInit {
   ngOnInit() {
     this.findAllOffre();
     this.ville ='';
-    this.typeOffre = '';
-    this.prix = 0;
-    this.surface = 0;
-    this.orientation = '';
-    this.bien = '';
+    // this.typeOffre = '';
+    // this.prix = 0;
+    // this.surface = 0;
+    // this.orientation = '';
+    // this.bien = '';
     this.rechercher();
 
 
@@ -47,20 +47,20 @@ export class TableListComponent implements OnInit {
 });
 }
 
+onSubmit(){
+  this.rechercher();
+}
+
+
   findAllOffre() {
     this.offreService.findAll().subscribe(data => { this.offres = data; });
   }
 
   rechercher(){
-    const url = `/table-list/recherche?ville=${this.ville}&type=${this.typeOffre}
-    &prix=${this.prix}&surface=${this.surface}&orientation=${this.orientation}`;
-    this.httpClient.get<any[]>(url).subscribe(data => {
-      this.bien = data;
-    });
+    this.offreService.rechercher(this.ville).subscribe(
+        data => {this.offreRecherche=data;}); 
+      
   }
 
-  onSubmit(){
-    this.rechercher();
-  }
 
 }
