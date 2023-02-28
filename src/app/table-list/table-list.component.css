@@ -1,0 +1,9 @@
+.mat-menu-content {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.mat-menu-item img {
+    width: 100%;
+    height: auto;
+}

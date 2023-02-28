@@ -1,78 +1,82 @@
-<div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-                <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title">Material Dashboard PRO Angular</h4>
-                        <p class="card-category">Are you looking for more components? Please check our Premium Version of Material Dashboard Angular.</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive table-upgrade">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th class="text-center">Free</th>
-                                        <th class="text-center">PRO</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Components</td>
-                                        <td class="text-center">60</td>
-                                        <td class="text-center">200</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Plugins</td>
-                                        <td class="text-center">2</td>
-                                        <td class="text-center">15</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Example Pages</td>
-                                        <td class="text-center">3</td>
-                                        <td class="text-center">27</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Login, Register, Pricing, Lock Pages</td>
-                                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
-                                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td>DataTables, VectorMap, SweetAlert, Wizard, jQueryValidation, FullCalendar etc...</td>
-                                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
-                                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mini Sidebar</td>
-                                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
-                                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Premium Support</td>
-                                        <td class="text-center"><i class="fa fa-times text-danger"></i></td>
-                                        <td class="text-center"><i class="fa fa-check text-success"></i></td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td class="text-center">Free</td>
-                                        <td class="text-center">Just $59</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"></td>
-                                        <td class="text-center">
-                                            <a href="javascript:void(0)" class="btn btn-round btn-fill btn-default disabled">Current Version</a>
-                                        </td>
-                                        <td class="text-center">
-                                            <a target="_blank" href="https://www.creative-tim.com/product/material-dashboard-pro-angular2?ref=md-free-angular-upgrade-live" class="btn btn-round btn-fill btn-info">Upgrade to PRO</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+<div class="container-fluid mt--7" style="background-color: white;">
+    <br>
+    <br>
+    <h3><b>Vous avez aimez cette application ?</b></h3>
+    <p style="font-size: larger;">Le principe d'une <b>agence immobilière 100% dématérialisée</b> vous plait ? <br>Alors
+        suivez nous sur tous nos réseaux sociaux pour ne rien rater de nos <b>prochaines expériences !</b> </p>
+    <br>
+    <br>
+    <p>Sur Facebook : <a href="https://fr-fr.facebook.com/"> <img src="assets/img/fb.png" width="50" height="50">
+        </a>
+    </p>
+    <br>
+    <p>Sur Instagram : <a href="https://www.instagram.com/"> <img src="assets/img/insta.jpg" width="50" height="50">
+        </a></p>
+    <br>
+    <p>Sur Twitter : &nbsp; &nbsp; <a href="https://twitter.com/"> <img src="assets/img/twitter.jpg" width="50"
+                height="50">
+        </a></p>
+    <br>
+    <p style="font-size: larger;">Pour toute question, ou pour faire une réclamation, n'hésitez pas à remplir le
+        formulaire ci joint. <br> Nous
+        donnerons
+        suite à vos retours dans <b>les plus bref délais ! </b></p>
+    <br>
+    <br>
+
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <h3 style="color: chocolate; margin: auto;"><b>Posez-nous une question </b></h3>
                     </div>
                 </div>
             </div>
+            <div class="card-body">
+                <form (ngSubmit)="saveQuestion()">
+                    <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group" style="border: 5px; border-color: chocolate; margin: auto;">
+                                    <label class="form-control-label" for="input-objetQuestion"
+                                        style=" color: black; margin: auto;">Objet de la question</label>
+                                    <input type="text" [(ngModel)]="question.objetQuestion" name="objetQuestion"
+                                        id="input-objetQuestion" class="form-control form-control-alternative"
+                                        placeholder="Réclamation, etc.. ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="form-group" style="margin: auto;"> <label class="form-control-label"
+                                        for="input-descriptionQuestion" style=" color: black; margin: auto;">Description
+                                        de la
+                                        question</label> <input type="text" [(ngModel)]="question.descriptionQuestion"
+                                        name="descriptionQuestion" id="input-descriptionQuestion"
+                                        class="form-control form-control-alternative" placeholder="Dites nous tout">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: relative; left: 100px;">
+                        <button class="btn btn-danger" style="background-color: chocolate;">Contactez-nous</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container-fluid mt--7" style="background-color: white;">
+        <div style="text-align: center;">
+            <p style="font-size: large;"> <b>Nos coordonées : </b></p>
+            <p>Numéro de téléphone : 0101010101</p>
+            <p>Adresse du siège : 32 rue des Dév' 75000 Paris</p>
+            <p>Adresse mail : contact.realEstateAgency@gmail.com</p>
+            <br>
+            <p>&nbsp;</p>
         </div>
     </div>
 </div>
+<!--Formulaire d'ajout fin-->

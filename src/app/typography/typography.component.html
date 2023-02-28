@@ -1,98 +1,122 @@
-<div class="main-content">
-  <div class="container-fluid">
-    <div class="card">
-        <div class="card-header card-header-danger">
-            <h4 class="card-title">Material Dashboard Heading</h4>
-            <p class="card-category">Created using Roboto Font Family</p>
-        </div>
-        <div class="card-body">
-            <div id="typography">
-                <div class="card-title">
-                    <h2>Typography</h2>
-                </div>
-                <div class="row">
-                    <div class="tim-typo">
-                        <h1>
-                            <span class="tim-note">Header 1</span>The Life of Material Dashboard </h1>
-                    </div>
-                    <div class="tim-typo">
-                        <h2>
-                            <span class="tim-note">Header 2</span>The Life of Material Dashboard</h2>
-                    </div>
-                    <div class="tim-typo">
-                        <h3>
-                            <span class="tim-note">Header 3</span>The Life of Material Dashboard</h3>
-                    </div>
-                    <div class="tim-typo">
-                        <h4>
-                            <span class="tim-note">Header 4</span>The Life of Material Dashboard</h4>
-                    </div>
-                    <div class="tim-typo">
-                        <h5>
-                            <span class="tim-note">Header 5</span>The Life of Material Dashboard</h5>
-                    </div>
-                    <div class="tim-typo">
-                        <h6>
-                            <span class="tim-note">Header 6</span>The Life of Material Dashboard</h6>
-                    </div>
-                    <div class="tim-typo">
-                        <p>
-                            <span class="tim-note">Paragraph</span>
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Quote</span>
-                        <blockquote class="blockquote">
-                            <p>
-                                I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.
-                            </p>
-                            <small>
-                                Kanye West, Musician
-                            </small>
-                        </blockquote>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Muted Text</span>
-                        <p class="text-muted">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                        </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Primary Text</span>
-                        <p class="text-primary">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Info Text</span>
-                        <p class="text-info">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Success Text</span>
-                        <p class="text-success">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Warning Text</span>
-                        <p class="text-warning">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...
-                        </p>
-                    </div>
-                    <div class="tim-typo">
-                        <span class="tim-note">Danger Text</span>
-                        <p class="text-danger">
-                            I will be the leader of a company that ends up being worth billions of dollars, because I got the answers... </p>
-                    </div>
-                    <div class="tim-typo">
-                        <h2>
-                            <span class="tim-note">Small Tag</span>
-                            Header with small subtitle
-                            <br>
-                            <small>Use "small" tag for the headers</small>
-                        </h2>
+<!-- Formulaire d'ajout début-->
+<br>
+<br>
+<br>
+<div class="container-fluid mt--7" style="background-color: white;">
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <h3 style="color: chocolate;"><b>Ajouter une offre</b></h3>
                     </div>
                 </div>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="saveOffre()">
+                    <h4 class="heading-small text-muted mb-4"><b>Informations nécessaires pour l'ajout d'un bien</b>
+                    </h4>
+                    <div class="pl-lg-4">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="form-group" style="border: 5px; border-color: chocolate;">
+                                    <label class="form-control-label" for="input-first-name"
+                                        style=" color: black;">Ville</label>
+                                    <input type="text" [(ngModel)]="offre.ville" name="ville" id="input-ville"
+                                        class="form-control form-control-alternative" placeholder="Ville "
+                                        value="Lucky">
+                                </div>
+                            </div>
+                            <div class="col-lg-1">
+                                <p> &nbsp;</p>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="form-group"> <label class="form-control-label" for="input-adresse"
+                                        style=" color: black;">Adresse</label> <input type="text"
+                                        [(ngModel)]="offre.adresseOffre" name="adresseOffre" id="input-adresse"
+                                        class="form-control form-control-alternative" placeholder="adresse"
+                                        value="Luck"> </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <div class="form-group"> <label class="form-control-label" for="input-prix"
+                                        style=" color: black;">Prix</label> <input type="email"
+                                        [(ngModel)]="offre.prixOffre" name="prixOffre" id="input-prix"
+                                        class="form-control form-control-alternative" placeholder="prix">
+                                </div>
+                            </div>
+                            <div class="col-lg-1">
+                                <p> &nbsp;</p>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="form-group"> <label class="form-control-label" for="input-surface"
+                                        style=" color: black;">Surface</label> <input type="text"
+                                        [(ngModel)]="offre.surfaceOffre" name="surfaceOffre" id="input-surface"
+                                        class="form-control form-control-alternative"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group"> <label class="form-control-label" for="input-description"
+                                    style=" color: black;">Description</label> <input type="text"
+                                    [(ngModel)]="offre.description" name="description" id="input-description"
+                                    class="form-control form-control-alternative" placeholder="description"
+                                    value="description">
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <p> &nbsp;</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group"> <label class="form-control-label" for="input-disponibiliteOffre"
+                                    style=" color: black;">Disponibilité</label> <input type="text"
+                                    [(ngModel)]="offre.disponibiliteOffre" name="disponibiliteOffre"
+                                    id="input-disponibiliteOffre" class="form-control form-control-alternative"
+                                    placeholder="TRUE OR FALSE" value="disponibiliteOffre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="form-group"> <label class="form-control-label" for="input-orientation"
+                                    style=" color: black;">Orientation</label> <input type="text"
+                                    [(ngModel)]="offre.orientationOffre" name="orientation" id="input-orientation"
+                                    class="form-control form-control-alternative" placeholder="orientation"
+                                    value="orientationOffre">
+                            </div>
+                        </div>
+                        <div class="col-lg-1">
+                            <p> &nbsp;</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="form-group"> <label class="form-control-label" for="input-typeOffre"
+                                    style=" color: black;">Type de l'offre</label> <input type="text"
+                                    [(ngModel)]="offre.typeOffre" name="typeOffre" id="input-typeOffre"
+                                    class="form-control form-control-alternative" placeholder="Location ou Achat"
+                                    value="typeOffre">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group"> <label class="form-control-label" for="input-etatOffre"
+                                style=" color: black;">Etat de l'offre</label>
+                            <p style="font-size: small;"><i>RENOVE , A_RENOVE , NEUF , BON_ETAT , PASSABLE</i></p>
+                            <input type="text" [(ngModel)]="offre.etatOffre" name="etatOffre" id="input-etatOffre"
+                                class="form-control form-control-alternative" placeholder="NEUF" value="etatOffre">
+                        </div>
+                    </div>
+                    <!-- <div>
+                        <p>Image</p>
+                    </div>-->
+                    <div>
+                        <button class="btn btn-danger" style="background-color: chocolate;">Ajouter</button>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
 </div>
+<!--Formulaire d'ajout fin-->
