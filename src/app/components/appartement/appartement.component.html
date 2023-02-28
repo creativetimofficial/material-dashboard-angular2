@@ -1,1 +1,122 @@
-<p>appartement works!</p>
+<style>
+h1{
+    text-align: center;
+    color: coral;
+    text-decoration: solid;
+}
+
+.slider {
+  width: 800px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.slider-viewport {
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slider-content {
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+.slider-content img {
+  width: 800px;
+  height: 400px;
+}
+
+.slider-nav {
+  position: absolute;
+  width: 100%;
+  bottom: 555px;
+  margin-top: 10px;
+  text-align: center;
+}
+.slider-nav a {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.3);
+          box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  background-color: #adafbc;
+  width: 15px;
+  height: 15px;
+  margin: 0 3px;
+
+}
+.slider-nav a:hover {
+  background-color: rgb(216, 90, 18);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(216, 90, 18);
+          box-shadow: 0px 0px 5px 0px rgba(216, 90, 18);
+}
+
+#img2:target .slider-content {
+  -webkit-transform: translateX(-800px);
+          transform: translateX(-800px);
+}
+
+h4{
+    font-weight: 200 ;
+}
+.avis{
+  color: chocolate;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12pt;
+}
+
+.checked{
+    color: orange;
+}
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+<div class="main-content">
+<h1><strong> Appartement à acheter au coeur de Paris</strong></h1>
+
+    <div class="slider">
+        <div class="slider-viewport">
+        <div id="img1">
+            <div id="img2">
+        
+                    <div class="slider-content">
+                        <img src="src/assets/img/appart1.jpg" width="50px" height="50px">
+                        <img src="src/assets/img/maison.jpgc/assets/img/salon-luxe-loft-rendu-3d-etagere-pres-table-manger.jpg" width="50px" height="50px">
+                       
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+    
+        <div class="slider-nav">
+        <a href="#img1"></a>
+        <a href="#img2"></a>
+        </div>
+<br>
+<br>
+        <div class="container-fluid"> 
+                <div>
+                <h4><strong> Description du bien</strong></h4>
+                </div>
+                <br>
+                <p>Nouvelle EXCLUSIVITE dans votre agence </p>
+                <p>Situé dans une belle copropriété familiale, sécurisée et très bien entretenue, 
+            découvrez ce bel appartement de 89m² compleétement rénové, composé de 2 chambres, un séjour, une cuisine 
+            indépendante et aménagée et équipée et une salle de bains.</p>
+                <p>La copropriété est située à deux pas des écoles, des commerces et des transports 
+                    (bus au pied de l'immeuble et à 15 minutes à pied du métro 7)</p>
+                    <br>
+                    <p>Vous bénéficierez également d'un box en sous-sol ainsi que d'une cave.</p>
+                    <br>
+                    <p><strong>Prix : 125 800 euros</strong></p>
+        </div>
+        <div>
+        <span class = "avis">Notez cette offre   </span>
+        <span class ="fas fa-star checked"></span>
+        <span class ="fas fa-star checked" ></span>
+        <span class ="fas fa-star checked"></span>
+        <span class ="fas fa-star" ></span>
+        <span class ="fas fa-star" ></span>
+</div>

@@ -32,7 +32,7 @@ import { MdpComponent } from './mdp/mdp.component';
     AppRoutingModule,
     ComponentsModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
   ],
   declarations: [
     AppComponent,

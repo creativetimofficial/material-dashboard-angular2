@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Appartement } from 'app/model/appartement';
 import { AppartementService } from 'app/services/appartement.service';
@@ -14,15 +15,15 @@ export class AppartementComponent implements OnInit {
   appartement: Appartement = new Appartement();
 
   appartementS!: any[];
-  offres!: any[];
-
+  offres!: any[];  
   constructor(private appartementService: AppartementService, private offreService: OffreService, private router: Router) {
-
+   
   }
 
   ngOnInit(): void {
     this.findAllAppartement();
     this.findAllOffres();
+
   }
 
   findAllAppartement() {
@@ -48,5 +49,5 @@ export class AppartementComponent implements OnInit {
       }
     )
   }
-
-}
+ 
+}  

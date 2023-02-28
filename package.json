@@ -43,6 +43,7 @@
     "hammerjs": "2.0.8",
     "jquery": "^3.6.0",
     "moment": "^2.29.4",
+    "ngx-star-rating": "^2.1.0",
     "perfect-scrollbar": "1.5.5",
     "popper.js": "1.16.1",
     "rxjs": "~7.5.0",

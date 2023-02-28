@@ -63,8 +63,8 @@
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let o of offreRecherche">
-                                            <td class="text-center"><img src="data:image/jpeg;base64,{{o.imageOffre}}"
-                                                    height="120" width="120" /></td>
+                                            <td class="text-center"><a routerLink="/appartements"><img src="data:image/jpeg;base64,{{o.imageOffre}}"
+                                                    height="120" width="120" ></a></td>
                                             <td class="text-center">{{o.description}}</td>
                                             <td class="text-center">{{o.ville}}</td>
                                             <td class="text-center">{{o.adresse}}</td>
