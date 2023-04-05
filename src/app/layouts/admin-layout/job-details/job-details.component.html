@@ -1,0 +1,127 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4>Job Details</h4>
+                </div>
+                <div class="card-body" *ngIf="job">
+                    <div class="row">
+                        <div class="col-md-6">
+                            Title: <b>{{job.title}}</b>
+                        </div>
+                        <div class="col-md-6">
+                            Seniority: <b>{{job.seniority}} years</b>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Mandatory abilities:
+                        </div>
+                        <div class="col-md-10">
+                            <span *ngFor="let exp of job.mandatory_knowledge" class="ability">
+                                <b>{{exp}}</b>
+                            </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-2">
+                            Optional abilities:
+                        </div>
+                        <div class="col-md-10">
+                            <span *ngFor="let exp of job.optional_knowledge" class="ability">
+                                <b>{{exp}}</b>
+                            </span>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-1">
+                            Name:
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field>
+                                <input matInput placeholder="Candidate Name" [(ngModel)]="newCandidateName" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-danger" (click)="addCandidate()">
+                                Add Candidate
+                            </button>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3">
+                            <button class="btn btn-danger" [disabled]="questions.length > 0" (click)="generateQuestions()" matTooltip="Automatically generate technical interview questions if they haven't been already generated">
+                                Generate Interview Questions
+                            </button>
+                        </div>
+                        <div class="col-md-2" *ngIf="questions.length == 0">
+                            <mat-form-field>
+                                <input matInput placeholder="Number of questions" type="number" [(ngModel)]="noQuestions" />
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" *ngIf="questions.length > 0">
+                <div class="card-header card-header-danger">
+                    <h4>Technical Interview Questions</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th *ngFor="let candidate of candidates">
+                                    {{candidate.name}}
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let question of questions;">
+                                <td>
+                                    {{question.index + 1}}. {{question.text}}
+                                    <mat-icon
+                                            matTooltip="Click to show ideal answer"
+                                            (click)="showIdealAnswer(question)"
+                                            style="cursor: pointer;"
+                                        >feedback
+                                    </mat-icon>
+                                </td>
+                                <td *ngFor="let candidate of candidates" style="text-align: center;">
+                                    <span *ngIf="candidate.answers[question._id]">
+                                        {{candidate.answers[question._id].mark}}
+                                        <mat-icon
+                                            (click)="showCandidateAnswer(question, candidate.answers[question._id])"
+                                            matTooltip="Show candidate answer and analysis"
+                                            style="cursor: pointer;"
+                                        >assignment
+                                        </mat-icon>
+                                    </span>
+                                    <span *ngIf="!candidate.answers[question._id]">
+                                        <mat-icon
+                                            (click)="addAnswer(question, candidate)"
+                                            matTooltip="Add candidate answer to question"
+                                            style="cursor: pointer"
+                                        >
+                                            create
+                                        </mat-icon>
+                                    </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

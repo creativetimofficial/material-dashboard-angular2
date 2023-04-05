@@ -1,0 +1,116 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Open Jobs</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="text-primary">
+                            <tr>
+                                <th>Title</th>
+                                <th>Seniority</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let job of jobs">
+                                <td>
+                                    <a [routerLink]="['/job-details', job._id]">
+                                         {{job.title}}
+                                    </a>
+                                </td>
+                                <td>
+                                    {{job.seniority}} years
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Add Open Job</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Job Title" [(ngModel)]="newJob.title" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2" style="vertical-align: middle;">
+                            Experience (years):
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Min" type="number" [(ngModel)]="minExperience" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Max" type="number" [(ngModel)]="maxExperience" />
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <h6>Mandatory abilities:</h6>
+                        </div>
+                        <span *ngFor="let exp of newJob.mandatory_knowledge" class="ability">
+                            <b>{{exp}}</b>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            New ability:
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="ability" [(ngModel)]="newMandatoryKnowledge" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-danger" (click)="addMandatoryKnowledge()">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <h6>Optional abilities:</h6>
+                        </div>
+                        <span *ngFor="let exp of newJob.optional_knowledge" class="ability">
+                            <b>{{exp}}</b>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            New ability:
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="ability" [(ngModel)]="newOptionalKnowledge" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-danger" (click)="addOptionalKnowledge()">
+                                Add
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <button class="btn btn-success" (click)="saveJob()">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

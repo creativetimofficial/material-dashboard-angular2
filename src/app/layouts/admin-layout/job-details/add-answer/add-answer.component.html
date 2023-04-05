@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Add Candidate Answer</h2>
+
+<mat-dialog-content>
+    <div class="row">
+        <b>Candidate:</b>
+        {{candidate.name}}
+    </div>
+
+    <div class="row">
+        <b>Question:</b>
+        {{question.text}}
+    </div>
+
+    <div class="row">
+        <mat-form-field style="width: 100%">
+            <textarea matInput placeholder="Write the candidate's answer here" [(ngModel)]="answer" ></textarea>
+        </mat-form-field>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button btn-success" (click)="save()">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Ideal Answer</h2>
+
+<mat-dialog-content>
+    <div class="row">
+        <b>Question:</b>
+        {{question}}
+    </div>
+    <div class="row">
+        <b>Ideal Answer:</b>
+        <mat-card-content [innerText]="answer"></mat-card-content>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>

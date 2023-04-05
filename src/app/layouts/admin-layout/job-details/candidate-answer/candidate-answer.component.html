@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Candidate Answer. Mark: <b>{{answer.mark}}</b></h2>
+
+<mat-dialog-content>
+    <div class="row">
+        <b>Question:</b>
+        {{question.text}}
+    </div>
+    <div class="row">
+        <b>Answer:</b>
+        <mat-card-content [innerText]="answer.text"></mat-card-content>
+    </div>
+    <div class="row">
+        <b>Analysis</b>
+        <mat-card-content [innerText]="answer.analysis"></mat-card-content>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions>
