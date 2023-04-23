@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
 import { Observable } from 'rxjs';
+import {UserService} from "./user.service";
 
 function base64UrlDecode(str: string): string {
   const base64 = str.replace('-', '+').replace('_', '/');
@@ -35,12 +36,12 @@ function isJwtExpired(token: string): boolean {
   providedIn: 'root'
 })
 export class AuthenticatedGuard implements CanActivate {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private userService: UserService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    const token = localStorage.getItem("token");
+    const token = this.userService.getAppJwtToken();
 
     try {
       if (!token || isJwtExpired(token)) {

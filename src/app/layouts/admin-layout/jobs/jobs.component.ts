@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
 import {getNewJob, Job} from "../../../models/job.model";
 import {Title} from "@angular/platform-browser";
+import {UserService} from "../../../user.service";
 
 
 
@@ -22,12 +23,9 @@ export class JobsComponent implements OnInit {
     constructor(
         private router: Router,
         private http: HttpClient,
-        private title: Title
+        private title: Title,
+        private userService: UserService
     ) {}
-
-    private getToken() {
-        return localStorage.getItem("token");
-    }
 
     ngOnInit() {
         this.title.setTitle("Osiris - Jobs");
@@ -38,7 +36,7 @@ export class JobsComponent implements OnInit {
         this.newOptionalKnowledge = null;
         this.http.get(`${environment.apiUrl}/jobs`, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Job[]) => {
@@ -53,6 +51,7 @@ export class JobsComponent implements OnInit {
     addMandatoryKnowledge() {
         if (!this.newMandatoryKnowledge) {
             console.log("No mandatory knowledge");
+            alert("No mandatory knowledge");
             return;
         }
         this.newJob.mandatory_knowledge.push(this.newMandatoryKnowledge);
@@ -62,6 +61,7 @@ export class JobsComponent implements OnInit {
     addOptionalKnowledge() {
         if (!this.newOptionalKnowledge) {
             console.log("No mandatory knowledge");
+            alert("No mandatory knowledge");
             return;
         }
         this.newJob.optional_knowledge.push(this.newOptionalKnowledge);
@@ -69,11 +69,21 @@ export class JobsComponent implements OnInit {
     }
 
     saveJob() {
+        if (!this.newJob.title) {
+            alert("Title not set");
+            return;
+        }
+
+        if ((!this.minExperience && this.minExperience !== 0) || !this.maxExperience) {
+            alert("Experience not set");
+            return;
+        }
+
         this.newJob.seniority = `${this.minExperience}-${this.maxExperience}`;
 
         this.http.post(`${environment.apiUrl}/jobs`, this.newJob, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Job) => {

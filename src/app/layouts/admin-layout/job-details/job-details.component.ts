@@ -11,6 +11,7 @@ import {IdealAnswerComponent} from "./ideal-answer/ideal-answer.component";
 import {CandidateAnswerComponent} from "./candidate-answer/candidate-answer.component";
 import {AddAnswerComponent} from "./add-answer/add-answer.component";
 import {Title} from "@angular/platform-browser";
+import {UserService} from "../../../user.service";
 
 @Component({
     selector: "app-job-details",
@@ -27,7 +28,8 @@ export class JobDetailsComponent implements OnInit, OnChanges {
         private route: ActivatedRoute,
         private http: HttpClient,
         private dialog: MatDialog,
-        private title: Title
+        private title: Title,
+        private userService: UserService
     ) { }
 
     ngOnInit() {
@@ -44,10 +46,6 @@ export class JobDetailsComponent implements OnInit, OnChanges {
         this.displayJob();
     }
 
-    private getToken() {
-        return localStorage.getItem("token");
-    }
-
     displayJob() {
         this.job = null;
         this.questions = [];
@@ -56,7 +54,7 @@ export class JobDetailsComponent implements OnInit, OnChanges {
         const jobId = this.route.snapshot.paramMap.get("id");
         this.http.get(`${environment.apiUrl}/jobs/${jobId}`, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Job) => {
@@ -75,7 +73,7 @@ export class JobDetailsComponent implements OnInit, OnChanges {
     listQuestions() {
         this.http.get(`${environment.apiUrl}/jobs/${this.job._id}/questions`, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Question[]) => {
@@ -91,7 +89,7 @@ export class JobDetailsComponent implements OnInit, OnChanges {
     listCandidates() {
         this.http.get(`${environment.apiUrl}/jobs/${this.job._id}/candidates`, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Candidate[]) => {
@@ -109,7 +107,7 @@ export class JobDetailsComponent implements OnInit, OnChanges {
             number: this.noQuestions
         }, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Question[]) => {
@@ -140,7 +138,7 @@ export class JobDetailsComponent implements OnInit, OnChanges {
 
         this.http.post(`${environment.apiUrl}/jobs/${this.job._id}/questions/${question._id}/generate-ideal-answer`, {}, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Question) => {
@@ -186,7 +184,7 @@ export class JobDetailsComponent implements OnInit, OnChanges {
             text: answer
         }, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Answer) => {
@@ -208,7 +206,7 @@ export class JobDetailsComponent implements OnInit, OnChanges {
             name: this.newCandidateName
         }, {
             headers: {
-                Authorization: `Bearer ${this.getToken()}`
+                Authorization: `Bearer ${this.userService.getAppJwtToken()}`
             }
         }).subscribe({
             next: (value: Candidate) => {

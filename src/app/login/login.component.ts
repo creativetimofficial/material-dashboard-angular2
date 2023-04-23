@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {SocialAuthService} from "@abacritt/angularx-social-login";
 
 @Component({
     selector: "login",
@@ -12,12 +13,21 @@ export class LoginComponent implements OnInit {
     username = "";
     password = "";
     errorMessage = "";
-    constructor(private router: Router, private http: HttpClient) {}
+    constructor(
+        private router: Router,
+        private http: HttpClient,
+        private socialService: SocialAuthService
+    ) {}
 
     ngOnInit() {
         this.username = "";
         this.password = "";
         this.errorMessage = "";
+        this.socialService.authState.subscribe({
+            next: (value) => {
+                console.log("Auth state changed", value);
+            }
+        })
     }
 
     login() {

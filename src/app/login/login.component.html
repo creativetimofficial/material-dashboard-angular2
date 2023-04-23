@@ -15,11 +15,17 @@
                 </mat-form-field>
             </div>
             <div class="row">
-                <button mat-raised-button type="button" class="btn btn-info" (click)="login()">
-                    Login
+                <button
+                        disabled
+                        mat-raised-button
+                        type="button"
+                        class="btn btn-info"
+                        (click)="login()"
+                >
+                    Login - Disabled
                 </button>
             </div>
-            <div class="row" *ngIf="!isProduction()">
+            <div class="row">
                 <div id="g_id_onload"
                      data-client_id="720095072153-bl54auh9v367357cdfj7nti1eu2lvr05.apps.googleusercontent.com"
                      data-context="signin"
@@ -38,25 +44,45 @@
                      data-logo_alignment="left">
                 </div>
             </div>
-            <div class="row" *ngIf="isProduction()">
-                <div id="g_id_onload"
-                     data-client_id="720095072153-bl54auh9v367357cdfj7nti1eu2lvr05.apps.googleusercontent.com"
-                     data-context="signin"
-                     data-ux_mode="redirect"
-                     data-login_uri="https://api.project-osiris.net/oauth/google"
-                     data-nonce=""
-                     data-auto_prompt="false">
-                </div>
+<!--            <div class="row" *ngIf="!isProduction()">-->
+<!--                <div id="g_id_onload"-->
+<!--                     data-client_id="720095072153-bl54auh9v367357cdfj7nti1eu2lvr05.apps.googleusercontent.com"-->
+<!--                     data-context="signin"-->
+<!--                     data-ux_mode="redirect"-->
+<!--                     data-login_uri="http://localhost:3000/oauth/google"-->
+<!--                     data-nonce=""-->
+<!--                     data-auto_prompt="false">-->
+<!--                </div>-->
 
-                <div class="g_id_signin"
-                     data-type="standard"
-                     data-shape="pill"
-                     data-theme="filled_blue"
-                     data-text="signin_with"
-                     data-size="large"
-                     data-logo_alignment="left">
-                </div>
-            </div>
+<!--                <div class="g_id_signin"-->
+<!--                     data-type="standard"-->
+<!--                     data-shape="pill"-->
+<!--                     data-theme="filled_blue"-->
+<!--                     data-text="signin_with"-->
+<!--                     data-size="large"-->
+<!--                     data-logo_alignment="left">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row" *ngIf="isProduction()">-->
+<!--                <div id="g_id_onload"-->
+<!--                     data-client_id="720095072153-bl54auh9v367357cdfj7nti1eu2lvr05.apps.googleusercontent.com"-->
+<!--                     data-context="signin"-->
+<!--                     data-ux_mode="redirect"-->
+<!--                     data-login_uri="https://api.project-osiris.net/oauth/google"-->
+<!--                     data-nonce=""-->
+<!--                     data-auto_prompt="false">-->
+<!--                </div>-->
+
+<!--                <div class="g_id_signin"-->
+<!--                     data-type="standard"-->
+<!--                     data-shape="pill"-->
+<!--                     data-theme="filled_blue"-->
+<!--                     data-text="signin_with"-->
+<!--                     data-size="large"-->
+<!--                     data-logo_alignment="left">-->
+<!--                </div>-->
+<!--            </div>-->
+
             <div class="row alert alert-danger" *ngIf="errorMessage">
                 {{errorMessage}}
             </div>

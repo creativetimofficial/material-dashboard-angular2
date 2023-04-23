@@ -8,6 +8,8 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import {AuthenticatedGuard} from "./authenticated.guard";
+import {CookieService} from "ngx-cookie-service";
+import {UserService} from "./user.service";
 
 @NgModule({
   imports: [
@@ -25,7 +27,9 @@ import {AuthenticatedGuard} from "./authenticated.guard";
 
   ],
   providers: [
-      AuthenticatedGuard
+      AuthenticatedGuard,
+      CookieService,
+      UserService
   ],
   bootstrap: [AppComponent]
 })
