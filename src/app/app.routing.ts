@@ -4,6 +4,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { FormRenderLayoutComponent } from './layouts/form-render-layout/form-render-layout.component';
 
 const routes: Routes =[
   {
@@ -11,11 +12,19 @@ const routes: Routes =[
     redirectTo: 'dashboard',
     pathMatch: 'full',
   }, {
-    path: '',
+    path: 'dashboard',
     component: AdminLayoutComponent,
     children: [{
       path: '',
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
+    }]
+  },
+  {
+    path: 'form',
+    component: FormRenderLayoutComponent,
+    children: [{
+      path: '',
+      loadChildren: () => import('./layouts/form-render-layout/form-render-layout.module').then(m => m.FormRenderLayoutModule)
     }]
   }
 ];

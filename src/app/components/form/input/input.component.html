@@ -1,0 +1,20 @@
+<ng-container [ngSwitch]="inputConfig.type">
+    <div *ngSwitchCase="'text' || 'number' || 'tel' || 'password' || 'email'">
+        <label>{{label}}</label>
+        <mat-form-field appearance="outline">
+            <input matInput [type]="inputConfig.type">
+        </mat-form-field>
+    </div>
+    <div *ngSwitchCase="'textarea'">
+        <label>{{inputConfig.type}}</label>
+        <mat-form-field>
+            <textarea matInput></textarea>
+        </mat-form-field>
+    </div>
+    <div *ngSwitchDefault class="col-md-12">
+        <label>{{label}}</label>
+        <mat-form-field appearance="outline">
+            <input matInput [type]="inputConfig.type">
+        </mat-form-field>
+    </div>
+</ng-container>

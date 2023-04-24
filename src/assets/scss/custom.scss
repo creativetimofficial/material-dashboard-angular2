@@ -1,0 +1,13 @@
+
+.form-main-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+app-form-presenter {
+    min-width: 100%;
+}

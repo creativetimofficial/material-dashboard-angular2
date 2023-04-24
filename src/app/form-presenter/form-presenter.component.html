@@ -1,0 +1,92 @@
+<div class="container-fluid">
+    <div class="row justify-content-center w-100">
+        <div class="col-md-8 col-lg-6">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div *ngIf="formConfig" class="card">
+                            <div class="card-header card-header-danger">
+                                <h1 class="card-title">{{formConfig.name}}</h1>
+                                <h3 class="card-category">{{formConfig.description}}</h3>
+                            </div>
+                            <div class="card-body">
+                                <form (submit)="submit($event)">
+                                    <div *ngFor="let section of formConfig.sections">
+                                        <div class="row">
+                                            <ng-container *ngFor="let inputConfig of section.fields">
+                                                <ng-container [ngSwitch]="inputConfig.type">
+                                                    <ng-container *ngSwitchCase="'TEXT'">
+                                                        <ng-container *ngTemplateOutlet="inputTemplate">
+                                                        </ng-container>
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchCase="'NUMBER'">
+                                                        <ng-container *ngTemplateOutlet="inputTemplate">
+                                                        </ng-container>
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchCase="'CHECKBOX'">
+                                                        <ng-container *ngTemplateOutlet="inputTemplate">
+                                                        </ng-container>
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchCase="'TEXTAREA'">
+                                                        <ng-container *ngTemplateOutlet="textAreaTemplate">
+                                                        </ng-container>
+                                                    </ng-container>
+                                                    <ng-container *ngSwitchDefault class="col-md-12">
+                                                        <ng-container *ngTemplateOutlet="inputTemplate">
+                                                        </ng-container>
+                                                    </ng-container>
+
+                                                    <ng-template #textAreaTemplate>
+                                                        <div class="col-md-12">
+                                                            <label [for]="inputConfig.id">{{inputConfig.name}}</label>
+                                                            <mat-form-field appearance="fill">
+                                                                <input matInput [id]="inputConfig?.id"
+                                                                    [type]="inputConfig?.type | lowercase"
+                                                                    #ngModel="{{inputConfig?.id}}" [(ngModel)]="inputConfig.value">
+                                                            </mat-form-field>
+                                                        </div>
+                                                    </ng-template>
+                                                    <ng-template #inputTemplate>
+                                                        <div class="col-md-12">
+                                                            <label [for]="inputConfig.id">{{inputConfig.name}}</label>
+                                                            <mat-form-field appearance="fill">
+                                                                <input matInput [id]="inputConfig.id"
+                                                                    [type]="inputConfig?.type | lowercase"
+                                                                     [(ngModel)]="inputConfig.value">
+                                                            </mat-form-field>
+                                                        </div>
+                                                    </ng-template>
+                                                </ng-container>
+                                            </ng-container>
+                                        </div>
+                                    </div>
+                                    <button mat-raised-button type="submit"
+                                        class="btn btn-danger pull-right">Submit</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <div class="card card-profile">
+                            <div class="card-avatar">
+                                <a href="javascript:void(0)">
+                                    <img class="img" src="./assets/img/faces/marc.jpg" />
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-category text-gray">CEO / Co-Founder</h6>
+                                <h4 class="card-title">Alec Thompson</h4>
+                                <p class="card-description">
+                                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                </p>
+                                <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
