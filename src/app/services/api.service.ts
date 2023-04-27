@@ -16,6 +16,14 @@ export class ApiService {
     return this.http.get<Form>(`${this.BASE_URL}/form/${id}`);
   }
 
+  listForms(): Observable<Form[]> {
+    return this.http.get<Form[]>(`${this.BASE_URL}/form`);
+  }
+
+  deleteForm(id: string): Observable<any> {
+    return this.http.delete(`${this.BASE_URL}/form/${id}`);
+  }
+
   submit(formResponse: FormResponse) {
     return this.http.post(`${this.BASE_URL}/form-response`, formResponse);
   }

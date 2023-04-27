@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Simple Table</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <a [routerLink]="['new']" class="btn btn-primary btn-sm">New form</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Sections
+                                    </th>
+                                    <th>
+                                        Actions
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let form of forms; let i = index">
+                                        <td>
+                                            {{i+1}}
+                                        </td>
+                                        <td>
+                                            {{form.name}}
+                                        </td>
+                                        <td>
+                                            {{form.description}}
+                                        </td>
+                                        <td>
+                                            {{form.sections.length}}
+                                        </td>
+                                        <td>
+                                            <a [routerLink]="['view', form.id]"
+                                                class="btn btn-primary btn-sm">View</a>
+                                            <a [routerLink]="['edit', form.id, 'edit']"
+                                                class="btn btn-warning btn-sm">Edit</a>
+                                            <button (click)="deleteForm(form.id)"
+                                                class="btn btn-danger btn-sm">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

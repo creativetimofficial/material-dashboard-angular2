@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row justify-content-center w-100">
-        <div class="col-md-8 col-lg-6">
+        <div class="col-md-8 col-lg-6" [ngClass]="{'col-md-8 col-lg-6': screenCover === 'narrow', 'col-md-12': screenCover === 'full'}">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -14,20 +14,20 @@
                                     <div *ngFor="let section of formConfig.sections">
                                         <div class="row">
                                             <ng-container *ngFor="let inputConfig of section.fields">
-                                                <ng-container [ngSwitch]="inputConfig.type">
-                                                    <ng-container *ngSwitchCase="'TEXT'">
+                                                <ng-container [ngSwitch]="inputConfig.type | lowercase">
+                                                    <ng-container *ngSwitchCase="'text'">
                                                         <ng-container *ngTemplateOutlet="inputTemplate">
                                                         </ng-container>
                                                     </ng-container>
-                                                    <ng-container *ngSwitchCase="'NUMBER'">
+                                                    <ng-container *ngSwitchCase="'number'">
                                                         <ng-container *ngTemplateOutlet="inputTemplate">
                                                         </ng-container>
                                                     </ng-container>
-                                                    <ng-container *ngSwitchCase="'CHECKBOX'">
+                                                    <ng-container *ngSwitchCase="'checkbox'">
                                                         <ng-container *ngTemplateOutlet="inputTemplate">
                                                         </ng-container>
                                                     </ng-container>
-                                                    <ng-container *ngSwitchCase="'TEXTAREA'">
+                                                    <ng-container *ngSwitchCase="'textarea'">
                                                         <ng-container *ngTemplateOutlet="textAreaTemplate">
                                                         </ng-container>
                                                     </ng-container>
@@ -39,17 +39,19 @@
                                                     <ng-template #textAreaTemplate>
                                                         <div class="col-md-12">
                                                             <label [for]="inputConfig.id">{{inputConfig.name}}</label>
-                                                            <mat-form-field appearance="fill">
-                                                                <input matInput [id]="inputConfig?.id"
+                                                            <mat-form-field appearance="outline">
+                                                                <textarea matInput
+                                                                    [id]="inputConfig.id"
                                                                     [type]="inputConfig?.type | lowercase"
-                                                                    #ngModel="{{inputConfig?.id}}" [(ngModel)]="inputConfig.value">
+                                                                    [name]="inputConfig.id" [(ngModel)]="inputConfig.value">
+                                                                    </textarea> 
                                                             </mat-form-field>
                                                         </div>
                                                     </ng-template>
                                                     <ng-template #inputTemplate>
                                                         <div class="col-md-12">
                                                             <label [for]="inputConfig.id">{{inputConfig.name}}</label>
-                                                            <mat-form-field appearance="fill">
+                                                            <mat-form-field appearance="outline">
                                                                 <input matInput [id]="inputConfig.id"
                                                                     [type]="inputConfig?.type | lowercase"
                                                                      [(ngModel)]="inputConfig.value">

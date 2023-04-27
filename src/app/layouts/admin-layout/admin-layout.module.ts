@@ -17,6 +17,9 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import { FormsComponent } from '../../forms/forms.component';
+import { FormBuilderComponent } from '../../forms/form-builder/form-builder.component';
+import { ComponentsModule } from 'app/components/components.module';
 
 @NgModule({
   imports: [
@@ -30,6 +33,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    ComponentsModule
   ],
   declarations: [
     DashboardComponent,
@@ -40,6 +44,8 @@ import {MatSelectModule} from '@angular/material/select';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    FormsComponent,
+    FormBuilderComponent,
   ]
 })
 

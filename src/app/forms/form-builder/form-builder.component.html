@@ -1,0 +1,102 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Edit Form</h4>
+                        <p class="card-category">Complete your form</p>
+                    </div>
+                    <div class="card-body">
+                        <form #formMetadataForm="ngForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="title">Form Title</label>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput id="title" placeholder="Form Title" [(ngModel)]="form.name" (change)="refreshPreview()">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="description">Description</label>
+                                    <mat-form-field appearance="outline">
+                                        <textarea matInput id="description" placeholder="description..."
+                                            [(ngModel)]="form.description" (change)="refreshPreview()"></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update
+                                Profile</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form #formSections="ngForm">
+                            <ng-container *ngFor="let section of form.sections">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <mat-label>Section Title</mat-label>
+                                        <mat-form-field appearance="outline">
+                                            <input matInput placeholder="Section Title"
+                                                [name]="generateFormName('s_title_', section._id)"
+                                                [(ngModel)]="section.title">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <mat-label>Section Description</mat-label>
+                                        <mat-form-field appearance="outline">
+                                            <textarea matInput placeholder="Section Description"
+                                                [name]="generateFormName('s_desc_', section._id)"
+                                                [(ngModel)]="section.description" (change)="refreshPreview()"></textarea>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <br />
+                                <ng-container *ngFor="let field of section.fields">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <mat-label>Field Title</mat-label>
+                                            <mat-form-field appearance="outline">
+                                                <input matInput placeholder="Field Title"
+                                                    [name]="generateFormName('i_title_', field._id)"
+                                                    [(ngModel)]="field.name" (change)="refreshPreview()">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <mat-label>Field Type</mat-label>
+                                            <mat-form-field appearance="outline">
+                                                <mat-select matInput placeholder="Field type"
+                                                [name]="generateFormName('i_type_', field._id)"
+                                                [(ngModel)]="field.type" (selectionChange)="refreshPreview()">
+                                                    <mat-option *ngFor="let fieldType of fieldTypes"
+                                                        [value]="fieldType" >{{fieldType | titlecase}}</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a (click)="removeField(section, field)"
+                                                class="btn btn-danger btn-round">Remove</a>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <br />
+                                <a (click)="addField(section, $event)" class="btn btn-danger btn-round">Add field</a>
+                                <br />
+                                <a (click)="removeSection(section)"
+                                    class="btn btn-danger btn-round">Remove section</a>
+                                <br />
+                            </ng-container>
+                            <button (click)="addSection()" class="btn btn-danger btn-round">Add Section</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <app-form-presenter screenCover="full" [(previewFormConfig)]="form" ></app-form-presenter>
+            </div>
+        </div>
+    </div>
+</div>

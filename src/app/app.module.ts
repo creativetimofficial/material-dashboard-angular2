@@ -8,7 +8,7 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { FormRenderLayoutComponent } from './layouts/form-render-layout/form-render-layout.component';
-import { FormPresenterComponent } from './form-presenter/form-presenter.component';
+import { FormPresenterComponent } from './components/form-presenter/form-presenter.component';
 
 @NgModule({
   imports: [

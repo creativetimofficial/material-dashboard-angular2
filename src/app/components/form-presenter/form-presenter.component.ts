@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormResponse } from 'app/models/form-response.model';
 import { Form } from 'app/models/form.model';
 import { ApiService } from 'app/services/api.service';
@@ -10,14 +10,32 @@ import { catchError, of, tap } from 'rxjs';
   templateUrl: './form-presenter.component.html',
   styleUrls: ['./form-presenter.component.css']
 })
-export class FormPresenterComponent implements OnInit {
+export class FormPresenterComponent implements OnInit, OnChanges {
+  @Input() screenCover: 'full' | 'narrow' = 'full';
+  @Input() previewFormConfig: Form = null;
+  @Output() previewFormConfigEvent(): Form {
+    return this.previewFormConfig;
+  }
+
   formId = '6438ffe42460fa0b4f5fe3fe';
   formConfig: Form = null;
 
   constructor(private api: ApiService, private ns: NotificationService) { }
 
   ngOnInit(): void {
-    this.getForm();
+    if (this.previewFormConfig) {
+      this.render(this.previewFormConfig);
+    } else {
+      this.getForm();
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('changed -> ', changes);
+    if (changes.previewFormConfig.currentValue) {
+      console.log('changed 2-> ', changes);
+      this.render(changes.previewFormConfig.currentValue);
+    }
   }
 
   getForm(): void {
@@ -34,22 +52,28 @@ export class FormPresenterComponent implements OnInit {
   }
 
   render(formConfig: Form) {
+    if (this.previewFormConfig) {
+      formConfig.sections = formConfig
+        .sections
+        .map(s => {s.id = s['_id']; return s;})
+        .map(s => {s.fields = s.fields.map(f =>{ f.id = f['_id']; return f;}); return s;});
+    }
     formConfig.sections.forEach(section => {
       section.fields.forEach(field => {
         field.value = null;
       });
     });
-    this.formConfig = formConfig;
+    this.formConfig = { ...formConfig };
   }
 
-  submit() {    
+  submit() {
     let sections = {};
     this.formConfig.sections.forEach(section => {
       let fields = {};
       section.fields.forEach(field => {
-        switch(field.type.toLocaleLowerCase()) {
+        switch (field.type.toLocaleLowerCase()) {
           case 'select':
-            if(!(field.value instanceof Array)) {
+            if (!(field.value instanceof Array)) {
               field.value = [];
             }
             fields[field.id] = field.value;
@@ -62,7 +86,15 @@ export class FormPresenterComponent implements OnInit {
     let formResponse: FormResponse = {
       formId: this.formConfig.id,
       sections: sections
-    };    
+    };
     this.api.submit(formResponse).subscribe(() => this.ns.success('Form submitted successfully'));
+  }
+
+
+  generateFormName(prefix, id) {
+    if (!prefix) {
+      throw Error("Prefix is required");
+    }
+    return `${prefix}_${id}`;
   }
 }

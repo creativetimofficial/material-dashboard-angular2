@@ -8,6 +8,8 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { FormsComponent } from 'app/forms/forms.component';
+import { FormBuilderComponent } from 'app/forms/form-builder/form-builder.component';
 
 export const AdminLayoutRoutes: Routes = [
 
@@ -20,4 +22,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'forms', children: [
+        { path: '', pathMatch: 'full',  component: FormsComponent },
+        { path: 'new', component: FormBuilderComponent},
+        { path: 'view', component: FormBuilderComponent},
+        { path: 'edit', component: FormBuilderComponent},
+    ] },
 ];

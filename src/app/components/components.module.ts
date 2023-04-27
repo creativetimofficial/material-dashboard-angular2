@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { FormPresenterComponent } from 'app/components/form-presenter/form-presenter.component';
 
 @NgModule({
   imports: [
@@ -28,12 +29,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    InputComponent
+    InputComponent,
+    FormPresenterComponent
   ],
   exports: [
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    FormPresenterComponent
   ]
 })
 export class ComponentsModule { }
