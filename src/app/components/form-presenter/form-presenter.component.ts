@@ -17,7 +17,7 @@ export class FormPresenterComponent implements OnInit, OnChanges {
     return this.previewFormConfig;
   }
 
-  formId = '6438ffe42460fa0b4f5fe3fe';
+  formId = '64ee64b6df7cf221a673751d';
   formConfig: Form = null;
 
   constructor(private api: ApiService, private ns: NotificationService) { }
@@ -55,8 +55,14 @@ export class FormPresenterComponent implements OnInit, OnChanges {
     if (this.previewFormConfig) {
       formConfig.sections = formConfig
         .sections
-        .map(s => {s.id = s['_id']; return s;})
-        .map(s => {s.fields = s.fields.map(f =>{ f.id = f['_id']; return f;}); return s;});
+        .map(s => { s.id = s['_id']; return s; })
+        .map(s => {
+          s.fields = s.fields.map(f => {
+            f.id = f['_id'];
+            return f;
+          });
+          return s;
+        });
     }
     formConfig.sections.forEach(section => {
       section.fields.forEach(field => {

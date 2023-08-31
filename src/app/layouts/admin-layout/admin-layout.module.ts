@@ -20,6 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsComponent } from '../../forms/forms.component';
 import { FormBuilderComponent } from '../../forms/form-builder/form-builder.component';
 import { ComponentsModule } from 'app/components/components.module';
+import { FormResolverResolver } from 'app/resolvers/form-resolver.resolver';
 
 @NgModule({
   imports: [

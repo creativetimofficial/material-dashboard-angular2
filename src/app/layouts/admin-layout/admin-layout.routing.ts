@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { FormsComponent } from 'app/forms/forms.component';
 import { FormBuilderComponent } from 'app/forms/form-builder/form-builder.component';
+import { FormResolverResolver } from 'app/resolvers/form-resolver.resolver';
 
 export const AdminLayoutRoutes: Routes = [
 
@@ -25,7 +26,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'forms', children: [
         { path: '', pathMatch: 'full',  component: FormsComponent },
         { path: 'new', component: FormBuilderComponent},
-        { path: 'view', component: FormBuilderComponent},
-        { path: 'edit', component: FormBuilderComponent},
+        { path: 'view/:id', resolve: {form: FormResolverResolver}, component: FormBuilderComponent},
+        { path: 'edit/:id', resolve: {form: FormResolverResolver}, component: FormBuilderComponent},
     ] },
 ];

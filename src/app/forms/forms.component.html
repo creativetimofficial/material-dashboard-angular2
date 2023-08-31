@@ -45,9 +45,9 @@
                                             {{form.sections.length}}
                                         </td>
                                         <td>
-                                            <a [routerLink]="['view', form.id]"
+                                            <a [routerLink]="['/view', form.id]"
                                                 class="btn btn-primary btn-sm">View</a>
-                                            <a [routerLink]="['edit', form.id, 'edit']"
+                                            <a [routerLink]="['edit', form.id]"
                                                 class="btn btn-warning btn-sm">Edit</a>
                                             <button (click)="deleteForm(form.id)"
                                                 class="btn btn-danger btn-sm">Delete</button>

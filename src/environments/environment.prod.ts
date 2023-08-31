@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  net: {
+    base_uri: 'http://localhost:8080',
+  }
 };

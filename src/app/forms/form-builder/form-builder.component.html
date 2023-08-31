@@ -13,7 +13,7 @@
                                 <div class="col-md-12">
                                     <label for="title">Form Title</label>
                                     <mat-form-field appearance="outline">
-                                        <input matInput id="title" placeholder="Form Title" [(ngModel)]="form.name" (change)="refreshPreview()">
+                                        <input matInput name="title" #formTitle="ngModel" id="title" placeholder="Form Title" [(ngModel)]="form.name" (change)="refreshPreview()">
                                     </mat-form-field>
                                 </div>
                             </div>
@@ -21,19 +21,17 @@
                                 <div class="col-md-12">
                                     <label for="description">Description</label>
                                     <mat-form-field appearance="outline">
-                                        <textarea matInput id="description" placeholder="description..."
+                                        <textarea matInput name="description" #description="ngModel" id="description" placeholder="description..."
                                             [(ngModel)]="form.description" (change)="refreshPreview()"></textarea>
                                     </mat-form-field>
                                 </div>
                             </div>
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update
-                                Profile</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-body">
+                <div class="container-fluid">
+                    <div class="container-fluid">
                         <form #formSections="ngForm">
                             <ng-container *ngFor="let section of form.sections">
                                 <div class="row">
@@ -42,7 +40,7 @@
                                         <mat-form-field appearance="outline">
                                             <input matInput placeholder="Section Title"
                                                 [name]="generateFormName('s_title_', section._id)"
-                                                [(ngModel)]="section.title">
+                                                [(ngModel)]="section.name">
                                         </mat-form-field>
                                     </div>
                                     <div class="col-md-12">
@@ -56,40 +54,62 @@
                                 </div>
                                 <br />
                                 <ng-container *ngFor="let field of section.fields">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <mat-label>Field Title</mat-label>
-                                            <mat-form-field appearance="outline">
-                                                <input matInput placeholder="Field Title"
-                                                    [name]="generateFormName('i_title_', field._id)"
-                                                    [(ngModel)]="field.name" (change)="refreshPreview()">
-                                            </mat-form-field>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <mat-label>Field Type</mat-label>
-                                            <mat-form-field appearance="outline">
-                                                <mat-select matInput placeholder="Field type"
-                                                [name]="generateFormName('i_type_', field._id)"
-                                                [(ngModel)]="field.type" (selectionChange)="refreshPreview()">
-                                                    <mat-option *ngFor="let fieldType of fieldTypes"
-                                                        [value]="fieldType" >{{fieldType | titlecase}}</mat-option>
-                                                </mat-select>
-                                            </mat-form-field>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <a (click)="removeField(section, field)"
-                                                class="btn btn-danger btn-round">Remove</a>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <mat-label>Field Title</mat-label>
+                                                    <mat-form-field appearance="outline">
+                                                        <input matInput placeholder="Field Title"
+                                                            [name]="generateFormName('i_title_', field._id)"
+                                                            [(ngModel)]="field.name" (change)="refreshPreview()">
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <mat-label>Field Type</mat-label>
+                                                    <mat-form-field appearance="outline">
+                                                        <mat-select matInput placeholder="Field type"
+                                                        [name]="generateFormName('i_type_', field._id)"
+                                                        [(ngModel)]="field.type" (selectionChange)="refreshPreview()">
+                                                            <mat-option *ngFor="let fieldType of fieldTypes"
+                                                                [value]="fieldType | uppercase" >{{fieldType | titlecase}}</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <a (click)="removeField(section, field)"
+                                                        class="btn btn-danger btn-round">
+                                                        <i class="material-icons">remove</i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row" *ngIf="field.type === 'SELECT'">
+                                                <div class="col-md-12">
+                                                        <mat-form-field *ngFor="let option of field.options; let i = index;">
+                                                        <input matInput placeholder="Type option here..."
+                                                            [name]="generateFormName('i_option_', field._id + '_'+ i)"
+                                                            [(ngModel)]="field.options[i].value" (change)="refreshPreview()">
+                                                    </mat-form-field>
+                                                    <button class="btn btn-sm btn-danger" type="button" (click)="addEmptyOption(field)">
+                                                        <i class="material-icons">add</i>
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    
                                 </ng-container>
                                 <br />
-                                <a (click)="addField(section, $event)" class="btn btn-danger btn-round">Add field</a>
+                                <a (click)="addField(section, $event)" class="btn btn-danger btn-round" matTooltip="Add field"> <i class="material-icons">add</i></a>
                                 <br />
                                 <a (click)="removeSection(section)"
-                                    class="btn btn-danger btn-round">Remove section</a>
+                                    class="btn btn-danger btn-round" matTooltip="Remove section"><i class="material-icons">remove</i></a>
                                 <br />
                             </ng-container>
-                            <button (click)="addSection()" class="btn btn-danger btn-round">Add Section</button>
+                            <button (click)="addSection()" class="btn btn-danger btn-round" matTooltip="Add section"><i class="material-icons">add</i></button>
+                            <br />
+                            <button mat-raised-button (click)="submit()" type="button" class="btn btn-danger pull-right">{{mode === 'create' ? 'Create Form' : 'Update Form'}}</button>
+                            <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>

@@ -12,6 +12,9 @@
                             <div class="card-body">
                                 <form (submit)="submit($event)">
                                     <div *ngFor="let section of formConfig.sections">
+                                        <div *ngIf="section.title" class="container-fluid h3">{{section?.title}}</div>
+                                        <div *ngIf="section.description" class="container-fluid">{{section?.description}}</div>
+                                        <br />
                                         <div class="row">
                                             <ng-container *ngFor="let inputConfig of section.fields">
                                                 <ng-container [ngSwitch]="inputConfig.type | lowercase">
@@ -23,8 +26,8 @@
                                                         <ng-container *ngTemplateOutlet="inputTemplate">
                                                         </ng-container>
                                                     </ng-container>
-                                                    <ng-container *ngSwitchCase="'checkbox'">
-                                                        <ng-container *ngTemplateOutlet="inputTemplate">
+                                                    <ng-container *ngSwitchCase="'select'">
+                                                        <ng-container *ngTemplateOutlet="selectTemplate">
                                                         </ng-container>
                                                     </ng-container>
                                                     <ng-container *ngSwitchCase="'textarea'">
@@ -58,11 +61,25 @@
                                                             </mat-form-field>
                                                         </div>
                                                     </ng-template>
+                                                    <ng-template #selectTemplate>
+                                                        <div class="col-md-12">
+                                                            <label [for]="inputConfig.id">{{inputConfig.name}}</label>
+                                                            <mat-form-field appearance="outline">
+                                                                <!-- <mat-label>Cars</mat-label> -->
+                                                                <mat-select>
+                                                                    <mat-option *ngFor="let option of inputConfig.options" [value]="option.value">
+                                                                      {{option.value}}
+                                                                    </mat-option>
+                                                                </mat-select>   
+                                                              </mat-form-field>
+                                                        </div>
+                                                    </ng-template>
                                                 </ng-container>
                                             </ng-container>
                                         </div>
                                     </div>
                                     <button mat-raised-button type="submit"
+                                        [disabled]="!!previewFormConfig"
                                         class="btn btn-danger pull-right">Submit</button>
                                     <div class="clearfix"></div>
                                 </form>

@@ -1,0 +1,33 @@
+<div class="row justify-content-center d-flex h-100">
+    <div class="col-md-6 align-self-center mt-5">
+        <div class="container">
+            <h1>Formzy</h1>
+        </div>
+        <div class="card mt-5">
+            <div class="card-header card-header-danger">
+                <h2 class="card-title">Login</h2>
+                <h5 class="card-category">Enter your details</h5>
+            </div>
+            <div class="card-body">
+                <form class="row">
+                    <div class="col-md-12">
+                        <label for="email">Email</label>
+                        <mat-form-field appearance="outline">
+                            <input matInput type="email" id="email" name="email" [(ngModel)]="credentials.email">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="password">Password</label>
+                        <mat-form-field appearance="outline">
+                            <input matInput type="password" id="password" name="password"
+                                [(ngModel)]="credentials.password">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-12">
+                        <button mat-raised-button color="success" type="submit" (click)="onSubmit()">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
