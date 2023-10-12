@@ -7,6 +7,9 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 
 @NgModule({
   imports: [
@@ -21,6 +24,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    OrdersComponent,
+    ClientsComponent,
+    RestaurantsComponent,
 
   ],
   providers: [],

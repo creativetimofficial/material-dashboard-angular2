@@ -1,0 +1,84 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des commandes</h4>
+                        <p class="card-category">Liste des commandes des restaurants</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Numero
+                                    </th>
+                                    <th>
+                                        Client
+                                    </th>
+                                    <th>
+                                        Restaurant
+                                    </th>
+                                    <th>
+                                        Type
+                                    </th>
+                                    <th>
+                                        Prix
+                                    </th>
+                                    <th>
+                                        Statut
+                                    </th>
+                                    <th>
+                                        Date du début
+                                    </th>
+                                    <th>
+                                        Date de la fin
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let order of ordersData">
+                                        <td>
+                                            {{order.numero}}
+                                        </td>
+                                        <td>
+                                            {{order.uid}}
+                                        </td>
+                                        <td>
+                                            {{order.uidPro}}
+                                        </td>
+                                        <td>
+                                            {{order.type}}
+                                        </td>
+                                        <td *ngIf="order.price; else noPriceTemplate">
+                                            {{order.price}} €
+                                        </td>
+                                        <ng-template #noPriceTemplate>
+                                            <td>
+                                                Non disponible
+                                            </td>
+                                        </ng-template>
+                                        <td [ngClass]="{
+                                            'text-primary': order.etat === 'En attente',
+                                            'text-warning': order.etat === 'En cours',
+                                            'text-success': order.etat === 'Terminée',
+                                            'text-danger': order.etat === 'Annulée'
+                                          }">
+                                            {{order.etat}}
+                                        </td>
+                                        <td>
+                                            {{timestampToDate(order.date) | date:'dd/MM/yyyy HH:mm'}}
+                                        </td>
+                                        <td>
+                                            {{timestampToDate(order.dateFin) | date:'dd/MM/yyyy HH:mm'}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

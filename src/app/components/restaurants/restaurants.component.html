@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des restaurants</h4>
+                        <p class="card-category">Liste des commandes des restaurants</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Siret
+                                    </th>
+                                    <th>
+                                        Nom
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Numéro de téléphone
+                                    </th>
+                                    <th>
+                                        Adresse
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of usersData">
+                                        <td>
+                                            {{user.siret}}
+                                        </td>
+                                        <td>
+                                            {{user.entreprisenom}}
+                                        </td>
+                                        <td>
+                                            {{user.email}}
+                                        </td>
+                                        <td>
+                                            {{user.tel}}
+                                        </td>
+                                        <td>
+                                            {{user.adresse}} {{user.codepostal}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste des clients</h4>
+                        <p class="card-category">Liste de tous les clients</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Nom
+                                    </th>
+                                    <th>
+                                        Prénom
+                                    </th>
+                                    <th>
+                                        Latitude
+                                    </th>
+                                    <th>
+                                        Longitude
+                                    </th>
+                                    <th>
+                                        Vérifié
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of usersData">
+                                        <td>
+                                            {{user.email}}
+                                        </td>
+                                        <td>
+                                            {{user.nom}}
+                                        </td>
+                                        <td>
+                                            {{user.prenom}}
+                                        </td>
+                                        <td>
+                                            {{user.lat}}
+                                        </td>
+                                        <td>
+                                            {{user.lon}}
+                                        </td>
+                                        <td>
+                                            {{user.verified}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
