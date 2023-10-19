@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment'; // Ajustez le chemin selon l'emplacement de votre service
+import { Token } from 'app/models/token.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +14,27 @@ export class TokenService {
   constructor(private http: HttpClient) { }
 
   // Générer un nouveau token
-  generateToken(tokenData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/generate`, tokenData);
+  generateToken(tokenData: Token): Observable<Token> {
+    return this.http.post<Token>(`${this.baseUrl}/generate`, tokenData);
   }
 
   // Récupérer toutes les informations de tokens
-  getAllTokens(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/getAll`);
+  getAllTokens(): Observable<Token[]> {
+    return this.http.get<Token[]>(`${this.baseUrl}/getAll`);
   }
 
   // Récupérer des informations spécifiques de token
-  getTokenById(id: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/getOne/${id}`);
+  getTokenById(id: string): Observable<Token> {
+    return this.http.get<Token>(`${this.baseUrl}/getOne/${id}`);
   }
 
   // Mettre à jour un token
-  updateToken(id: string, updatedData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/update/${id}`, updatedData); 
+  updateToken(id: string, updatedData: Token): Observable<Token> {
+    return this.http.put<Token>(`${this.baseUrl}/update/${id}`, updatedData); 
   }
 
   // Révoquer un token
-  revokeToken(id: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/revoke/${id}`); 
+  revokeToken(id: string): Observable<Token> {
+    return this.http.delete<Token>(`${this.baseUrl}/revoke/${id}`); 
   }
 }

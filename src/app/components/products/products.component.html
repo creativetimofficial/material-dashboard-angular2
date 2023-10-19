@@ -1,0 +1,164 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <button (click)="navigateToCreateProduct()" class="btn btn-success float-right">
+                            Ajouter un produit
+                        </button>
+                        <h4 class="card-title">Produits</h4>
+                        <p class="card-category">Liste de tous les produits</p>
+                    </div>
+                    <div class="card-body scroll h-500px">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Nom
+                                    </th>
+                                    <th>
+                                        Prénom
+                                    </th>
+                                    <th>
+                                        Latitude
+                                    </th>
+                                    <th>
+                                        Longitude
+                                    </th>
+                                    <th>
+                                        Vérifié
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of productsData">
+                                        <td>
+                                            {{user.email}}
+                                        </td>
+                                        <td>
+                                            {{user.nom}}
+                                        </td>
+                                        <td>
+                                            {{user.prenom}}
+                                        </td>
+                                        <td>
+                                            {{user.lat}}
+                                        </td>
+                                        <td>
+                                            {{user.lon}}
+                                        </td>
+                                        <td>
+                                            {{user.verified}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Catégories</h4>
+                        <p class="card-category">Liste de toutes les catégories de produit</p>
+                    </div>
+                    <div class="card-body scroll h-500px">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Nom
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let category of categoriesData">
+                                        <td>
+                                            {{category.name}}
+                                        </td>
+                                        <td class="text-right">
+                                            <button mat-mini-fab matTooltip="Modifier"
+                                                class="btn btn-warning mr-2  mb-1" data-toggle="modal"
+                                                (click)="changeCurrentCategory(category)"
+                                                data-target="#updateCategoryModal">
+                                                <i class="material-icons">mode</i>
+                                            </button>
+                                            <button mat-mini-fab matTooltip="Supprimer"
+                                                class="btn btn-danger mr-2 pull-right"
+                                                (click)="deleteCategory(category)">
+                                                <i class="material-icons">clear</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center" colspan="2">
+                                            <button mat-raised-button class="btn btn-success" data-toggle="modal"
+                                                data-target="#addCategoryModal">
+                                                <i class="material-icons">add</i> Ajouter
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog"
+                aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addCategoryModalLabel">Ajouter une catégorie</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-sm-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput [(ngModel)]="category.name" type="text"
+                                        placeholder="Nom de la catégorie">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-success" (click)="addCategory()"
+                                data-dismiss="modal">Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="updateCategoryModal" tabindex="-1" role="dialog"
+                aria-labelledby="updateCategoryModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="updateCategoryModalLabel">Modifier une catégorie</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-sm-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput [(ngModel)]="currentCategory.name" type="text"
+                                        placeholder="Nom de la catégorie">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-success" (click)="updateCategory(currentCategory)"
+                                data-dismiss="modal">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment'; // Ajustez le chemin selon l'emplacement de votre service
+import { Product } from 'app/models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +14,27 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   // Ajouter un produit
-  createProduct(productData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/add`, productData);
+  createProduct(productData: Product): Observable<Product> {
+    return this.http.post<Product>(`${this.baseUrl}/add`, productData);
   }
 
   // Récupérer tous les produits
-  getAllProducts(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/getAll`);
+  getAllProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.baseUrl}/getAll`);
   }
 
   // Récupérer un produit spécifique
-  getProductById(id: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/getOne/${id}`);
+  getProductById(id: string): Observable<Product> {
+    return this.http.get<Product>(`${this.baseUrl}/getOne/${id}`);
   }
 
   // Mettre à jour un produit
-  updateProduct(id: string, updatedData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/update/${id}`, updatedData); 
+  updateProduct(id: string, updatedData: Product): Observable<Product> {
+    return this.http.put<Product>(`${this.baseUrl}/update/${id}`, updatedData); 
   }
 
   // Supprimer un produit
-  deleteProduct(id: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/delete/${id}`); 
+  deleteProduct(id: string): Observable<Product> {
+    return this.http.delete<Product>(`${this.baseUrl}/delete/${id}`); 
   }
 }

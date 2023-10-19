@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment'; // Ajustez le chemin selon l'emplacement de votre service
+import { ProductIngredient } from 'app/models/productIngredient.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +14,27 @@ export class ProductIngredientService {
   constructor(private http: HttpClient) { }
 
   // Ajouter un ingrédient de produit
-  createProductIngredient(productIngredientData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/add`, productIngredientData);
+  createProductIngredient(productIngredientData: ProductIngredient): Observable<ProductIngredient> {
+    return this.http.post<ProductIngredient>(`${this.baseUrl}/add`, productIngredientData);
   }
 
   // Récupérer tous les ingrédients de produits
-  getAllProductIngredients(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/getAll`);
+  getAllProductIngredients(): Observable<ProductIngredient[]> {
+    return this.http.get<ProductIngredient[]>(`${this.baseUrl}/getAll`);
   }
 
   // Récupérer un ingrédient de produit spécifique
-  getProductIngredientById(id: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/getOne/${id}`);
+  getProductIngredientById(id: string): Observable<ProductIngredient> {
+    return this.http.get<ProductIngredient>(`${this.baseUrl}/getOne/${id}`);
   }
 
   // Mettre à jour un ingrédient de produit
-  updateProductIngredient(id: string, updatedData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/update/${id}`, updatedData); 
+  updateProductIngredient(id: string, updatedData: ProductIngredient): Observable<ProductIngredient> {
+    return this.http.put<ProductIngredient>(`${this.baseUrl}/update/${id}`, updatedData); 
   }
 
   // Supprimer un ingrédient de produit
-  deleteProductIngredient(id: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/delete/${id}`); 
+  deleteProductIngredient(id: string): Observable<ProductIngredient> {
+    return this.http.delete<ProductIngredient>(`${this.baseUrl}/delete/${id}`); 
   }
 }

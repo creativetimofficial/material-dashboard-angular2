@@ -1,0 +1,95 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Ajouter un produit</h4>
+                        <p class="card-category">Complete your profile</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput [(ngModel)]="product.name" placeholder="Nom" type="text">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <mat-label>Catégories</mat-label>
+                                        <mat-select [(ngModel)]="product.categoryId">
+                                            <mat-option *ngFor="let category of categoriesData" [value]="category.id">{{
+                                                category.name }}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput [(ngModel)]="product.price" placeholder="Prix" type="text">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput [(ngModel)]="product.description"
+                                            placeholder="Description"></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-success pull-right"
+                                (click)="addProduct()">Ajouter</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-0">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Photo</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <img [src]="previewUrl" class="w-100 w-max-300 mx-auto d-block"
+                            *ngIf="previewUrl;else elseBlock">
+                        <ng-template #elseBlock>
+                            <img [src]="'assets/img/Beepz_logo.png'" class="w-100 w-max-300 mx-auto d-block">
+                        </ng-template>
+                        <div class="justify-content-center w-100 mt-3">
+                            <a class="btn btn-warning" data-toggle="modal" data-target="#updateImage">Modifier</a>
+                            <a class="btn btn-danger ml-2">Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="updateImage" tabindex="-1" role="dialog" aria-labelledby="updateImageLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="updateImageLabel">Modifier l'image</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="imageInput">Sélectionnez une image</label>
+                                    <input type="file" class="form-control-file" id="imageInput"
+                                        (change)="onImageSelected($event)">
+                                </div>
+                                <img [src]="previewUrl" class="w-100 w-max-300 mx-auto d-block" *ngIf="previewUrl">
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
