@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+.scroll {
+    overflow-y: auto
+}
+
+.w-20px {
+    width: 20px !important;
+}
+
+.w-300px {
+    width: 300px !important;
+}
+
+.w-700px {
+    width: 700px !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.w-max-300 {
+    max-width: 300px !important;
+}
+
+.h-500px {
+    height: 500px !important;
+}
+
+.h-400px {
+    height: 400px !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

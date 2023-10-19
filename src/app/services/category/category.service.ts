@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment'; // Ajustez le chemin selon l'emplacement de votre service
+import { Category } from 'app/models/category.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +14,28 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
   // Ajouter une catégorie
-  createCategory(categoryData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/add`, categoryData);
+  createCategory(categoryData: Category): Observable<Category> {
+    console.log(categoryData);
+    return this.http.post<Category>(`${this.baseUrl}/add`, categoryData);
   }
 
   // Récupérer toutes les catégories
-  getAllCategories(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/getAll`);
+  getAllCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.baseUrl}/getAll`);
   }
 
   // Récupérer une catégorie spécifique
-  getCategoryById(id: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/getOne/${id}`);
+  getCategoryById(id: string): Observable<Category> {
+    return this.http.get<Category>(`${this.baseUrl}/getOne/${id}`);
   }
 
   // Mettre à jour une catégorie
-  updateCategory(id: string, updatedData: any): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/update/${id}`, updatedData);
+  updateCategory(id: string, updatedData: Category): Observable<Category> {
+    return this.http.put<Category>(`${this.baseUrl}/update/${id}`, updatedData);
   }
 
   // Supprimer une catégorie
-  deleteCategory(id: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/delete/${id}`);
+  deleteCategory(id: string): Observable<Category> {
+    return this.http.delete<Category>(`${this.baseUrl}/delete/${id}`);
   }
 }

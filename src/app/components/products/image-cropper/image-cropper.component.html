@@ -1,0 +1,21 @@
+<input type="file" (change)="fileChangeEvent($event)" />
+<div class="card">
+  <div class="card-body">
+    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 3"
+      [canvasRotation]="canvasRotation" [transform]="transform" [resizeToWidth]="100" format="png"
+      (imageCropped)="imageCropped($event)">
+    </image-cropper>
+  </div>
+</div>
+<div class="text-center mb-3" *ngIf="croppedImage">
+  <button mat-mini-fab matTooltip="Pivoter à gauche" class="btn btn-primary mr-2" (click)="rotateLeft()">
+    <i class="material-icons">rotate_left</i>
+  </button>
+  <button mat-mini-fab matTooltip="Pivoter à droite" class="btn btn-primary" (click)="rotateRight()">
+    <i class="material-icons">rotate_right</i>
+  </button>
+</div>
+<div class="text-center">
+  <a class="btn" (click)="cancel()">Annuler</a>
+  <a class="btn btn-success ml-2" (click)="save()">Valider</a>
+</div>
