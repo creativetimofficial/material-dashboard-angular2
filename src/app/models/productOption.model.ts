@@ -1,5 +1,5 @@
 export class ProductOption {
-    _id?: string;
+    id?: string;
     name: string;
     categoryId: string;
     createdAt?: Date;

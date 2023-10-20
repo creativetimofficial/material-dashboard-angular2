@@ -1,5 +1,5 @@
 export class Token {
-    _id?: string;
+    id?: string;
     token: string;
     uid: string;
     createdAt?: Date;

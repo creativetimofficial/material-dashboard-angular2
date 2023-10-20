@@ -32,7 +32,6 @@ export class ProductsComponent implements OnInit {
     this.productsService.getAllProducts().subscribe(
       data => {
         this.productsData = data;
-        console.log(data);  // Traitez les données ici
       },
       error => {
         console.error('There was an error!', error);
@@ -49,6 +48,13 @@ export class ProductsComponent implements OnInit {
         console.error('There was an error!', error);
       }
     );
+  }
+
+  getCategoryName(categoryId) {
+    const category = this.categoriesData.find(cat => cat.id === categoryId);
+    if (category) {
+      return category.name;
+    }
   }
 
   addCategory() {
@@ -70,7 +76,7 @@ export class ProductsComponent implements OnInit {
     this.currentCategory = Object.assign({}, category);
   }
 
-  updateCategory(currentCategory:Category) {
+  updateCategory(currentCategory: Category) {
     this.categoriesService.updateCategory(currentCategory.id, currentCategory).subscribe(
       response => {
         console.log('Catégorie modifiée avec succès!', response);
@@ -98,7 +104,7 @@ export class ProductsComponent implements OnInit {
     );
   }
 
-  navigateToCreateProduct(){
+  navigateToCreateProduct() {
     this.router.navigate(['/products/create-product']);
   }
 }

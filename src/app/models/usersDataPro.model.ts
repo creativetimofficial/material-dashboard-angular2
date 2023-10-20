@@ -1,5 +1,5 @@
 export class UsersDataPro {
-    _id?: string;
+    id?: string;
     email: string;
     tel: string;
     adresse: string;

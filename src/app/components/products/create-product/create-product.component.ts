@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Category } from 'app/models/category.model';
 import { Product } from 'app/models/product.model';
 import { CategoryService } from 'app/services/category/category.service';
+import { NotificationService } from 'app/services/notification/notification.service';
 import { ProductService } from 'app/services/product/product.service';
 // import { MatDialog } from '@angular/material/dialog';
 // import { ImageCropperComponent } from '../image-cropper/image-cropper.component';
@@ -29,7 +30,7 @@ export class CreateProductComponent implements OnInit {
   // deleteImage = false;
   // existingImageUrl: string;
 
-  constructor(private productsService: ProductService, private categoriesService: CategoryService, 
+  constructor(private productsService: ProductService, private categoriesService: CategoryService, private notificationsService: NotificationService
     // private dialog: MatDialog
     ) { }
 
@@ -61,6 +62,16 @@ export class CreateProductComponent implements OnInit {
 
   addProduct() {
     console.log(this.product);
+    this.productsService.createProduct(this.product).subscribe(
+      response => {
+        console.log('Produit crée avec succès!', response);
+        this.notificationsService.showSuccess("Produit crée avec succès!");
+      },
+      error => {
+        console.error('Il y a eu une erreur lors de la création du produit', error);
+        this.notificationsService.showError("Il y a eu une erreur lors de la création du produit");
+      }
+    );
   }
 
   onImageSelected(event: any): void {

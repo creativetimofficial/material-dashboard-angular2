@@ -15,43 +15,31 @@
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>
-                                        Email
+                                        Name
                                     </th>
                                     <th>
-                                        Nom
+                                        Catégorie
                                     </th>
                                     <th>
-                                        Prénom
+                                        Prix
                                     </th>
                                     <th>
-                                        Latitude
-                                    </th>
-                                    <th>
-                                        Longitude
-                                    </th>
-                                    <th>
-                                        Vérifié
+                                        Description
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let user of productsData">
+                                    <tr *ngFor="let product of productsData">
                                         <td>
-                                            {{user.email}}
+                                            {{product.name}}
                                         </td>
                                         <td>
-                                            {{user.nom}}
+                                            {{getCategoryName(product.categoryId)}}
                                         </td>
                                         <td>
-                                            {{user.prenom}}
+                                            {{product.price}} €
                                         </td>
                                         <td>
-                                            {{user.lat}}
-                                        </td>
-                                        <td>
-                                            {{user.lon}}
-                                        </td>
-                                        <td>
-                                            {{user.verified}}
+                                            {{product.description}}
                                         </td>
                                     </tr>
                                 </tbody>
