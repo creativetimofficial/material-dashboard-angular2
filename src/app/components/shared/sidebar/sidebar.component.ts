@@ -9,17 +9,17 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     // { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/restaurants', title: 'Restaurants',  icon: 'restaurant', class: '' },
-    { path: '/clients', title: 'Clients',  icon: 'person', class: '' },
-    { path: '/orders', title: 'Commandes',  icon: 'local_shipping', class: '' },
-    { path: '/products', title: 'Produits',  icon: 'local_offer', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+    { path: '/admin/restaurants', title: 'Restaurants',  icon: 'restaurant', class: '' },
+    { path: '/admin/clients', title: 'Clients',  icon: 'person', class: '' },
+    { path: '/admin/orders', title: 'Commandes',  icon: 'local_shipping', class: '' },
+    { path: '/admin/products', title: 'Produits',  icon: 'local_offer', class: '' },
+    { path: '/admin/user-profile', title: 'User Profile',  icon:'person', class: '' },
+    { path: '/admin/table-list', title: 'Table List',  icon:'content_paste', class: '' },
+    { path: '/admin/typography', title: 'Typography',  icon:'library_books', class: '' },
+    { path: '/admin/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
+    { path: '/admin/maps', title: 'Maps',  icon:'location_on', class: '' },
+    { path: '/admin/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+    { path: '/admin/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
 ];
 
 @Component({

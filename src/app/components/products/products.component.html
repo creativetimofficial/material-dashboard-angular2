@@ -41,6 +41,17 @@
                                         <td>
                                             {{product.description}}
                                         </td>
+                                        <td class="text-right">
+                                            <button mat-mini-fab matTooltip="Modifier"
+                                                class="btn btn-warning mr-2  mb-1"
+                                                (click)="navigateToUpdateProduct(product.id)">
+                                                <i class="material-icons">mode</i>
+                                            </button>
+                                            <button mat-mini-fab matTooltip="Supprimer"
+                                                class="btn btn-danger mr-2 pull-right" (click)="deleteProduct(product)">
+                                                <i class="material-icons">clear</i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

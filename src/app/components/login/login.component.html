@@ -1,0 +1,49 @@
+<div class="main-content mt-5">
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-5">
+            <img class="w-150px" src="assets/img/logo.png" />
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Beep'z - Administration</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput type="email" placeholder="Adresse mail">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput type="password" placeholder="Mot de passe">
+                                    <i class="material-icons" mat-icon matSuffix
+                                        (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' :
+                                        'visibility'}}</i>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <button mat-raised-button class="btn btn-success mt-3" (click)="login()">Connexion</button>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-3">
+                            <a routerLink="fhzefze">Mot de passe oublié ?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>

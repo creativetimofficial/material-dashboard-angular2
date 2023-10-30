@@ -4,7 +4,7 @@ export class UsersDataPro {
     tel: string;
     adresse: string;
     codepostal: string;
-    nomEntreprise: string;
+    entreprisenom: string;
     siret: string;
     lat: number;
     lon: number;

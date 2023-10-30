@@ -104,7 +104,25 @@ export class ProductsComponent implements OnInit {
     );
   }
 
+  deleteProduct(product: Product) {
+    this.productsService.deleteProduct(product.id).subscribe(
+      response => {
+        console.log('Produit supprimé avec succès!', response);
+        this.loadAllCategoriesData();
+        this.notificationsService.showSuccess("Produit supprimé avec succès!");
+      },
+      error => {
+        console.error('Il y a eu une erreur lors de la suppression du produit', error);
+        this.notificationsService.showError("Il y a eu une erreur lors de la suppression du produit");
+      }
+    );
+  }
+
   navigateToCreateProduct() {
-    this.router.navigate(['/products/create-product']);
+    this.router.navigate(['/admin/products/create-product']);
+  }
+
+  navigateToUpdateProduct(id) {
+    this.router.navigate(['/admin/products/edit-product', id]);
   }
 }
