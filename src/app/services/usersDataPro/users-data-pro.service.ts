@@ -9,13 +9,22 @@ import { UsersDataPro } from 'app/models/usersDataPro.model';
 })
 export class UsersDataProService {
   // URL de base pour accéder au backend. Ajustez-le en fonction de votre configuration.
-  private readonly baseUrl: string = `${environment.backendUrl}/usersDataPro`; 
-  
+  private readonly baseUrl: string = `${environment.backendUrl}/usersDataPro`;
+
   constructor(private http: HttpClient) { }
 
   // Ajouter des informations professionnelles pour un utilisateur
   createUsersDataPro(userDataPro: UsersDataPro): Observable<UsersDataPro> {
     return this.http.post<UsersDataPro>(`${this.baseUrl}/add`, userDataPro);
+  }
+
+  // Ajouter des informations professionnelles pour un utilisateur
+  login(user: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/login`, user);
+  }
+
+  logout(): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/logout`, {});
   }
 
   // Récupérer toutes les informations professionnelles des utilisateurs

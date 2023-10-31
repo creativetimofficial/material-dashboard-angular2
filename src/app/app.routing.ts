@@ -21,13 +21,24 @@ import { ProductsComponent } from './components/products/products.component';
 import { EditProductComponent } from './components/products/edit-product/edit-product.component';
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './shared/guards/auth.guard';
+import { RedirectIfAuthenticatedGuard } from './shared/guards/redirect-if-authenticated.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
+  {
+    path: '',
+    component: LoginComponent,
+    canActivate: [RedirectIfAuthenticatedGuard],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [RedirectIfAuthenticatedGuard],
+  },
   {
     path: 'admin',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardComponent },
       { path: 'dashboard', component: DashboardComponent },

@@ -1,7 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -24,12 +24,12 @@ import { MapsComponent } from './components/maps/maps.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { UpgradeComponent } from './components/upgrade/upgrade.component';
 
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatRippleModule} from '@angular/material/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatSelectModule} from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
 import { EditRestaurantComponent } from './components/restaurants/edit-restaurant/edit-restaurant.component';
 import { ProductsComponent } from './components/products/products.component';
 import { EditProductComponent } from './components/products/edit-product/edit-product.component';
@@ -38,6 +38,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { ImageCropperComponent } from './components/products/image-cropper/image-cropper.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './components/login/login.component';
+
+import { AuthInterceptor } from './shared/auth.interceptor';
 
 @NgModule({
   imports: [
@@ -79,7 +81,12 @@ import { LoginComponent } from './components/login/login.component';
     ImageCropperComponent,
     LoginComponent
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ], bootstrap: [AppComponent]
 })
 export class AppModule { }
