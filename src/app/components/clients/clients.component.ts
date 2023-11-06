@@ -17,12 +17,12 @@ export class ClientsComponent implements OnInit {
 
   loadAllUsersData(): void {
     this.usersDataUserService.getAllUsersDataUser().subscribe(
-      data => {
-        this.usersData = data;
-        console.log(data);  // Traitez les données ici
+      response => {
+        this.usersData = response;
+        console.log('Clients récupérés avec succès!', response);
       },
       error => {
-        console.error('There was an error!', error);
+        console.error('Il y a eu une erreur lors de la récupération des clients', error);
       }
     );
   }

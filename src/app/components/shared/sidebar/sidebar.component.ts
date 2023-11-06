@@ -10,7 +10,7 @@ declare interface RouteInfo {
   class: string;
 }
 export const ROUTES: RouteInfo[] = [
-  // { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+  { path: '/admin/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
   { path: '/admin/restaurants', title: 'Restaurants', icon: 'restaurant', class: '' },
   { path: '/admin/clients', title: 'Clients', icon: 'person', class: '' },
   { path: '/admin/orders', title: 'Commandes', icon: 'local_shipping', class: '' },
@@ -20,8 +20,8 @@ export const ROUTES: RouteInfo[] = [
   // { path: '/admin/typography', title: 'Typography',  icon:'library_books', class: '' },
   // { path: '/admin/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
   // { path: '/admin/maps', title: 'Maps',  icon:'location_on', class: '' },
-  { path: '/admin/notifications', title: 'Notifications', icon: 'notifications', class: '' },
-  { path: '/admin/upgrade', title: 'Upgrade to PRO', icon: 'unarchive', class: 'active-pro' },
+  // { path: '/admin/notifications', title: 'Notifications', icon: 'notifications', class: '' },
+  // { path: '/admin/upgrade', title: 'Upgrade to PRO', icon: 'unarchive', class: 'active-pro' },
 ];
 
 @Component({
@@ -58,5 +58,9 @@ export class SidebarComponent implements OnInit {
         console.error("Il y a eu une erreur lors de la déconnexion de l'utilisateur", error);
       }
     );
+  }
+
+  navigateToDashboard(){
+    this.router.navigate(['/admin/dashboard']);
   }
 }

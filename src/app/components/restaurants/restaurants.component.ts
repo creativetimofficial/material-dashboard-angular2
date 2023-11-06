@@ -18,17 +18,17 @@ export class RestaurantsComponent implements OnInit {
 
   loadAllUsersData(): void {
     this.usersDataProService.getAllUsersDataPro().subscribe(
-      data => {
-        this.usersData = data;
-        console.log(data);  // Traitez les données ici
+      response => {
+        this.usersData = response;
+        console.log('Restaurants récupérés avec succès!', response);
       },
       error => {
-        console.error('There was an error!', error);
+        console.error('Il y a eu une erreur lors de la récupération des restaurants', error);
       }
     );
   }
 
   navigateToCreateRestaurant(): void {
-    this.router.navigate(['/restaurants/edit-restaurant']); // Remplacez par le chemin réel de la page de création de restaurant.
+    this.router.navigate(['/admin/restaurants/edit-restaurant']);
   }
 }

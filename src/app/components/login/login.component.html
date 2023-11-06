@@ -13,33 +13,37 @@
                         <h4 class="card-title">Beep'z - Administration</h4>
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <mat-form-field class="example-full-width">
-                                    <input matInput type="email" [(ngModel)]="user.email" placeholder="Adresse mail">
-                                </mat-form-field>
+                        <form>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput type="email" [(ngModel)]="user.email"
+                                            placeholder="Adresse mail">
+                                    </mat-form-field>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <mat-form-field class="example-full-width">
-                                    <input matInput [type]="hidePassword ? 'password' : 'text'"
-                                        [(ngModel)]="user.password" placeholder="Mot de passe">
-                                    <i class="material-icons" mat-icon matSuffix
-                                        (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' :
-                                        'visibility'}}</i>
-                                </mat-form-field>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput [type]="hidePassword ? 'password' : 'text'"
+                                            [(ngModel)]="user.password" placeholder="Mot de passe">
+                                        <i class="material-icons" mat-icon matSuffix
+                                            (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' :
+                                            'visibility'}}</i>
+                                    </mat-form-field>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <button mat-raised-button class="btn btn-success mt-3"
-                                    (click)="login()">Connexion</button>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button mat-raised-button class="btn btn-success mt-3"
+                                        (click)="login()">Connexion</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row justify-content-center mt-3">
-                            <a routerLink="fhzefze">Mot de passe oublié ?</a>
-                        </div>
+                            <div class="row justify-content-center mt-3">
+                                <a routerLink="fhzefze">Mot de passe oublié ?</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

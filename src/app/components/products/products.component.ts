@@ -30,22 +30,24 @@ export class ProductsComponent implements OnInit {
 
   loadAllProductsData(): void {
     this.productsService.getAllProducts().subscribe(
-      data => {
-        this.productsData = data;
+      response => {
+        this.productsData = response;
+        console.log('Produits récupérés avec succès!', response);
       },
       error => {
-        console.error('There was an error!', error);
+        console.error('Il y a eu une erreur lors de la récupération des produits', error);
       }
     );
   }
 
   loadAllCategoriesData(): void {
     this.categoriesService.getAllCategories().subscribe(
-      data => {
-        this.categoriesData = data;
+      response => {
+        this.categoriesData = response;
+        console.log('Catégories récupérées avec succès!', response);
       },
       error => {
-        console.error('There was an error!', error);
+        console.error('Il y a eu une erreur lors de la récupération des catégories', error);
       }
     );
   }

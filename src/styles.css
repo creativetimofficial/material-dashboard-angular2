@@ -34,6 +34,10 @@
     width: 100% !important;
 }
 
+.w-max-75 {
+    max-width: 75px !important;
+}
+
 .w-max-300 {
     max-width: 300px !important;
 }

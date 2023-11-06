@@ -26,33 +26,36 @@ export class OrdersComponent implements OnInit {
 
     loadAllOrdersData(): void {
         this.orderService.getAllOrders().subscribe(
-            data => {
-                this.ordersData = data;
+            response => {
+                this.ordersData = response;
+                console.log('Commandes récupérées avec succès!', response);
             },
             error => {
-                console.error('There was an error!', error);
+                console.error('Il y a eu une erreur lors de la récupération des commandes', error);
             }
         );
     }
 
     loadAllUsersData(): void {
         this.usersDataUserService.getAllUsersDataUser().subscribe(
-            data => {
-                this.usersData = data;
+            response => {
+                this.usersData = response;
+                console.log('Clients récupérés avec succès!', response);
             },
             error => {
-                console.error('There was an error!', error);
+                console.error('Il y a eu une erreur lors de la récupération des clients', error);
             }
         );
     }
 
     loadAllProsData(): void {
         this.usersDataProService.getAllUsersDataPro().subscribe(
-            data => {
-                this.prosData = data;
+            response => {
+                this.prosData = response;
+                console.log('Restaurants récupérés avec succès!', response);
             },
             error => {
-                console.error('There was an error!', error);
+                console.error('Il y a eu une erreur lors de la récupération des restaurants', error);
             }
         );
     }
