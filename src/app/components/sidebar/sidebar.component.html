@@ -54,6 +54,7 @@
         </li>
     </ul>
   </div>
+
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
             <a class="nav-link" [routerLink]="[menuItem.path]">
@@ -62,4 +63,5 @@
             </a>
         </li>
     </ul>
+
 </div>
