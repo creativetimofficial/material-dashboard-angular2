@@ -18,7 +18,7 @@ export class AdminLayoutComponent implements OnInit {
   constructor( public location: Location, private router: Router) {}
 
   ngOnInit() {
-      const isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
+      const isWindows = navigator.userAgent.indexOf('Win') > -1 ? true : false;
 
       if (isWindows && !document.getElementsByTagName('body')[0].classList.contains('sidebar-mini')) {
           // if we are on windows OS we activate the perfectScrollbar function
@@ -148,7 +148,7 @@ export class AdminLayoutComponent implements OnInit {
   }
   isMac(): boolean {
       let bool = false;
-      if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
+      if (navigator.userAgent.toUpperCase().indexOf('MAC') >= 0 || navigator.userAgent.toUpperCase().indexOf('IPAD') >= 0) {
           bool = true;
       }
       return bool;
