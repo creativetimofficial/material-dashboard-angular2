@@ -71,11 +71,11 @@
   // Size variations
   &.btn-lg,
   .btn-group-lg & {
-    @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $bmd-btn-font-size, $btn-lg-line-height, $border-radius-sm);
+    @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $bmd-btn-font-size, $border-radius-sm);
   }
   &.btn-sm,
   .btn-group-sm & {
-    @include button-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, $bmd-btn-font-size-sm, $line-height-sm, $border-radius-sm);
+    @include button-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, $bmd-btn-font-size-sm, $border-radius-sm);
   }
 
   &.btn-round {
