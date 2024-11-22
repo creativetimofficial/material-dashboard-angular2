@@ -2,20 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 declare const $: any;
 declare interface RouteInfo {
-    path: string;
-    title: string;
-    icon: string;
-    class: string;
+  path: string;
+  title: string;
+  icon: string;
+  class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+  { path: '/home', title: 'Accueil', icon: 'home', class: '' },
+  { path: '/user-profile', title: 'Compte personnel', icon: 'person', class: '' },
+  { path: '/table-list', title: 'Toutes nos offres', icon: 'local_offer', class: '' },
+  { path: '/typography', title: '(gérant) Ajouter une offre', icon: 'note_add', class: '' },
+  { path: '/icons', title: '(admin) gérer les utilisateurs', icon: 'settings_applications', class: '' },
+  { path: '/maps', title: '(admin) Statistiques', icon: 'create', class: '' },
+  // { path: '/notifications', title: 'Notifications', icon: 'notifications', class: '' },
+  { path: '/upgrade', title: 'Contactez-nous !', icon: 'unarchive', class: 'active-pro' },
 ];
 
 @Component({
@@ -32,9 +32,9 @@ export class SidebarComponent implements OnInit {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
   isMobileMenu() {
-      if ($(window).width() > 991) {
-          return false;
-      }
-      return true;
+    if ($(window).width() > 991) {
+      return false;
+    }
+    return true;
   };
 }
