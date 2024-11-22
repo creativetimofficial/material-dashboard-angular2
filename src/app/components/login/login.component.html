@@ -1,0 +1,78 @@
+<style>
+  *{
+       /* background-color: rgb(223, 178, 204); */
+       margin: 0;
+       
+  }
+  
+  body {
+    margin-top: 0%;
+    margin-left: 25%;
+  }
+
+  h1 {
+    color: rgba(197, 106, 53, 0.48);
+    font-size: 70px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+
+  .form-group {
+    position: relative;
+    background-color: none;
+    margin-top: 5%;
+    border-width: 10px;
+    border-color: rgb(194, 93, 53);
+    border-style:groove;
+    border-radius: 15px;
+
+  }
+
+  .form-group input{
+    border: 1px solid #ddd;
+    height : 40px;
+    padding: 0 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+
+  }
+
+  .eyeicon{
+    position: absolute;
+    right: 60px;
+    top: 175px;
+    cursor: pointer;
+
+  }
+  
+
+</style>
+
+<div>
+  <img src="./assets/img/maison.jpg" width ="100%" height = "450px" alt="photoAgence">
+</div>
+
+<body>
+  <div class="form-group col-md-8" style="text-align: center">
+    <h1>Connectez vous</h1>
+    <form (submit)="login()">
+      <div>
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" class="form-control" [(ngModel)]="credentials.username" name="username">
+      </div>
+      <div>
+        <label for="password">Mot de passe</label>
+        <input [type]="changetype? 'password' : 'text'" class="form-control" [(ngModel)]="credentials.password" name="password">
+        <span class = "eyeicon" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye' : 'fa fa-eye-slash'"></i>
+
+        </span>
+        <br>
+      </div>
+      <button class="btn btn-warning" type="submit">Se connecter</button>
+      <p>Pas encore de compte ? <a routerLink="/registration">Inscrivez-vous</a></p>
+      <p><a routerLink="/mdp">Mot de passe oublié ?</a></p>
+    </form>
+  </div>
+
+</body>
+
